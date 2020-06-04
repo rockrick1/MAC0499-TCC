@@ -1,2 +1,2 @@
 shooter/data/*
-!shooter/data/.gitkeep
+!shooter/data/.gitkeep.txt
