@@ -17,7 +17,7 @@ __meta__ = {
 }
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 80 )
+position = Vector2( 144, 232 )
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 rotating = true

@@ -1,12 +1,15 @@
 extends KinematicBody2D
 
-var MAX_RUN_SPEED = 2
+const MAX_RUN_SPEED = 2
 var RUN_SPEED = 0
 var RUN_ACC = 20
 var mot = Vector2(0,0)
 
-var pistol = preload("res://guns/pistol.tscn")
-var machinegun = preload("res://guns/machinegun.tscn")
+const pistol = preload("res://guns/pistol.tscn")
+const machinegun = preload("res://guns/machinegun.tscn")
+
+const ActionRecorder = preload("res://scripts/action_recorder.gd")
+onready var action_recorder = ActionRecorder.new()
 
 var guns = [pistol, machinegun]
 var gun_names = ["Pistol", "Machinegun"]
@@ -18,6 +21,7 @@ var mouse_angle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	action_recorder._ready()
 	change_gun(cur_gun)
 
 func prev_gun():
@@ -71,18 +75,27 @@ func _process(delta):
 	var dir = Vector2(0,0)
 	var moving = false
 	
+	var data = {"type" : "movement", "info" : ""}
 	if Input.is_action_pressed("ui_left"):
 		moving = true
 		dir.x -= 1
-	if Input.is_action_pressed("ui_right"):
+		data.info = "Left"
+		action_recorder.write_data(data)
+	elif Input.is_action_pressed("ui_right"):
 		moving = true
 		dir.x += 1
+		data.info = "Right"
+		action_recorder.write_data(data)
 	if Input.is_action_pressed("ui_down"):
 		moving = true
 		dir.y += 1
-	if Input.is_action_pressed("ui_up"):
+		data.info += "Down"
+		action_recorder.write_data(data)
+	elif Input.is_action_pressed("ui_up"):
 		moving = true
 		dir.y -= 1
+		data.info += "Up"
+		action_recorder.write_data(data)
 	
 	if moving:
 		$Sprite.set_animation("run")
@@ -105,3 +118,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_next"):
 		print(999)
 		next_gun()
+
+
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+		print ("You are quit!")
+		action_recorder.save()
