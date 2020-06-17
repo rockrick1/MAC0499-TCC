@@ -33,15 +33,17 @@ smoothing_enabled = true
 wait_time = 1.5
 autostart = true
 
-[node name="1" type="Node2D" parent="Spawner"]
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="SpawnPositions"]
 position = Vector2( 160, 18 )
 
-[node name="2" type="Node2D" parent="Spawner"]
+[node name="2" type="Node2D" parent="SpawnPositions"]
 position = Vector2( 368, 224 )
 
-[node name="3" type="Node2D" parent="Spawner"]
+[node name="3" type="Node2D" parent="SpawnPositions"]
 position = Vector2( 160, 432 )
 
-[node name="4" type="Node2D" parent="Spawner"]
+[node name="4" type="Node2D" parent="SpawnPositions"]
 position = Vector2( -48, 224 )
 [connection signal="timeout" from="Spawner" to="." method="_on_Spawner_timeout"]

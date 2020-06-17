@@ -16,13 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="shooter"
-run/main_scene="res://stages/arena1.tscn"
+run/main_scene="res://stages/arena3.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=512
 window/size/height=300
+window/size/fullscreen=true
 mouse_cursor/custom_image="res://assets/sprites/crosshair.png"
 mouse_cursor/custom_image_hotspot=Vector2( 16, 16 )
 window/stretch/mode="2d"

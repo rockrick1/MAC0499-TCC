@@ -30,6 +30,8 @@ func _ready():
 
 func shoot(dir):
 	if can_fire:
+		shooter.stats.shots_fired += 1
+		shooter.update_stats_display()
 		can_fire = false
 		$Cooldown.start()
 		
@@ -37,7 +39,7 @@ func shoot(dir):
 		tween.interpolate_property($Sprite, "position",
 		Vector2($Sprite.position.x, $Sprite.position.y),
 		Vector2(0, $Sprite.position.y), .2,
-        Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 
 		

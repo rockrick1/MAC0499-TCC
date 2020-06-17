@@ -11,7 +11,6 @@ func _ready():
 	f.open("res://data/somefile.dat", File.WRITE)
 
 func write_data(data):
-	print(data.type + "-" + data.info)
 	f.store_string(data.type + "-" + data.info + "\n")
 
 func save():

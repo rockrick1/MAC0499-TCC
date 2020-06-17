@@ -18,6 +18,8 @@ func _on_Area2D_body_entered(body):
 	if body != shooter:
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
+			shooter.stats.shots_hit += 1
+			shooter.update_stats_display()
 			queue_free()
 
 func _on_DeathTimer_timeout():

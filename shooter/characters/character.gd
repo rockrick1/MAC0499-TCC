@@ -8,9 +8,6 @@ var mot = Vector2(0,0)
 const pistol = preload("res://guns/pistol.tscn")
 const machinegun = preload("res://guns/machinegun.tscn")
 
-const ActionRecorder = preload("res://scripts/action_recorder.gd")
-onready var action_recorder = ActionRecorder.new()
-
 var guns = [pistol, machinegun]
 var gun_names = ["Pistol", "Machinegun"]
 var cur_gun = 1
@@ -19,10 +16,25 @@ var cur_gun_name = gun_names[cur_gun]
 var mouse_vec
 var mouse_angle
 
+########################### action recording ###################################
+const ActionRecorder = preload("res://scripts/action_recorder.gd")
+onready var action_recorder = ActionRecorder.new()
+
+var stats = {
+	"shots_fired": 0.0,
+	"shots_hit": 0.0,
+	"enemies_killed": 0
+}
+
+
+################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	action_recorder._ready()
 	change_gun(cur_gun)
+	
+func update_stats_display():
+	$Camera2D/CanvasLayer/Stats.update_stats(stats)
 
 func prev_gun():
 	if cur_gun == 0:
@@ -40,7 +52,6 @@ func change_gun(gun_idx):
 	cur_gun_name = gun_names[cur_gun]
 	var gun_scene = guns[gun_idx]
 	var gun_inst = gun_scene.instance()
-	print(gun_inst.name)
 	add_child(gun_inst)
 	# When running this function prom _ready(), we dont have the mouse variables
 	# yet, so...
@@ -116,8 +127,6 @@ func _process(delta):
 		prev_gun()
 	if Input.is_action_just_pressed("ui_next"):
 		next_gun()
-		
-	print($Camera2D.get_camera_position())
 
 
 func _notification(what):
