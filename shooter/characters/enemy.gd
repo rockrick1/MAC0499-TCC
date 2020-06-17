@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var RUN_SPEED = 1
 var HP = 100
+var FIRE_REWARD = 1
 
 # Called when the enemy takes damage
 func take_damage(dmg):

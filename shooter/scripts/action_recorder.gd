@@ -2,9 +2,12 @@ extends Node
 
 var f
 
+var walk_points
+var fire_points
+var hit_points
+
 func _ready():
 	f = File.new()
-	print(111111111)
 	f.open("res://data/somefile.dat", File.WRITE)
 
 func write_data(data):

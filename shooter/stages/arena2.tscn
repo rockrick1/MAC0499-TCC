@@ -25,7 +25,7 @@ current = true
 smoothing_enabled = true
 
 [node name="Spawner" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.5
 autostart = true
 
 [node name="1" type="Node2D" parent="Spawner"]
@@ -35,7 +35,7 @@ position = Vector2( 144, 48 )
 position = Vector2( 336, 240 )
 
 [node name="3" type="Node2D" parent="Spawner"]
-position = Vector2( 144, 424 )
+position = Vector2( 144, 432 )
 
 [node name="4" type="Node2D" parent="Spawner"]
 position = Vector2( -48, 240 )

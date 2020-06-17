@@ -113,11 +113,11 @@ func _process(delta):
 		get_node(cur_gun_name).shoot(mouse_vec.normalized())
 	
 	if Input.is_action_just_pressed("ui_prev"):
-		print(12)
 		prev_gun()
 	if Input.is_action_just_pressed("ui_next"):
-		print(999)
 		next_gun()
+		
+	print($Camera2D.get_camera_position())
 
 
 func _notification(what):
