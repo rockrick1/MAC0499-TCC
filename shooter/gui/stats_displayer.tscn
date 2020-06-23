@@ -5,7 +5,7 @@
 [node name="Stats" type="VBoxContainer"]
 margin_right = 512.0
 margin_bottom = 300.0
-custom_constants/separation = 0
+custom_constants/separation = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
@@ -21,27 +21,27 @@ __meta__ = {
 }
 
 [node name="ShotsHit" type="Label" parent="."]
-margin_top = 14.0
+margin_top = 15.0
 margin_right = 512.0
-margin_bottom = 28.0
+margin_bottom = 29.0
 text = "shots hit: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Accuracy" type="Label" parent="."]
-margin_top = 28.0
+margin_top = 30.0
 margin_right = 512.0
-margin_bottom = 42.0
+margin_bottom = 44.0
 text = "accuracy: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Killed" type="Label" parent="."]
-margin_top = 42.0
+margin_top = 45.0
 margin_right = 512.0
-margin_bottom = 56.0
+margin_bottom = 59.0
 text = "blops murdered: "
 __meta__ = {
 "_edit_use_anchors_": false

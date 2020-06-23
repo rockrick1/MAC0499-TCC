@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 export (float) var RUN_SPEED
 export (float) var HP
-export (float) var FIRE_REWARD
+export (float) var HIT_REWARD
 
 var character
+var dir
 
 func _ready():
 	character = get_parent().get_node("Character")
@@ -18,7 +19,7 @@ func take_damage(dmg):
 		die()
 
 func _process(delta):
-	var dir = character.get_position() - get_position()
+	dir = character.get_position() - get_position()
 	if dir.x < 0:
 		$AnimatedSprite.set_flip_h(true)
 	else:

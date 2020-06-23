@@ -1,8 +1,9 @@
 extends Node2D
 
 var enemies = {
-	"blop_green": load("res://characters/blop_green.tscn"),
-	"blop_blue": load("res://characters/blop_blue.tscn")
+#	"blop_green": load("res://characters/blop_green.tscn"),
+#	"blop_blue": load("res://characters/blop_blue.tscn"),
+	"shooter_man": load("res://characters/shooter_man.tscn")
 }
 var enemy_names = enemies.keys()
 

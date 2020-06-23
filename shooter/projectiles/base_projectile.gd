@@ -9,6 +9,7 @@ var shooter
 func set_direction(dir):
 	direction = dir
 	set_rotation(dir.angle())
+	set_process(true)
 
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
@@ -17,6 +18,7 @@ func _process(_delta):
 func _on_Area2D_body_entered(body):
 	if body != shooter:
 		if body.has_method("take_damage"):
+			print("Acertou!")
 			body.take_damage(damage)
 			shooter.stats.shots_hit += 1
 			shooter.update_stats_display()
