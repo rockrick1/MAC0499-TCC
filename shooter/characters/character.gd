@@ -1,9 +1,16 @@
 extends KinematicBody2D
 
-const MAX_RUN_SPEED = 2
+export (int) var RUN_ACC = 20
+export (int) var MAX_RUN_SPEED = 2
+export (float) var MAX_HP
+export (int) var DEF
+
 var RUN_SPEED = 0
-var RUN_ACC = 20
+var HP
+
 var mot = Vector2(0,0)
+
+const enemy = false
 
 const pistol = preload("res://guns/pistol.tscn")
 const machinegun = preload("res://guns/machinegun.tscn")
@@ -31,10 +38,15 @@ var stats = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	action_recorder._ready()
+	HP = MAX_HP
+	$Camera2D/GUI/HealthBar.max_value = MAX_HP
+	$Camera2D/GUI/HealthBar.value = HP
 	change_gun(cur_gun)
-	
+
+
 func update_stats_display():
-	$Camera2D/CanvasLayer/Stats.update_stats(stats)
+	$Camera2D/GUI/Stats.update_stats(stats)
+
 
 func prev_gun():
 	if cur_gun == 0:
@@ -42,8 +54,10 @@ func prev_gun():
 		return
 	change_gun(cur_gun - 1)
 
+
 func next_gun():
 	change_gun((cur_gun + 1) % len(guns))
+
 
 func change_gun(gun_idx):
 	if get_node(cur_gun_name):
@@ -57,7 +71,8 @@ func change_gun(gun_idx):
 	# yet, so...
 	if mouse_vec and mouse_angle:
 		adjust_gun_pos()
-	
+
+
 func adjust_gun_pos():
 	if get_node(cur_gun_name):
 		get_node(cur_gun_name).set_position(mouse_vec)
@@ -66,6 +81,7 @@ func adjust_gun_pos():
 		else:
 			get_node(cur_gun_name).flip_v(false)
 		get_node(cur_gun_name).set_rotation(mouse_vec.angle())
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -127,6 +143,21 @@ func _process(delta):
 		prev_gun()
 	if Input.is_action_just_pressed("ui_next"):
 		next_gun()
+
+
+func take_damage(dmg):
+	print("shiet mang im ded")
+	HP -= dmg
+#	$AnimationPlayer.play("take damage")
+#	$Particles2D.restart()
+	if HP <= 0:
+		die()
+		
+	$Camera2D/GUI/HealthBar.value = HP
+
+
+func die():
+	queue_free()
 
 
 func _notification(what):

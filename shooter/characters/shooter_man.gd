@@ -36,7 +36,8 @@ func shoot(dir):
 	var sway = deg2rad((randf() - 0.5)*fire_sway)
 	proj_instance.set_direction(dir.rotated(sway))
 	proj_instance.shooter = self
-	arena.add_child(proj_instance)
+	print(get_name())
+	arena.add_child_below_node(arena.get_node(get_name()) ,proj_instance)
 	print(proj_instance.get_global_position())
 #	why
 
