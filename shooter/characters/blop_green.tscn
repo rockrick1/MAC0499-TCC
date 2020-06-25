@@ -51,14 +51,14 @@ color = Color( 0.956863, 0.0156863, 0.0156863, 1 )
 script = ExtResource( 4 )
 RUN_SPEED = 1.0
 HP = 100.0
-FIRE_REWARD = 1.0
+TYPE = "Melee"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 modulate = Color( 1, 84.89, 1, 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

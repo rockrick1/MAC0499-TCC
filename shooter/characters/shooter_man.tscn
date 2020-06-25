@@ -50,6 +50,8 @@ script = ExtResource( 2 )
 RUN_SPEED = 0.8
 HP = 150.0
 HIT_REWARD = 3.0
+TYPE = "Ranged"
+DISTANCE = 100.0
 fire_rate = 3.0
 proj_type = "blue"
 
@@ -85,4 +87,16 @@ __meta__ = {
 [node name="FireCD" type="Timer" parent="."]
 
 [node name="MidShotCD" type="Timer" parent="."]
+
+[node name="Center" type="Line2D" parent="."]
+visible = false
+points = PoolVector2Array( 0, 0 )
+width = 4.0
+default_color = Color( 0.4, 0.501961, 1, 1 )
+
+[node name="Muzzle2" type="Line2D" parent="."]
+visible = false
+points = PoolVector2Array( 0, 0 )
+width = 4.0
+default_color = Color( 0.4, 0.501961, 1, 1 )
 [connection signal="timeout" from="FireCD" to="." method="_on_FireCD_timeout"]

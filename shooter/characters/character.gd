@@ -157,7 +157,9 @@ func take_damage(dmg):
 
 
 func die():
+	action_recorder.save()
 	queue_free()
+	get_parent().queue_free()
 
 
 func _notification(what):

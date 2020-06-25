@@ -28,18 +28,16 @@ func _ready():
 func shoot(dir):
 #	shooter.stats.shots_fired += 1
 #	shooter.update_stats_display()
+	proj_dir = character.get_node("Center").get_global_position() - $Muzzle.get_global_position()
 	$FireCD.start()
 	
 	print($Muzzle.get_global_position())
 	var proj_instance = proj_scene.instance()
 	proj_instance.position = $Muzzle.get_global_position()
 	var sway = deg2rad((randf() - 0.5)*fire_sway)
-	proj_instance.set_direction(dir.rotated(sway))
+	proj_instance.set_direction(proj_dir.rotated(sway))
 	proj_instance.shooter = self
-	print(get_name())
 	arena.add_child_below_node(arena.get_node(get_name()) ,proj_instance)
-	print(proj_instance.get_global_position())
-#	why
 
 
 func _on_FireCD_timeout():
