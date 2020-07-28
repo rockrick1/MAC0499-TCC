@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/blop_green.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stages/test_stage.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 7.99999 )
+
+[node name="Stage" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 128.0
+margin_bottom = 304.0
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 304.0
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 304.0
+color = Color( 0.14902, 0.14902, 0.14902, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 288 )
+
+[node name="StageBorder" type="StaticBody2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StageBorder"]
+position = Vector2( 120, 152 )
+scale = Vector2( 1, 20 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StageBorder"]
+position = Vector2( 392, 152 )
+scale = Vector2( 1, 20 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StageBorder"]
+position = Vector2( 256, -8 )
+scale = Vector2( 17, 1 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StageBorder"]
+position = Vector2( 256, 312 )
+scale = Vector2( 17, 1 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 256, 64 )
