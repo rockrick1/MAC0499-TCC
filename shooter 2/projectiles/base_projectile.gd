@@ -13,6 +13,7 @@ var wr
 func _ready():
 	enemy = shooter.enemy
 	wr = weakref(shooter)
+	set_life()
 
 func set_direction(dir):
 	direction = dir
