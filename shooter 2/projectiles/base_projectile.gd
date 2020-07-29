@@ -19,9 +19,9 @@ func set_direction(dir):
 	set_rotation(dir.angle())
 	set_process(true)
 
-func set_life(_l):
-	if _l:
-		life = _l
+func set_life(l = 5):
+	if l:
+		life = l
 	$DeathTimer.wait_time = life
 
 # Called when the node enters the scene tree for the first time.
