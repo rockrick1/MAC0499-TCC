@@ -6,6 +6,7 @@ export (float) var life
 
 var direction
 var shooter
+var generator
 var enemy
 
 var wr
@@ -36,8 +37,13 @@ func _on_Area2D_body_entered(body):
 			if wr.get_ref() and shooter.has_method("update_stats_display"):
 				shooter.stats.shots_hit += 1
 				shooter.update_stats_display()
-		queue_free()
+		die()
 			
 
 func _on_DeathTimer_timeout():
+	die()
+
+func die():
+	if wr.get_ref() and generator != null:
+		generator.n_bullets -= 1
 	queue_free()

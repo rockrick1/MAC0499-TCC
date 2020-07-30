@@ -18,9 +18,9 @@ export (int) var bullets_per_array = 4
 export (float) var individual_array_spread = 135
 
 # Numer of arrays
-export (int) var total_bullet_arrays = 2
+export (int) var total_bullet_arrays = 3
 # Spread between different arrays
-export (float) var total_array_spread = 180
+export (float) var total_array_spread = 120
 
 # "Character" spin speed
 export (float) var spin_speed = 0
@@ -35,6 +35,8 @@ export (float) var fire_interval = 0
 export (float) var bullet_speed = 1
 export (float) var bullet_life = 5
 
+var n_bullets = 0
+
 export (Color) var bullet_color = Color(1, 1, 1)
 
 
@@ -42,21 +44,19 @@ func _ready():
 	set_process(false)
 	print(spin_speed)
 	shooter = get_parent()
-	arena = shooter.arena
+	print(shooter)
 	$FireRate.wait_time = 1/fire_rate
-	pass
 
 
 # sets the patterns parameters
 func set_params(params):
 	$FireRate.wait_time = 1/fire_rate
-	pass
 
 
 func start():
 	set_process(true)
+	arena = shooter.arena
 	shooting = true
-	pass
 
 
 func modulate_bullets():
@@ -88,25 +88,31 @@ func _process(delta):
 		
 		var proj1_instance
 		var start_angle = 0
+		var angle_between_bullets
+		var angle
+		var dir
+		
 		for array in range(total_bullet_arrays):
 			
-			var angle_between_bullets = individual_array_spread/bullets_per_array
+			angle_between_bullets = individual_array_spread/bullets_per_array
 			
 			for bullet_n in range(bullets_per_array):
-				var angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
-				var dir = Vector2(cos(angle), sin(angle))
+				angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
+				dir = Vector2(cos(angle), sin(angle))
 				
 				proj1_instance = proj1.instance()
 				proj1_instance.set_direction(dir.rotated(deg2rad(current_spin)))
 				proj1_instance.shooter = shooter
+				proj1_instance.generator = self
 				proj1_instance.position = shooter.get_global_position()
 				proj1_instance.speed = bullet_speed
 				proj1_instance.set_life(bullet_life)
 				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
+				n_bullets += 1
+				arena.stats.update_stats(n_bullets)
 				shooter.arena.add_child_below_node(shooter.arena.get_node("Character"), proj1_instance)
 				
 			start_angle += total_array_spread
-	pass
 
 
 func _on_FireRate_timeout():

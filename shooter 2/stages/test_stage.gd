@@ -5,9 +5,12 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+var stats
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	stats = $CanvasLayer/Stats
 #	$Enemies/Enemy1/BulletGenerator.start()
 	pass
 

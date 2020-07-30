@@ -18,8 +18,6 @@ var muzzlepos
 func _ready():
 	arena = get_parent().get_parent()
 	character = arena.get_node("Character")
-#	if has_node("Muzzle"):
-#		muzzlepos = $Muzzle.get_position()
 
 # Called when the enemy takes damage
 func take_damage(dmg):
