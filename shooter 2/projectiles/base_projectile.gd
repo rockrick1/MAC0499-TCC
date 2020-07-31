@@ -4,6 +4,8 @@ export (float) var speed
 export (int) var damage
 export (float) var life
 
+export (int) var dist_threshold = 20
+
 var direction
 var shooter
 var generator
@@ -28,6 +30,13 @@ func set_life(l = 5):
 
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
+	# Only checks collision with the nearest bullets
+	if MainNodes.get_character() != null and get_global_position().distance_to(MainNodes.get_character().get_global_position()) < dist_threshold:
+		$Sprite.set_modulate(Color(1,0,0,1))
+		$Area2D/CollisionShape2D.set_disabled(false)
+	elif enemy:
+		$Sprite.set_modulate(Color(1,1,1,1))
+		$Area2D/CollisionShape2D.set_disabled(true)
 	position += direction.normalized() * speed
 
 func _on_Area2D_body_entered(body):
@@ -45,5 +54,5 @@ func _on_DeathTimer_timeout():
 
 func die():
 	if wr.get_ref() and generator != null:
-		generator.n_bullets -= 1
+		MainNodes.get_arena().n_bullets -= 1
 	queue_free()

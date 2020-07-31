@@ -9,7 +9,7 @@ extents = Vector2( 8.45452, 9.01071 )
 [node name="Projectile" type="Node2D"]
 script = ExtResource( 2 )
 speed = 8.0
-damage = 1
+damage = 10
 life = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]

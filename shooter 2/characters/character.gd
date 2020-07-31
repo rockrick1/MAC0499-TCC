@@ -49,47 +49,11 @@ func _ready():
 	$FireRate.wait_time = FIRE_RATE
 #	$Camera2D/GUI/HealthBar.max_value = MAX_HP
 #	$Camera2D/GUI/HealthBar.value = HP
-#	change_gun(cur_gun)
 
 
 func update_stats_display():
 	return
 	$Camera2D/GUI/Stats.update_stats(stats)
-
-
-#func prev_gun():
-#	if cur_gun == 0:
-#		change_gun(len(guns) - 1)
-#		return
-#	change_gun(cur_gun - 1)
-#
-#
-#func next_gun():
-#	change_gun((cur_gun + 1) % len(guns))
-
-
-#func change_gun(gun_idx):
-#	if get_node(cur_gun_name):
-#		get_node(cur_gun_name).queue_free()
-#	cur_gun = gun_idx
-#	cur_gun_name = gun_names[cur_gun]
-#	var gun_scene = guns[gun_idx]
-#	var gun_inst = gun_scene.instance()
-#	add_child(gun_inst)
-#	# When running this function prom _ready(), we dont have the mouse variables
-#	# yet, so...
-#	if mouse_vec and mouse_angle:
-#		adjust_gun_pos()
-
-
-#func adjust_gun_pos():
-#	if get_node(cur_gun_name):
-#		get_node(cur_gun_name).set_position(mouse_vec)
-#		if mouse_angle > 90 or mouse_angle < -90:
-#			get_node(cur_gun_name).flip_v(true)
-#		else:
-#			get_node(cur_gun_name).flip_v(false)
-#		get_node(cur_gun_name).set_rotation(mouse_vec.angle())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

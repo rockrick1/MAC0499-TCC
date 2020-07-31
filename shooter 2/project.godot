@@ -19,6 +19,11 @@ config/name="shooter 2"
 run/main_scene="res://stages/test_stage.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MainNodes="*res://scripts/main_nodes_getter.gd"
+DBManager="*res://scripts/db_manager.gd"
+
 [display]
 
 window/size/width=512
@@ -84,5 +89,6 @@ ui_prev={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+quality/filters/anisotropic_filter_level=1
 quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"

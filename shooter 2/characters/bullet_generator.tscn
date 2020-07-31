@@ -8,4 +8,7 @@ script = ExtResource( 1 )
 [node name="FireRate" type="Timer" parent="."]
 
 [node name="SpinSpeed" type="Tween" parent="."]
+
+[node name="LifeTimer" type="Timer" parent="."]
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]

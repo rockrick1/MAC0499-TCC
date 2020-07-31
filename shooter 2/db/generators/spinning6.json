@@ -1,0 +1,15 @@
+{
+	"life" : -1,
+	"bullets_per_array" : 13,
+	"individual_array_spread" : 360,
+	"total_bullet_arrays" : 1,
+	"total_array_spread" : 120,
+	"base_spin_speed" : 60,
+	"spin_speed_period" : 0,
+	"spin_variation" : 0,
+	"fire_rate" : 13,
+	"fire_interval" : 0,
+	"bullet_speed" : 1,
+	"bullet_life" : 5,
+	"bullet_color" : {"r":1, "g":1, "b":1, "a":1},
+}

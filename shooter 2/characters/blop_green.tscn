@@ -60,12 +60,11 @@ explosiveness = 0.8
 process_material = SubResource( 3 )
 
 [node name="BulletGenerator" parent="." instance=ExtResource( 1 )]
+base_spin_speed = 120.0
 
 [node name="BulletGenerator2" parent="." instance=ExtResource( 1 )]
 bullets_per_array = 3
 individual_array_spread = 30.0
 total_bullet_arrays = 1
-spin_speed = 700.0
-spin_speed_period = 1.0
-fire_rate = 10.0
+base_spin_speed = -60.0
 bullet_speed = 1.3
