@@ -30,29 +30,29 @@ Variables: {
 """
 
 # Time in seconds the generator stays active
-export (float) var life = 100
+export (float) var life
 # Amount of bullets in an array
-export (int) var bullets_per_array = 2
+export (int) var bullets_per_array
 # Angle of spread of the whole array
-export (float) var individual_array_spread = 120
+export (float) var individual_array_spread
 
 # Numer of arrays
-export (int) var total_bullet_arrays = 3
+export (int) var total_bullet_arrays
 # Spread between different arrays
-export (float) var total_array_spread = 120
+export (float) var total_array_spread
 
 # "Character" spin speed
 export (float) var base_spin_speed
-export (float) var spin_speed_period = 0
-export (float) var spin_variation = 0
+export (float) var spin_speed_period
+export (float) var spin_variation
 var spin_speed
 var current_rotation = 0
 
 # fire rate in bullets/sec
-export (float) var fire_rate = 10
-export (float) var fire_interval = 0
-export (float) var bullet_speed = 1
-export (float) var bullet_life = 5
+export (float) var fire_rate
+export (float) var fire_interval
+export (float) var bullet_speed
+export (float) var bullet_life
 
 var n_bullets = 0
 
@@ -63,13 +63,12 @@ func _ready():
 	set_process(false)
 	shooter = get_parent()
 	print(shooter)
-	$FireRate.wait_time = 1/fire_rate
-	$LifeTimer.wait_time = life
 
 
 # sets the patterns parameters
 func set_params(params):
 	life = params.life
+	$LifeTimer.wait_time = life
 	bullets_per_array = params.bullets_per_array
 	individual_array_spread = params.individual_array_spread
 	total_bullet_arrays = params.total_bullet_arrays
@@ -95,7 +94,7 @@ func set_params(params):
 func start():
 	set_process(true)
 	shooting = true
-	if ($LifeTimer.wait_time > 0):
+	if (life > 0):
 		$LifeTimer.start()
 
 
