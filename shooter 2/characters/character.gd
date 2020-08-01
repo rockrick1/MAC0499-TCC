@@ -104,10 +104,10 @@ func _process(delta):
 	else:
 		RUN_SPEED = max(0, RUN_SPEED - (RUN_ACC * delta))
 		mot = mot.normalized()*RUN_SPEED
-#	if delta != 0:
+	if delta != 0:
 #		if mot == Vector2(0, 0):
 #			$Sprite.set_animation("idle")
-	move_and_slide(mot / delta)
+		move_and_slide(mot / delta)
 	############################################################################
 	
 	############################# shooting #####################################
