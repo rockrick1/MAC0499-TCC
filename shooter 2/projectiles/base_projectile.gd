@@ -38,11 +38,11 @@ func _process(_delta):
 	elif enemy:
 		$Sprite.set_modulate(Color(1,1,1,1))
 		$CollisionShape2D.set_disabled(true)
-	position += direction * speed
+	position += direction * speed * _delta * 50
 
 
 func _on_Projectile_body_entered(body):
-	if body.has_method("take_damage") and body.enemy != enemy:
+	if body.has_method("take_damage"):
 		body.take_damage(damage)
 		if wr.get_ref() and shooter.has_method("update_stats_display"):
 			shooter.stats.shots_hit += 1

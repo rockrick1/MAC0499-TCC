@@ -1,6 +1,6 @@
 {
 	"life" : -1,
-	"bullets_per_array" : 13,
+	"bullets_per_array" : 20,
 	"individual_array_spread" : 360,
 	"total_bullet_arrays" : 1,
 	"total_array_spread" : 120,
