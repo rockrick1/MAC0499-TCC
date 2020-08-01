@@ -86,6 +86,14 @@ ui_prev={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="player proj"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="enemy proj"
+2d_physics/layer_5="environment"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true

@@ -49,13 +49,13 @@ tracks/0/keys = {
 }
 
 [node name="Character" type="KinematicBody2D"]
+collision_mask = 28
 script = ExtResource( 2 )
 MAX_HP = 150.0
 FIRE_RATE = 0.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
 playing = true
 
 [node name="ShotEffect" type="Sprite" parent="."]

@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 export (float) var speed
 export (int) var damage
@@ -28,31 +28,34 @@ func set_life(l = 5):
 		life = l
 	$DeathTimer.wait_time = life
 
+
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
 	# Only checks collision with the nearest bullets
 	if MainNodes.get_character() != null and get_global_position().distance_to(MainNodes.get_character().get_global_position()) < dist_threshold:
 		$Sprite.set_modulate(Color(1,0,0,1))
-		$Area2D/CollisionShape2D.set_disabled(false)
+		$CollisionShape2D.set_disabled(false)
 	elif enemy:
 		$Sprite.set_modulate(Color(1,1,1,1))
-		$Area2D/CollisionShape2D.set_disabled(true)
+		$CollisionShape2D.set_disabled(true)
 	position += direction.normalized() * speed
 
-func _on_Area2D_body_entered(body):
-	if body != shooter:
-		if body.has_method("take_damage") and body.enemy != enemy:
-			body.take_damage(damage)
-			if wr.get_ref() and shooter.has_method("update_stats_display"):
-				shooter.stats.shots_hit += 1
-				shooter.update_stats_display()
-		die()
-			
+
+func _on_Projectile_body_entered(body):
+	if body.has_method("take_damage") and body.enemy != enemy:
+		body.take_damage(damage)
+		if wr.get_ref() and shooter.has_method("update_stats_display"):
+			shooter.stats.shots_hit += 1
+			shooter.update_stats_display()
+	die()
+
 
 func _on_DeathTimer_timeout():
 	die()
+
 
 func die():
 	if wr.get_ref() and generator != null:
 		MainNodes.get_arena().n_bullets -= 1
 	queue_free()
+

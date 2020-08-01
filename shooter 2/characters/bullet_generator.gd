@@ -115,7 +115,7 @@ func change_current_spin_speed():
 		spin_variation = -spin_variation
 
 func _process(delta):
-	print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
+#	print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 #	print(get_name(), ': ', base_spin_speed,': ', current_rotation, ' -> ', fmod(current_rotation + spin_speed*delta, 360))
 #	print(get_name(), ': ', spin_speed)
 	current_rotation = fmod(current_rotation + spin_speed*delta, 360)
