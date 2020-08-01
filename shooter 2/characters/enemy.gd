@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 export (float) var RUN_SPEED
 export (float) var HP

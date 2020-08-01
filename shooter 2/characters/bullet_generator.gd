@@ -98,6 +98,11 @@ func start():
 		$LifeTimer.start()
 
 
+func stop():
+	shooting = false
+	$LifeTimer.stop()
+
+
 func modulate_bullets(color):
 	bullet_color = color
 
@@ -148,7 +153,7 @@ func _process(delta):
 				
 				proj1_instance = proj1.instance()
 				
-				proj1_instance.set_direction(dir.rotated(deg2rad(current_rotation)))
+				proj1_instance.set_direction(dir.rotated(deg2rad(current_rotation)).normalized())
 				proj1_instance.shooter = shooter
 				proj1_instance.generator = self
 				proj1_instance.position = shooter.get_global_position()

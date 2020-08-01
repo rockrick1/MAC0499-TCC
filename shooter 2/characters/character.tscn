@@ -56,7 +56,6 @@ FIRE_RATE = 0.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 2
 playing = true
 
 [node name="ShotEffect" type="Sprite" parent="."]

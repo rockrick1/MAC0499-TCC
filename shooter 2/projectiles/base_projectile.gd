@@ -38,7 +38,7 @@ func _process(_delta):
 	elif enemy:
 		$Sprite.set_modulate(Color(1,1,1,1))
 		$CollisionShape2D.set_disabled(true)
-	position += direction.normalized() * speed
+	position += direction * speed
 
 
 func _on_Projectile_body_entered(body):
