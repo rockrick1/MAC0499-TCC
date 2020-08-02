@@ -10,12 +10,14 @@ var direction
 var shooter
 var generator
 var enemy
+var character
 
 var wr
 
 func _ready():
 	enemy = shooter.enemy
 	wr = weakref(shooter)
+	character = MainNodes.get_character()
 	set_life()
 
 func set_direction(dir):
@@ -32,7 +34,7 @@ func set_life(l = 5):
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
 	# Only checks collision with the nearest bullets
-	if MainNodes.get_character() != null and get_global_position().distance_to(MainNodes.get_character().get_global_position()) < dist_threshold:
+	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
 		$Sprite.set_modulate(Color(1,0,0,1))
 		$CollisionShape2D.set_disabled(false)
 	elif enemy:

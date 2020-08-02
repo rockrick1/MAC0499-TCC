@@ -6,6 +6,8 @@ const proj1 = preload("res://projectiles/proj1.tscn")
 var shooting = false
 var can_shoot = true
 var shooter
+var character
+var arena
 
 var modul = false
 
@@ -94,6 +96,8 @@ func set_params(params):
 func start():
 	set_process(true)
 	shooting = true
+	character = MainNodes.get_character()
+	arena = MainNodes.get_arena()
 	if (life > 0):
 		$LifeTimer.start()
 
@@ -139,8 +143,6 @@ func _process(delta):
 		var start_angle = 0
 		var angle_between_bullets
 		var angle
-		var arena = MainNodes.get_arena()
-		var character = MainNodes.get_character()
 		var dir
 		
 		for array in range(total_bullet_arrays):
