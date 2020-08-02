@@ -80,22 +80,22 @@ func _process(delta):
 		moving = true
 		dir.x -= 1
 		data.info = "Left"
-		action_recorder.write_data(data)
+#		action_recorder.write_data(data)
 	elif Input.is_action_pressed("ui_right"):
 		moving = true
 		dir.x += 1
 		data.info = "Right"
-		action_recorder.write_data(data)
+#		action_recorder.write_data(data)
 	if Input.is_action_pressed("ui_down"):
 		moving = true
 		dir.y += 1
 		data.info += "Down"
-		action_recorder.write_data(data)
+#		action_recorder.write_data(data)
 	elif Input.is_action_pressed("ui_up"):
 		moving = true
 		dir.y -= 1
 		data.info += "Up"
-		action_recorder.write_data(data)
+#		action_recorder.write_data(data)
 	
 	if moving:
 #		$Sprite.set_animation("run")

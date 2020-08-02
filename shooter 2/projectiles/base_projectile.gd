@@ -34,12 +34,12 @@ func set_life(l = 5):
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
 	# Only checks collision with the nearest bullets
-	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
-		$Sprite.set_modulate(Color(1,0,0,1))
-		$CollisionShape2D.set_disabled(false)
-	elif enemy:
-		$Sprite.set_modulate(Color(1,1,1,1))
-		$CollisionShape2D.set_disabled(true)
+#	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
+#		$Sprite.set_modulate(Color(1,0,0,1))
+#		$CollisionShape2D.set_disabled(false)
+#	elif enemy:
+#		$Sprite.set_modulate(Color(1,1,1,1))
+#		$CollisionShape2D.set_disabled(true)
 	position += direction * speed * _delta * 50
 
 
