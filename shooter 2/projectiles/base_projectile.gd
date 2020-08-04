@@ -4,7 +4,7 @@ export (float) var speed
 export (int) var damage
 export (float) var life
 
-export (int) var dist_threshold = 20
+export (int) var dist_threshold = 25
 
 var direction
 var shooter
@@ -34,12 +34,6 @@ func set_life(l = 5):
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
 	# Only checks collision with the nearest bullets
-#	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
-#		$Sprite.set_modulate(Color(1,0,0,1))
-#		$CollisionShape2D.set_disabled(false)
-#	elif enemy:
-#		$Sprite.set_modulate(Color(1,1,1,1))
-#		$CollisionShape2D.set_disabled(true)
 	position += direction * speed * _delta * 50
 
 
@@ -56,8 +50,21 @@ func _on_DeathTimer_timeout():
 	die()
 
 
+# Every time the CharSearchRefresh timer timeouts, the projectile will check if
+# the character is close enough to the bullet, and activate the collision if he is
+func _on_CharSearchRefresh_timeout():
+	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
+		$Sprite.set_modulate(Color(1,0,0,1))
+		$CollisionShape2D.set_disabled(false)
+	elif enemy:
+		$Sprite.set_modulate(Color(1,1,1,1))
+		$CollisionShape2D.set_disabled(true)
+
+
 func die():
 	if wr.get_ref() and generator != null:
 		MainNodes.get_arena().n_bullets -= 1
 	queue_free()
+
+
 

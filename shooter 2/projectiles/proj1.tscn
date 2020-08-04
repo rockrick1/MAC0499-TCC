@@ -24,5 +24,10 @@ disabled = true
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="CharSearchRefresh" type="Timer" parent="."]
+wait_time = 0.075
+autostart = true
 [connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="timeout" from="CharSearchRefresh" to="." method="_on_CharSearchRefresh_timeout"]

@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 export (int) var RUN_ACC = 30
-export (int) var MAX_RUN_SPEED = 2
+export (float) var MAX_RUN_SPEED = 2
+export (float) var MAX_STRAFE_SPEED = .85
 export (float) var MAX_HP
 export (int) var DEF
 export (float) var FIRE_RATE
@@ -12,6 +13,7 @@ var HP
 var mot = Vector2(0,0)
 var shooting = false
 var can_shoot = true
+var strafing = false
 
 const enemy = false
 var arena
@@ -47,6 +49,7 @@ func _ready():
 	action_recorder._ready()
 	HP = MAX_HP
 	$FireRate.wait_time = FIRE_RATE
+	$ShotEffect.visible = false
 #	$Camera2D/GUI/HealthBar.max_value = MAX_HP
 #	$Camera2D/GUI/HealthBar.value = HP
 
@@ -75,31 +78,34 @@ func _process(delta):
 	var dir = Vector2(0,0)
 	var moving = false
 	
-	var data = {"type" : "movement", "info" : ""}
+	# var data = {"type" : "movement", "info" : ""}
 	if Input.is_action_pressed("ui_left"):
 		moving = true
 		dir.x -= 1
-		data.info = "Left"
+		# data.info = "Left"
 #		action_recorder.write_data(data)
 	elif Input.is_action_pressed("ui_right"):
 		moving = true
 		dir.x += 1
-		data.info = "Right"
+		# data.info = "Right"
 #		action_recorder.write_data(data)
 	if Input.is_action_pressed("ui_down"):
 		moving = true
 		dir.y += 1
-		data.info += "Down"
+		# data.info += "Down"
 #		action_recorder.write_data(data)
 	elif Input.is_action_pressed("ui_up"):
 		moving = true
 		dir.y -= 1
-		data.info += "Up"
+		# data.info += "Up"
 #		action_recorder.write_data(data)
 	
 	if moving:
 #		$Sprite.set_animation("run")
-		RUN_SPEED = min(MAX_RUN_SPEED, RUN_SPEED + (RUN_ACC * delta))
+		if strafing:
+			RUN_SPEED = min(MAX_STRAFE_SPEED, RUN_SPEED + (RUN_ACC * delta))	
+		else:
+			RUN_SPEED = min(MAX_RUN_SPEED, RUN_SPEED + (RUN_ACC * delta))
 		mot = dir.normalized()*RUN_SPEED
 	else:
 		RUN_SPEED = max(0, RUN_SPEED - (RUN_ACC * delta))
@@ -112,7 +118,7 @@ func _process(delta):
 	
 	############################# shooting #####################################
 	if Input.is_action_pressed("ui_action") or Input.is_action_pressed("ui_select"):
-		$AnimationPlayer.play("Shooting")
+		$ShotEffect/AnimationPlayer.play("Shooting")
 		if can_shoot:
 			can_shoot = false
 			$FireRate.start()
@@ -125,9 +131,20 @@ func _process(delta):
 		
 		shooting = true
 	elif shooting:
-		$AnimationPlayer.stop()
+		$ShotEffect/AnimationPlayer.stop()
 		$ShotEffect.set_visible(false)
 		shooting = false
+	
+	################################## strafe ##################################
+	if Input.is_action_just_pressed("ui_secondary_action"):
+		strafing = true
+		$Hitbox/AnimationPlayer.play("ShowHitbox")
+	elif Input.is_action_just_released("ui_secondary_action"):
+		strafing = false
+		$Hitbox/AnimationPlayer.play("HideHitbox")
+	############################################################################
+
+
 
 
 func take_damage(dmg):
@@ -141,8 +158,8 @@ func take_damage(dmg):
 
 
 func die():
-	print("shiet mang im ded")
 	return
+	print("shiet mang im ded")
 	action_recorder.save()
 	queue_free()
 	get_parent().queue_free()
