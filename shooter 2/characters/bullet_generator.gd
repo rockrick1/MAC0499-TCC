@@ -65,7 +65,7 @@ export (bool) var DEBUG
 
 func _ready():
 	set_process(false)
-	shooter = get_parent()
+	shooter = get_parent().get_parent()
 	print(shooter)
 
 

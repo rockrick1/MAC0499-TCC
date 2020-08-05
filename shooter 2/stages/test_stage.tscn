@@ -48,7 +48,6 @@ __meta__ = {
 position = Vector2( 256, 288 )
 
 [node name="StageBorder" type="StaticBody2D" parent="."]
-visible = false
 __meta__ = {
 "_edit_lock_": true
 }
