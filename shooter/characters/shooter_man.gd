@@ -6,7 +6,7 @@ export (String) var proj_type
 export (float) var fire_sway
 
 var shooter
-var arena
+var stage
 var proj_scene
 var muzzle_pos
 
@@ -20,7 +20,7 @@ func flip_v(flip):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	proj_scene = load("res://projectiles/" + proj_type + "_proj.tscn")
-	arena = get_parent()
+	stage = get_parent()
 	muzzle_pos = $Muzzle.get_position()
 	$FireCD.set_wait_time(fire_rate)
 	$FireCD.start()
@@ -37,7 +37,7 @@ func shoot(dir):
 	var sway = deg2rad((randf() - 0.5)*fire_sway)
 	proj_instance.set_direction(proj_dir.rotated(sway))
 	proj_instance.shooter = self
-	arena.add_child_below_node(arena.get_node(get_name()) ,proj_instance)
+	stage.add_child_below_node(stage.get_node(get_name()) ,proj_instance)
 
 
 func _on_FireCD_timeout():

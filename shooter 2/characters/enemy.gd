@@ -9,15 +9,15 @@ export (float) var DISTANCE
 const enemy = true
 
 var character
-var arena
+var stage
 var dir
 var proj_dir
 var muzzlepos
 
 
 func _ready():
-	arena = get_parent().get_parent()
-	character = arena.get_node("Character")
+	stage = get_parent().get_parent()
+	character = stage.get_node("Character")
 
 # Called when the enemy takes damage
 func take_damage(dmg):

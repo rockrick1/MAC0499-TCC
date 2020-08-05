@@ -7,7 +7,7 @@ var shooting = false
 var can_shoot = true
 var shooter
 var character
-var arena
+var stage
 
 var modul = false
 
@@ -60,6 +60,8 @@ var n_bullets = 0
 
 export (Color) var bullet_color = Color(1, 1, 1)
 
+export (bool) var DEBUG
+
 
 func _ready():
 	set_process(false)
@@ -89,15 +91,17 @@ func set_params(params):
 		params.bullet_color.b,
 		params.bullet_color.a
 	)
-
-	$FireRate.wait_time = 1/fire_rate
+	
+	print("FIRE RATE: ", float(1/float(fire_rate)))
+	print("FIRE RATE: ", float(fire_rate))
+	$FireRate.wait_time = 1/float(fire_rate)
 
 
 func start():
 	set_process(true)
 	shooting = true
 	character = MainNodes.get_character()
-	arena = MainNodes.get_arena()
+	stage = MainNodes.get_stage()
 	if (life > 0):
 		$LifeTimer.start()
 
@@ -132,10 +136,12 @@ func _process(delta):
 		change_current_spin_speed()
 #	print(spin_speed)
 	
-	
+#	if DEBUG:
+#		print(get_name(), ': ', $FireRate.wait_time, ' ')
 #	if current_rotation > 360 or current_rotation :
 #		current_rotation -= 360
 	if shooting and can_shoot:
+		print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 		can_shoot = false
 		$FireRate.start()
 		
@@ -163,10 +169,10 @@ func _process(delta):
 				proj1_instance.set_life(bullet_life)
 				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
 
-				arena.n_bullets += 1
-				arena.stats.update_stats(arena.n_bullets)
+				stage.n_bullets += 1
+				stage.stats.update_stats(stage.n_bullets)
 
-				arena.add_child_below_node(character, proj1_instance)
+				stage.add_child_below_node(character, proj1_instance)
 				
 			start_angle += total_array_spread
 

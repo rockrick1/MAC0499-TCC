@@ -1,0 +1,50 @@
+{
+    "repeat" : true,
+    "waves" : 
+    [
+        {
+            "delay" : 0,
+            "enemies" : 
+            [   
+                {
+                    "name" : "test_enemy",
+                    "generator" : "spinning6",
+                    "pos_override" : "left",
+                },
+                
+                {
+                    "name" : "test_enemy",
+                    "generator" : "spinning6",
+                    "pos_override" : "right",
+                },
+            ],
+        },
+
+        {
+            "delay" : 3,
+        },
+
+        {
+            "delay" : 2,
+            "enemies" : 
+            [
+                {
+                    "name" : "test_enemy",
+                    "generator" : "spinning6",
+                    "pos_override" : "left",
+                },
+                
+                {
+                    "name" : "test_enemy",
+                    "generator" : "spinning6",
+                    "pos_override" : "right",
+                },
+                
+                {
+                    "name" : "test_enemy",
+                    "generator" : "spinning6",
+                },
+            ],
+        },
+    ]
+}

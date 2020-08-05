@@ -1,10 +1,10 @@
 {
 	"life" : -1,
-	"bullets_per_array" : 5,
+	"bullets_per_array" : 6,
 	"individual_array_spread" : 360,
 	"total_bullet_arrays" : 1,
 	"total_array_spread" : 120,
-	"base_spin_speed" : 70,
+	"base_spin_speed" : 60,
 	"spin_speed_period" : 0,
 	"spin_variation" : 0,
 	"fire_rate" : 7,

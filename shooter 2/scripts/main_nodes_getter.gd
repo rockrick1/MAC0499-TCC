@@ -2,7 +2,7 @@ extends Node
 
 
 var character
-var arena
+var stage
 
 
 func get_character():
@@ -13,9 +13,9 @@ func set_character(node):
 	character = node
 
 
-func get_arena():
-	return arena
+func get_stage():
+	return stage
 
 
-func set_arena(node):
-	arena = node
+func set_stage(node):
+	stage = node

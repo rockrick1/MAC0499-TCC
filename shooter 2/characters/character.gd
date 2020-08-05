@@ -16,7 +16,7 @@ var can_shoot = true
 var strafing = false
 
 const enemy = false
-var arena
+var stage
 
 const shot = preload("res://projectiles/shot1.tscn")
 
@@ -45,7 +45,7 @@ var stats = {
 ################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	arena = get_parent()
+	stage = get_parent()
 	action_recorder._ready()
 	HP = MAX_HP
 	$FireRate.wait_time = FIRE_RATE
@@ -126,7 +126,7 @@ func _process(delta):
 			shot_instance.position = $ShotOrigin.get_global_position()
 			shot_instance.shooter = self
 			shot_instance.set_direction(Vector2(0,-1))
-			arena.add_child_below_node(self, shot_instance)
+			stage.add_child_below_node(self, shot_instance)
 			
 		
 		shooting = true
