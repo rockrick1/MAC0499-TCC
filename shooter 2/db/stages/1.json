@@ -4,45 +4,54 @@
     [
         {
             "delay" : 0,
-            "enemies" : 
-            [   
+            "enemy_spawn_delay" : 0.5,
+            "enemies" :
+            [
                 {
                     "name" : "test_enemy",
-                    "generator" : "spinning6",
+                    "generators" : ["spinning6", "spinning-6"],
+                    "pos_override" : "center",
+                },
+
+                {
+                    "name" : "test_enemy",
+                    "generators" : ["spinning6", ],
                     "pos_override" : "left",
                 },
-                
+
                 {
                     "name" : "test_enemy",
-                    "generator" : "spinning6",
+                    "generators" : ["spinning6", ],
                     "pos_override" : "right",
                 },
             ],
         },
 
         {
-            "delay" : 3,
+            "enemy_spawn_delay" : 3,
         },
 
         {
             "delay" : 2,
-            "enemies" : 
+            "enemy_spawn_delay" : 1,
+            "enemies" :
             [
                 {
                     "name" : "test_enemy",
-                    "generator" : "spinning6",
+                    "generators" : ["spinning6", "spinning-6"],
                     "pos_override" : "left",
                 },
-                
+
                 {
                     "name" : "test_enemy",
-                    "generator" : "spinning6",
+                    "generators" : ["spinning6", "spinning-6"],
                     "pos_override" : "right",
                 },
-                
+
                 {
                     "name" : "test_enemy",
-                    "generator" : "spinning6",
+                    "generators" : ["spinning6", "spinning-6"],
+                    "pos_override" : null,
                 },
             ],
         },

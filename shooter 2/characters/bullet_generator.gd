@@ -91,9 +91,6 @@ func set_params(params):
 		params.bullet_color.b,
 		params.bullet_color.a
 	)
-	
-	print("FIRE RATE: ", float(1/float(fire_rate)))
-	print("FIRE RATE: ", float(fire_rate))
 	$FireRate.wait_time = 1/float(fire_rate)
 
 
@@ -141,7 +138,7 @@ func _process(delta):
 #	if current_rotation > 360 or current_rotation :
 #		current_rotation -= 360
 	if shooting and can_shoot:
-		print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
+#		print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 		can_shoot = false
 		$FireRate.start()
 		

@@ -9,8 +9,9 @@ export (float) var DISTANCE
 export (float) var amount_to_move
 export (float) var move_period
 
-export (String) var generator_scripts
+export (Array) var generator_scripts
 
+const base_generator = preload("res://characters/bullet_generator.tscn")
 const enemy = true
 
 var character
@@ -24,23 +25,30 @@ func _ready():
 	stage = get_parent().get_parent()
 	character = stage.get_node("Character")
 	print(get_global_position())
-	position = Vector2(256,-15)
+	start()
+
+
+func start():
 	
-	var params = DBManager.get_vars("generators/spinning6")
-	
-	$Generators/BulletGenerator.set_params(params)
-	params.base_spin_speed = -80
-	params.fire_rate = 12
-	$Generators/BulletGenerator2.set_params(params)
-	$Generators/BulletGenerator2.modulate_bullets(Color(.1,.35,1,1))
+	set_generators(generator_scripts)
 	
 	if $StartMove:
 		$StartMove.interpolate_property(self, "position",
-		get_global_position(),
-		get_global_position() + Vector2(0,amount_to_move),
+		get_position(),
+		get_position() + Vector2(0,amount_to_move),
 		2,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		$StartMove.start()
+
+
+func set_generators(generators):
+	if generators:
+		for generator in generators:
+			var g = base_generator.instance()
+			var params = DBManager.get_bullet_gen(generator)
+			g.set_params(params)
+			$Generators.add_child(g)
+
 
 # Called when the enemy takes damage
 func take_damage(dmg):
@@ -84,4 +92,5 @@ func die():
 
 func _on_StartMove_tween_all_completed():
 	for generator in $Generators.get_children():
+#		return
 		generator.start()
