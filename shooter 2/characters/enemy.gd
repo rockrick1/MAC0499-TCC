@@ -24,14 +24,12 @@ var muzzlepos
 func _ready():
 	stage = get_parent().get_parent()
 	character = stage.get_node("Character")
-	print(get_global_position())
+	$ColorRect.set_frame_color(Color(randf(), randf(), randf()))
 	start()
 
 
 func start():
-	
 	set_generators(generator_scripts)
-	
 	if $StartMove:
 		$StartMove.interpolate_property(self, "position",
 		get_position(),

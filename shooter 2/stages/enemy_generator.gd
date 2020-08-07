@@ -48,6 +48,8 @@ func start_next_wave():
 	else:
 		cur_wave_n += 1
 	
+	stage.stats.update_wave(cur_wave_n+1)
+	
 	current_wave = waves[cur_wave_n]
 	$EnemySpawnTimer.wait_time = waves[cur_wave_n].enemy_spawn_delay
 	$EnemySpawnTimer.start()

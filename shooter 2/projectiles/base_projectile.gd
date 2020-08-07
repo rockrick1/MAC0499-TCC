@@ -8,6 +8,7 @@ export (int) var dist_threshold = 25
 
 var direction
 var shooter
+var stage
 var generator
 var enemy
 var character
@@ -18,6 +19,8 @@ func _ready():
 	enemy = shooter.enemy
 	wr = weakref(shooter)
 	character = MainNodes.get_character()
+	stage = MainNodes.get_stage()
+	stage.add_bullet()
 	set_life()
 
 func set_direction(dir):
@@ -62,8 +65,7 @@ func _on_CharSearchRefresh_timeout():
 
 
 func die():
-	if wr.get_ref() and generator != null:
-		MainNodes.get_stage().n_bullets -= 1
+	stage.remove_bullet()
 	queue_free()
 
 

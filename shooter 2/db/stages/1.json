@@ -48,11 +48,6 @@
                     "pos_override" : "right",
                 },
 
-                {
-                    "name" : "test_enemy",
-                    "generators" : ["spinning6", "spinning-6"],
-                    "pos_override" : null,
-                },
             ],
         },
     ]

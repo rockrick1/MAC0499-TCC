@@ -166,9 +166,6 @@ func _process(delta):
 				proj1_instance.set_life(bullet_life)
 				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
 
-				stage.n_bullets += 1
-				stage.stats.update_stats(stage.n_bullets)
-
 				stage.add_child_below_node(character, proj1_instance)
 				
 			start_angle += total_array_spread
