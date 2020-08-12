@@ -15,7 +15,7 @@ var active_projectiles = []
 
 """
 Variables: {
-	life :
+	life
 	bullets_per_array
 	individual_array_spread
 	total_bullet_arrays
@@ -48,6 +48,7 @@ export (float) var base_spin_speed
 export (float) var spin_speed_period
 export (float) var spin_variation
 var spin_speed
+var next_variation
 var current_rotation = 0
 
 # fire rate in bullets/sec
@@ -93,6 +94,13 @@ func set_params(params):
 	)
 	$FireRate.wait_time = 1/float(fire_rate)
 
+func set_fire_rate(rate):
+	fire_rate = rate
+	$FireRate.wait_time = 1/float(rate)
+
+func set_spin_speed(speed):
+	base_spin_speed = speed
+	spin_speed = speed
 
 func start():
 	set_process(true)
@@ -114,15 +122,17 @@ func modulate_bullets(color):
 
 func change_current_spin_speed():
 	if not $SpinSpeed.is_active():
-		print('henlo guys')
+		if next_variation == null or next_variation < 0:
+			next_variation = spin_variation
+		else:
+			next_variation = -spin_variation
 #		print(str(spin_speed) + " -> " + str(base_spin_speed + spin_variation))
 		$SpinSpeed.interpolate_property(self, "spin_speed",
 		spin_speed,
-		base_spin_speed + spin_variation,
+		base_spin_speed + next_variation,
 		spin_speed_period,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		$SpinSpeed.start()
-		spin_variation = -spin_variation
 
 func _process(delta):
 #	print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
