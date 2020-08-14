@@ -80,12 +80,12 @@ func _on_BulletsPerArrayUp_pressed():
 
 
 func _on_IndividualArraySpreadDown_pressed():
-	generator.individual_array_spread -= 5
+	generator.individual_array_spread -= 10
 	$IndividualArraySpread/Number.set_text(str(generator.individual_array_spread))
 
 
 func _on_IndividualArraySpreadUp_pressed():
-	generator.individual_array_spread += 5
+	generator.individual_array_spread += 10
 	$IndividualArraySpread/Number.set_text(str(generator.individual_array_spread))
 
 
@@ -102,12 +102,12 @@ func _on_TotalBulletArraysUp_pressed():
 
 
 func _on_TotalArraySpreadDown_pressed():
-	generator.total_array_spread -= 5
+	generator.total_array_spread -= 10
 	$TotalArraySpread/Number.set_text(str(generator.total_array_spread))
 
 
 func _on_TotalArraySpreadUp_pressed():
-	generator.total_array_spread += 5
+	generator.total_array_spread += 10
 	$TotalArraySpread/Number.set_text(str(generator.total_array_spread))
 
 
@@ -156,14 +156,23 @@ func _on_FireRateUp_pressed():
 
 
 func _on_FireIntervalDown_pressed():
-	generator.fire_interval -= 1
+	generator.set_fire_interval(generator.fire_interval - .25)
 	$FireInterval/Number.set_text(str(generator.fire_interval))
 
 
 func _on_FireIntervalUp_pressed():
-	generator.fire_interval += 1
+	generator.set_fire_interval(generator.fire_interval + .25)
 	$FireInterval/Number.set_text(str(generator.fire_interval))
 
+
+func _on_CyclesPerIntervalDown_pressed():
+	generator.cycles_per_interval -= 1
+	$CyclesPerInterval/Number.set_text(str(generator.cycles_per_interval))
+
+
+func _on_CyclesPerIntervalUp_pressed():
+	generator.cycles_per_interval += 1
+	$CyclesPerInterval/Number.set_text(str(generator.cycles_per_interval))
 
 
 func _on_BulletSpeedDown_pressed():

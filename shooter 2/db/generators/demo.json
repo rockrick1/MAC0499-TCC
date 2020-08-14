@@ -9,6 +9,7 @@
 	"spin_variation" : 0,
 	"fire_rate" : 8,
 	"fire_interval" : 0,
+	"cycles_per_interval" : 1,
 	"bullet_speed" : 1,
 	"bullet_life" : 5,
 	"bullet_color" : {"r":1, "g":1, "b":1, "a":1},

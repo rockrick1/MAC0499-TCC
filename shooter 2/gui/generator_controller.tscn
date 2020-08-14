@@ -395,10 +395,44 @@ margin_bottom = 12.0
 custom_fonts/font = SubResource( 1 )
 text = "0"
 
-[node name="BulletSpeed" type="HBoxContainer" parent="."]
+[node name="CyclesPerInterval" type="HBoxContainer" parent="."]
 margin_top = 209.0
 margin_right = 500.0
 margin_bottom = 224.0
+
+[node name="CyclesPerIntervalDown" type="Button" parent="CyclesPerInterval"]
+margin_right = 15.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 1 )
+text = "-"
+
+[node name="CyclesPerIntervalUp" type="Button" parent="CyclesPerInterval"]
+margin_left = 19.0
+margin_right = 35.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 1 )
+text = "+"
+
+[node name="Button" type="Label" parent="CyclesPerInterval"]
+margin_left = 39.0
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "CyclesPerInterval: "
+
+[node name="Number" type="Label" parent="CyclesPerInterval"]
+margin_left = 98.0
+margin_top = 3.0
+margin_right = 102.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+
+[node name="BulletSpeed" type="HBoxContainer" parent="."]
+margin_top = 228.0
+margin_right = 500.0
+margin_bottom = 243.0
 
 [node name="BulletSpeedDown" type="Button" parent="BulletSpeed"]
 margin_right = 15.0
@@ -430,9 +464,9 @@ custom_fonts/font = SubResource( 1 )
 text = "0"
 
 [node name="BulletLife" type="HBoxContainer" parent="."]
-margin_top = 228.0
+margin_top = 247.0
 margin_right = 500.0
-margin_bottom = 243.0
+margin_bottom = 262.0
 
 [node name="BulletLifeDown" type="Button" parent="BulletLife"]
 margin_right = 15.0
@@ -485,6 +519,8 @@ text = "0"
 [connection signal="pressed" from="FireRate/FireRateUp" to="." method="_on_FireRateUp_pressed"]
 [connection signal="pressed" from="FireInterval/FireIntervalDown" to="." method="_on_FireIntervalDown_pressed"]
 [connection signal="pressed" from="FireInterval/FireIntervalUp" to="." method="_on_FireIntervalUp_pressed"]
+[connection signal="pressed" from="CyclesPerInterval/CyclesPerIntervalDown" to="." method="_on_CyclesPerIntervalDown_pressed"]
+[connection signal="pressed" from="CyclesPerInterval/CyclesPerIntervalUp" to="." method="_on_CyclesPerIntervalUp_pressed"]
 [connection signal="pressed" from="BulletSpeed/BulletSpeedDown" to="." method="_on_BulletSpeedDown_pressed"]
 [connection signal="pressed" from="BulletSpeed/BulletSpeedUp" to="." method="_on_BulletSpeedUp_pressed"]
 [connection signal="pressed" from="BulletLife/BulletLifeDown" to="." method="_on_BulletLifeDown_pressed"]

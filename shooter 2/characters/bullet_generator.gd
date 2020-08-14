@@ -25,6 +25,7 @@ Variables: {
 	spin_variation
 	fire_rate
 	fire_interval
+	cycles_per_interval
 	bullet_speed
 	bullet_life
 	bullet_color
@@ -51,15 +52,20 @@ var spin_speed
 var next_variation
 var current_rotation = 0
 
-# fire rate in bullets/sec
+# Fire rate in bullets/sec
 export (float) var fire_rate
 export (float) var fire_interval
+export (int) var cycles_per_interval
+# A cycle would be one iteration of all the bullet arrays
+var current_cycle = 0
+var is_in_interval = false
+
+# Bullet vars
 export (float) var bullet_speed
 export (float) var bullet_life
+export (Color) var bullet_color = Color(1, 1, 1)
 
 var n_bullets = 0
-
-export (Color) var bullet_color = Color(1, 1, 1)
 
 export (bool) var DEBUG
 
@@ -70,7 +76,7 @@ func _ready():
 	print(shooter)
 
 
-# sets the patterns parameters
+# Sets the patterns parameters
 func set_params(params):
 	life = params.life
 	$LifeTimer.wait_time = life
@@ -92,15 +98,24 @@ func set_params(params):
 		params.bullet_color.b,
 		params.bullet_color.a
 	)
+	$IntervalTimer.wait_time = fire_interval
 	$FireRate.wait_time = 1/float(fire_rate)
+
 
 func set_fire_rate(rate):
 	fire_rate = rate
-	$FireRate.wait_time = 1/float(rate)
+	$FireRate.wait_time = 1/float(fire_rate)
+
+
+func set_fire_interval(interval):
+	fire_interval = interval
+	$IntervalTimer.wait_time = fire_interval
+
 
 func set_spin_speed(speed):
 	base_spin_speed = speed
 	spin_speed = speed
+
 
 func start():
 	set_process(true)
@@ -147,7 +162,7 @@ func _process(delta):
 #		print(get_name(), ': ', $FireRate.wait_time, ' ')
 #	if current_rotation > 360 or current_rotation :
 #		current_rotation -= 360
-	if shooting and can_shoot:
+	if shooting and can_shoot and not is_in_interval:
 #		print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 		can_shoot = false
 		$FireRate.start()
@@ -160,7 +175,8 @@ func _process(delta):
 		
 		for array in range(total_bullet_arrays):
 			
-			angle_between_bullets = individual_array_spread/bullets_per_array
+			if bullets_per_array != 0:
+				angle_between_bullets = individual_array_spread/bullets_per_array
 			
 			for bullet_n in range(bullets_per_array):
 				angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
@@ -177,8 +193,14 @@ func _process(delta):
 				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
 
 				stage.add_child_below_node(character, proj1_instance)
-				
+
 			start_angle += total_array_spread
+		# Finished a cycle
+		current_cycle += 1
+		if fire_interval > 0 and current_cycle >= cycles_per_interval:
+			is_in_interval = true
+			current_cycle = 0
+			$IntervalTimer.start()
 
 
 func _on_FireRate_timeout():
@@ -187,6 +209,10 @@ func _on_FireRate_timeout():
 
 func _on_LifeTimer_timeout():
 	die()
+
+
+func _on_IntervalTimer_timeout():
+	is_in_interval = false
 
 
 func die():
