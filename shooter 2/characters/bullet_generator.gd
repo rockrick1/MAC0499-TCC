@@ -102,6 +102,25 @@ func set_params(params):
 	$FireRate.wait_time = 1/float(fire_rate)
 
 
+func get_params():
+	return {
+		"life" : life,
+		"bullets_per_array" : bullets_per_array,
+		"individual_array_spread" : individual_array_spread,
+		"total_bullet_arrays" : total_bullet_arrays,
+		"total_array_spread" : total_array_spread,
+		"base_spin_speed" : base_spin_speed,
+		"spin_speed_period" : spin_speed_period,
+		"spin_variation" : spin_variation,
+		"fire_rate" : fire_rate,
+		"fire_interval" : fire_interval,
+		"cycles_per_interval" : cycles_per_interval,
+		"bullet_speed" : bullet_speed,
+		"bullet_life" : bullet_life,
+		"bullet_color" : bullet_color
+	}
+
+
 func set_fire_rate(rate):
 	fire_rate = rate
 	$FireRate.wait_time = 1/float(fire_rate)

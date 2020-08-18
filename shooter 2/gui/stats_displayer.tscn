@@ -32,7 +32,6 @@ margin_top = 14.0
 margin_right = 512.0
 margin_bottom = 27.0
 custom_fonts/font = SubResource( 1 )
-text = "shots hit: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,7 +51,7 @@ margin_top = 42.0
 margin_right = 512.0
 margin_bottom = 55.0
 custom_fonts/font = SubResource( 1 )
-text = "enemies murdered: "
+text = "accuracy: "
 __meta__ = {
 "_edit_use_anchors_": false
 }

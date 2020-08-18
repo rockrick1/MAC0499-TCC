@@ -16,6 +16,8 @@ var character
 var wr
 
 func _ready():
+	# circus mode
+#	$Sprite.set_self_modulate(Color(randf(), randf(), randf()))
 	enemy = shooter.enemy
 	wr = weakref(shooter)
 	character = MainNodes.get_character()

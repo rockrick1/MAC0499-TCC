@@ -34,10 +34,11 @@ __meta__ = {
 }
 
 [node name="Stats" parent="CanvasLayer" instance=ExtResource( 3 )]
+margin_left = 386.988
+margin_right = 898.988
 
 [node name="GeneratorController" parent="CanvasLayer" instance=ExtResource( 1 )]
-margin_top = 56.0
-margin_bottom = 280.0
+margin_bottom = 292.0
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 512.0
