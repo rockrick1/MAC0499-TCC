@@ -55,10 +55,8 @@ var current_rotation = 0
 # Fire rate in bullets/sec
 export (float) var fire_rate
 export (float) var fire_interval
-export (int) var cycles_per_interval
 # A cycle would be one iteration of all the bullet arrays
 var current_cycle = 0
-var is_in_interval = false
 
 # Bullet vars
 export (float) var bullet_speed
@@ -98,7 +96,6 @@ func set_params(params):
 		params.bullet_color.b,
 		params.bullet_color.a
 	)
-	$IntervalTimer.wait_time = fire_interval
 	$FireRate.wait_time = 1/float(fire_rate)
 
 
@@ -114,7 +111,6 @@ func get_params():
 		"spin_variation" : spin_variation,
 		"fire_rate" : fire_rate,
 		"fire_interval" : fire_interval,
-		"cycles_per_interval" : cycles_per_interval,
 		"bullet_speed" : bullet_speed,
 		"bullet_life" : bullet_life,
 		"bullet_color" : bullet_color
@@ -181,7 +177,7 @@ func _process(delta):
 #		print(get_name(), ': ', $FireRate.wait_time, ' ')
 #	if current_rotation > 360 or current_rotation :
 #		current_rotation -= 360
-	if shooting and can_shoot and not is_in_interval:
+	if shooting and can_shoot:
 #		print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 		can_shoot = false
 		$FireRate.start()
@@ -214,12 +210,6 @@ func _process(delta):
 				stage.add_child_below_node(character, proj1_instance)
 
 			start_angle += total_array_spread
-		# Finished a cycle
-		current_cycle += 1
-		if fire_interval > 0 and current_cycle >= cycles_per_interval:
-			is_in_interval = true
-			current_cycle = 0
-			$IntervalTimer.start()
 
 
 func _on_FireRate_timeout():
@@ -228,10 +218,6 @@ func _on_FireRate_timeout():
 
 func _on_LifeTimer_timeout():
 	die()
-
-
-func _on_IntervalTimer_timeout():
-	is_in_interval = false
 
 
 func die():

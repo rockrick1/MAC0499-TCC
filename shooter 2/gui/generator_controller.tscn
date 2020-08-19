@@ -13,7 +13,7 @@ __meta__ = {
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 margin_right = 500.0
-margin_bottom = 269.0
+margin_bottom = 250.0
 
 [node name="Generator" type="HBoxContainer" parent="Buttons"]
 margin_right = 500.0
@@ -371,44 +371,10 @@ margin_bottom = 22.0
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 
-[node name="FireInterval" type="HBoxContainer" parent="Buttons"]
+[node name="CyclesPerInterval" type="HBoxContainer" parent="Buttons"]
 margin_top = 197.0
 margin_right = 500.0
 margin_bottom = 212.0
-
-[node name="FireIntervalDown" type="Button" parent="Buttons/FireInterval"]
-margin_right = 14.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 1 )
-text = "-"
-
-[node name="FireIntervalUp" type="Button" parent="Buttons/FireInterval"]
-margin_left = 18.0
-margin_right = 33.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 1 )
-text = "+"
-
-[node name="Button" type="Label" parent="Buttons/FireInterval"]
-margin_left = 37.0
-margin_top = 3.0
-margin_right = 67.0
-margin_bottom = 12.0
-custom_fonts/font = ExtResource( 1 )
-text = "FireInterval: "
-
-[node name="Number" type="Label" parent="Buttons/FireInterval"]
-margin_left = 71.0
-margin_top = 3.0
-margin_right = 74.0
-margin_bottom = 12.0
-custom_fonts/font = ExtResource( 1 )
-text = "0"
-
-[node name="CyclesPerInterval" type="HBoxContainer" parent="Buttons"]
-margin_top = 216.0
-margin_right = 500.0
-margin_bottom = 231.0
 
 [node name="CyclesPerIntervalDown" type="Button" parent="Buttons/CyclesPerInterval"]
 margin_right = 14.0
@@ -440,9 +406,9 @@ custom_fonts/font = ExtResource( 1 )
 text = "0"
 
 [node name="BulletSpeed" type="HBoxContainer" parent="Buttons"]
-margin_top = 235.0
+margin_top = 216.0
 margin_right = 500.0
-margin_bottom = 250.0
+margin_bottom = 231.0
 
 [node name="BulletSpeedDown" type="Button" parent="Buttons/BulletSpeed"]
 margin_right = 14.0
@@ -474,9 +440,9 @@ custom_fonts/font = ExtResource( 1 )
 text = "0"
 
 [node name="BulletLife" type="HBoxContainer" parent="Buttons"]
-margin_top = 254.0
+margin_top = 235.0
 margin_right = 500.0
-margin_bottom = 269.0
+margin_bottom = 250.0
 
 [node name="BulletLifeDown" type="Button" parent="Buttons/BulletLife"]
 margin_right = 14.0
@@ -507,15 +473,10 @@ margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 
-[node name="TextEdit" type="TextEdit" parent="."]
-margin_top = 273.0
-margin_right = 500.0
-margin_bottom = 273.0
-
 [node name="ExtraButtons" type="HBoxContainer" parent="."]
-margin_top = 277.0
+margin_top = 254.0
 margin_right = 500.0
-margin_bottom = 292.0
+margin_bottom = 269.0
 
 [node name="Export" type="Button" parent="ExtraButtons"]
 margin_right = 28.0
@@ -543,8 +504,6 @@ text = "Export"
 [connection signal="pressed" from="Buttons/SpinVariation/SpinVariationUp" to="." method="_on_SpinVariationUp_pressed"]
 [connection signal="pressed" from="Buttons/FireRate/FireRateDown" to="." method="_on_FireRateDown_pressed"]
 [connection signal="pressed" from="Buttons/FireRate/FireRateUp" to="." method="_on_FireRateUp_pressed"]
-[connection signal="pressed" from="Buttons/FireInterval/FireIntervalDown" to="." method="_on_FireIntervalDown_pressed"]
-[connection signal="pressed" from="Buttons/FireInterval/FireIntervalUp" to="." method="_on_FireIntervalUp_pressed"]
 [connection signal="pressed" from="Buttons/CyclesPerInterval/CyclesPerIntervalDown" to="." method="_on_CyclesPerIntervalDown_pressed"]
 [connection signal="pressed" from="Buttons/CyclesPerInterval/CyclesPerIntervalUp" to="." method="_on_CyclesPerIntervalUp_pressed"]
 [connection signal="pressed" from="Buttons/BulletSpeed/BulletSpeedDown" to="." method="_on_BulletSpeedDown_pressed"]

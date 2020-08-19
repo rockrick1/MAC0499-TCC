@@ -149,7 +149,6 @@ func _on_FireRateDown_pressed():
 		var inverse = 1/generator.fire_rate
 		inverse += 1
 		generator.set_fire_rate(1/inverse)
-#		generator.set_fire_rate(generator.fire_rate - generator.fire_rate/2)
 	else:
 		generator.set_fire_rate(generator.fire_rate - 1)
 	$Buttons/FireRate/Numbers/Number1.set_text(str(generator.fire_rate))
@@ -161,22 +160,10 @@ func _on_FireRateUp_pressed():
 		var inverse = 1/generator.fire_rate
 		inverse -= 1
 		generator.set_fire_rate(1/inverse)
-#		generator.set_fire_rate(generator.fire_rate*2)
 	else:
 		generator.set_fire_rate(generator.fire_rate + 1)
 	$Buttons/FireRate/Numbers/Number1.set_text(str(generator.fire_rate))
 	$Buttons/FireRate/Numbers/Number2.set_text(str(1/generator.fire_rate))
-
-
-
-func _on_FireIntervalDown_pressed():
-	generator.set_fire_interval(generator.fire_interval - .25)
-	$Buttons/FireInterval/Number.set_text(str(generator.fire_interval))
-
-
-func _on_FireIntervalUp_pressed():
-	generator.set_fire_interval(generator.fire_interval + .25)
-	$Buttons/FireInterval/Number.set_text(str(generator.fire_interval))
 
 
 func _on_CyclesPerIntervalDown_pressed():
@@ -227,4 +214,5 @@ func update_numbers():
 
 
 func _on_Export_pressed():
-	pass # Replace with function body.
+	var params = generator.get_params()
+	
