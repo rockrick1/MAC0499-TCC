@@ -18,7 +18,11 @@ var strafing = false
 const enemy = false
 var stage
 
-var hit_free_time = 0
+var no_hit_time = 0
+
+var overall_difficulty = 1
+var max_diff = 1.1
+var min_diff = 1
 
 const shot = preload("res://projectiles/shot1.tscn")
 
@@ -121,12 +125,15 @@ func _process(delta):
 	############################################################################
 	
 	if len(stage.get_node("Enemies").get_children()) > 0:
-		hit_free_time += delta
-	stage.stats.update_hit_free_time(hit_free_time)
+		no_hit_time += delta
+	stage.stats.update_hit_free_time(no_hit_time)
+	
+	calculate_difficulty()
+	stage.stats.update_difficulty(overall_difficulty)
 
 
 func take_damage(dmg):
-	hit_free_time = 0
+	no_hit_time = 0
 	HP -= dmg
 #	$AnimationPlayer.play("take damage")
 #	$Particles2D.restart()
@@ -134,6 +141,30 @@ func take_damage(dmg):
 		die()
 		
 #	$Camera2D/GUI/HealthBar.value = HP
+
+
+func calculate_difficulty():
+	var a = 1
+	var b = 10
+	if overall_difficulty > max_diff:
+		max_diff = overall_difficulty
+	if overall_difficulty < min_diff:
+		min_diff = overall_difficulty
+	
+	var current_diff = overall_difficulty
+	
+	var core_action_points = 0
+	
+	var no_hit_points = 0
+	
+	# Points gained from not getting hit, considering time and amount of
+	# bullets on screen
+	no_hit_points = no_hit_time * stage.n_bullets
+	
+	overall_difficulty = no_hit_points
+	
+	
+	overall_difficulty = a + ((overall_difficulty - min_diff)*(b-a)/(max_diff-min_diff))
 
 
 func die():
@@ -152,3 +183,4 @@ func _notification(what):
 
 func _on_FireRate_timeout():
 	can_shoot = true
+

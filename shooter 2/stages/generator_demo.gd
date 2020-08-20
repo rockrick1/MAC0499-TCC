@@ -26,9 +26,3 @@ func add_bullet():
 func remove_bullet():
 	n_bullets -= 1
 	stats.update_bullets(n_bullets)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("ui_select"):
-		return
