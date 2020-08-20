@@ -18,18 +18,9 @@ var strafing = false
 const enemy = false
 var stage
 
-const shot = preload("res://projectiles/shot1.tscn")
+var hit_free_time = 0
 
-#const pistol = preload("res://guns/pistol.tscn")
-#const machinegun = preload("res://guns/machinegun.tscn")
-#
-#var guns = [pistol, machinegun]
-#var gun_names = ["Pistol", "Machinegun"]
-#var cur_gun = 1
-#var cur_gun_name = gun_names[cur_gun]
-#
-#var mouse_vec
-#var mouse_angle
+const shot = preload("res://projectiles/shot1.tscn")
 
 ########################### action recording ###################################
 const ActionRecorder = preload("res://scripts/action_recorder.gd")
@@ -56,24 +47,12 @@ func _ready():
 
 func update_stats_display():
 	return
-	$Camera2D/GUI/Stats.update_stats(stats)
+#	$Camera2D/GUI/Stats.update_stats(stats)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var mouse_pos = get_global_mouse_position()
-	var pos = get_position()
-#	mouse_vec = (mouse_pos - pos).normalized() * 6
-#	mouse_angle = rad2deg(mouse_vec.angle())
-	
-	# Adjusts gun position
-#	adjust_gun_pos()
-	
-	# Flips character sprite
-#	if mouse_pos.x < pos.x: # faces left
-#		$Sprite.set_flip_h(true)
-#	else: # faces right
-#		$Sprite.set_flip_h(false)
+#	var mouse_pos = get_global_mouse_position()
 	############################# movement #####################################
 	var dir = Vector2(0,0)
 	var moving = false
@@ -101,7 +80,6 @@ func _process(delta):
 #		action_recorder.write_data(data)
 	
 	if moving:
-#		$Sprite.set_animation("run")
 		if strafing:
 			RUN_SPEED = min(MAX_STRAFE_SPEED, RUN_SPEED + (RUN_ACC * delta))	
 		else:
@@ -111,8 +89,6 @@ func _process(delta):
 		RUN_SPEED = max(0, RUN_SPEED - (RUN_ACC * delta))
 		mot = mot.normalized()*RUN_SPEED
 	if delta != 0:
-#		if mot == Vector2(0, 0):
-#			$Sprite.set_animation("idle")
 		move_and_slide(mot / delta)
 	############################################################################
 	
@@ -143,11 +119,14 @@ func _process(delta):
 		strafing = false
 		$Hitbox/AnimationPlayer.play("HideHitbox")
 	############################################################################
-
-
+	
+	if len(stage.get_node("Enemies").get_children()) > 0:
+		hit_free_time += delta
+	stage.stats.update_hit_free_time(hit_free_time)
 
 
 func take_damage(dmg):
+	hit_free_time = 0
 	HP -= dmg
 #	$AnimationPlayer.play("take damage")
 #	$Particles2D.restart()

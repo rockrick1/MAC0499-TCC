@@ -55,14 +55,18 @@ func _on_DeathTimer_timeout():
 	die()
 
 
+func get_dist_to_char():
+	return get_global_position().distance_to(character.get_global_position())
+
+
 # Every time the CharSearchRefresh timer timeouts, the projectile will check if
 # the character is close enough to the bullet, and activate the collision if he is
 func _on_CharSearchRefresh_timeout():
-	if character != null and get_global_position().distance_to(character.get_global_position()) < dist_threshold:
-		$Sprite.set_modulate(Color(200,200,200,1))
+	if character != null and get_dist_to_char() < dist_threshold:
+#		$Sprite.set_modulate(Color(200,200,200,1))
 		$CollisionShape2D.set_disabled(false)
 	elif enemy:
-		$Sprite.set_modulate(Color(1,1,1,1))
+#		$Sprite.set_modulate(Color(1,1,1,1))
 		$CollisionShape2D.set_disabled(true)
 
 

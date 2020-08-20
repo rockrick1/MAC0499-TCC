@@ -9,5 +9,9 @@ func update_wave(wave):
 	$b.set_text("wave: "+str(wave))
 
 
+func update_hit_free_time(time):
+	$d.set_text("time without hits: "+str(time))
+
+
 func _process(delta):
 	$c.set_text("fps: "+str(Engine.get_frames_per_second()))

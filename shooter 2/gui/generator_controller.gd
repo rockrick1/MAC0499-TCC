@@ -208,7 +208,6 @@ func update_numbers():
 	$Buttons/SpinVariation/Number.set_text(str(generator.spin_variation))
 	$Buttons/FireRate/Numbers/Number1.set_text(str(generator.fire_rate))
 	$Buttons/FireRate/Numbers/Number2.set_text(str(1/generator.fire_rate))
-	$Buttons/FireInterval/Number.set_text(str(generator.fire_interval))
 	$Buttons/BulletSpeed/Number.set_text(str(generator.bullet_speed))
 	$Buttons/BulletLife/Number.set_text(str(generator.bullet_life))
 
