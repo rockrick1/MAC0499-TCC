@@ -7,7 +7,7 @@
 	"base_spin_speed" : -60,
 	"spin_speed_period" : 0,
 	"spin_variation" : 0,
-	"fire_rate" : 7,
+	"fire_rate" : 5.5,
 	"fire_interval" : 0,
 	"cycles_per_interval" : 1,
 	"bullet_speed" : 1,

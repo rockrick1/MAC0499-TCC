@@ -59,6 +59,13 @@ func get_dist_to_char():
 	return get_global_position().distance_to(character.get_global_position())
 
 
+func is_on_screen():
+	var pos = get_global_position()
+	if pos.x < stage.start_border.x or pos.x > stage.end_border.x or pos.y < stage.start_border.y or pos.y > stage.end_border.y:
+		return false
+	return true
+
+
 # Every time the CharSearchRefresh timer timeouts, the projectile will check if
 # the character is close enough to the bullet, and activate the collision if he is
 func _on_CharSearchRefresh_timeout():
@@ -68,6 +75,8 @@ func _on_CharSearchRefresh_timeout():
 	elif enemy:
 #		$Sprite.set_modulate(Color(1,1,1,1))
 		$CollisionShape2D.set_disabled(true)
+	if not is_on_screen():
+		die()
 
 
 func die():
