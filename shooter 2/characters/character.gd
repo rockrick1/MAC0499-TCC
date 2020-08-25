@@ -20,7 +20,7 @@ var stage
 
 var no_hit_time = 0
 
-var overall_difficulty = 1
+var accumulated_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
@@ -132,7 +132,7 @@ func _process(delta):
 
 
 func take_damage(dmg):
-#	no_hit_time = 0
+	no_hit_time = 0
 	HP -= dmg
 #	$AnimationPlayer.play("take damage")
 #	$Particles2D.restart()
@@ -145,12 +145,12 @@ func take_damage(dmg):
 func calculate_difficulty():
 	var a = 1
 	var b = 10
-	if overall_difficulty > max_diff:
-		max_diff = overall_difficulty
-	if overall_difficulty < min_diff:
-		min_diff = overall_difficulty
+	if accumulated_diff > max_diff:
+		max_diff = accumulated_diff
+	if accumulated_diff < min_diff:
+		min_diff = accumulated_diff
 	
-	var current_diff = overall_difficulty
+	var current_diff = accumulated_diff
 	
 	var core_action_points = 0
 	
@@ -158,14 +158,11 @@ func calculate_difficulty():
 	
 	# Points gained from not getting hit, considering time and amount of
 	# bullets on screen
-	no_hit_points = (pow(no_hit_time, 1.5) * stage.n_bullets) / 500
+	no_hit_points = pow((pow(no_hit_time, 1.1) * stage.n_bullets) / 500, 1)
 	
-	var vec = Vector2(no_hit_time, stage.n_bullets/500).normalized()
+	accumulated_diff = floor(no_hit_points / 2)
 	
-	
-	overall_difficulty = no_hit_points / 2
-	
-	stage.stats.update_difficulty(overall_difficulty, vec)
+	stage.stats.update_difficulty(accumulated_diff)
 
 
 func die():

@@ -1,16 +1,14 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var stats
 
 var start_border = Vector2(128,0)
 var end_border = Vector2(384,300)
 
 var n_bullets = 0
+
+var overall_difficulty = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,3 +26,8 @@ func add_bullet():
 func remove_bullet():
 	n_bullets -= 1
 	stats.update_bullets(n_bullets)
+
+
+func update_diff(accumulated_diff):
+	overall_difficulty += accumulated_diff
+	

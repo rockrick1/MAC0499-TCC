@@ -13,8 +13,8 @@ func _process(delta):
 	$c.set_text("fps: "+str(Engine.get_frames_per_second()))
 
 
-func update_difficulty(diff,vec):
-	$e.set_text("overall difficulty: "+str(diff) + " " + str(vec))
+func update_difficulty(diff):
+	$e.set_text("overall difficulty: "+str(diff))
 
 
 func update_hit_free_time(time):
