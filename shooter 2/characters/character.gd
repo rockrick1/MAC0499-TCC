@@ -25,7 +25,7 @@ var overall_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
-const shot = preload("res://projectiles/shot1.tscn")
+const shot = preload("res://projectiles/shot2.tscn")
 
 ########################### action recording ###################################
 const ActionRecorder = preload("res://scripts/action_recorder.gd")

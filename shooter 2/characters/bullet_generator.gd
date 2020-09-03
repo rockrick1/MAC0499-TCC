@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const proj1 = preload("res://projectiles/proj2.tscn")
+const proj1 = preload("res://projectiles/proj2.1.tscn")
 
 var shooting = false
 var can_shoot = true
