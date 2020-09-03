@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const proj1 = preload("res://projectiles/proj1.tscn")
+const proj1 = preload("res://projectiles/proj2.tscn")
 
 var shooting = false
 var can_shoot = true
@@ -24,13 +24,14 @@ Variables: {
 	spin_speed_period
 	spin_variation
 	fire_rate
-	fire_interval
 	cycles_per_interval
 	bullet_speed
 	bullet_life
 	bullet_color
 }
 """
+
+########################### Generator base variables ###########################
 
 # Time in seconds the generator stays active
 export (float) var life
@@ -44,17 +45,19 @@ export (int) var total_bullet_arrays
 # Spread between different arrays
 export (float) var total_array_spread
 
-# "Character" spin speed
+# Origin spin speed
 export (float) var base_spin_speed
-export (float) var spin_speed_period
+# Angle variation during the spin speed period
 export (float) var spin_variation
+export (float) var spin_speed_period
+# Current spin speed
 var spin_speed
+# Auxiliary variable
 var next_variation
 var current_rotation = 0
 
 # Fire rate in bullets/sec
 export (float) var fire_rate
-export (float) var fire_interval
 # A cycle would be one iteration of all the bullet arrays
 var current_cycle = 0
 
@@ -63,7 +66,15 @@ export (float) var bullet_speed
 export (float) var bullet_life
 export (Color) var bullet_color = Color(1, 1, 1)
 
-var n_bullets = 0
+
+############################# Difficulty modifiers #############################
+
+var mod_bullets_per_array = 0
+var mod_spin_speed = 0
+var mod_fire_rate = 0
+var mod_bullet_speed = 0
+
+################################################################################
 
 export (bool) var DEBUG
 
@@ -87,7 +98,6 @@ func set_params(params):
 	spin_speed_period = params.spin_speed_period
 	spin_variation = params.spin_variation
 	fire_rate = params.fire_rate
-	fire_interval = params.fire_interval
 	bullet_speed = params.bullet_speed
 	bullet_life = params.bullet_life
 	bullet_color = Color(
@@ -110,24 +120,18 @@ func get_params():
 		"spin_speed_period" : spin_speed_period,
 		"spin_variation" : spin_variation,
 		"fire_rate" : fire_rate,
-		"fire_interval" : fire_interval,
 		"bullet_speed" : bullet_speed,
 		"bullet_life" : bullet_life,
 		"bullet_color" : bullet_color
 	}
 
 
-func set_fire_rate(rate):
+func set_fire_rate(rate, modifier):
 	fire_rate = rate
-	$FireRate.wait_time = 1/float(fire_rate)
+	$FireRate.wait_time = 1/float(fire_rate + modifier)
 
 
-func set_fire_interval(interval):
-	fire_interval = interval
-	$IntervalTimer.wait_time = fire_interval
-
-
-func set_spin_speed(speed):
+func set_spin_speed(speed, modifier):
 	base_spin_speed = speed
 	spin_speed = speed
 
@@ -168,7 +172,7 @@ func _process(delta):
 #	print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 #	print(get_name(), ': ', base_spin_speed,': ', current_rotation, ' -> ', fmod(current_rotation + spin_speed*delta, 360))
 #	print(get_name(), ': ', spin_speed)
-	current_rotation = fmod(current_rotation + spin_speed*delta, 360)
+	current_rotation = fmod(current_rotation + (spin_speed + mod_spin_speed)*delta, 360)
 	if spin_variation != 0:
 		change_current_spin_speed()
 #	print(spin_speed)
@@ -193,7 +197,7 @@ func _process(delta):
 			if bullets_per_array != 0:
 				angle_between_bullets = individual_array_spread/bullets_per_array
 			
-			for bullet_n in range(bullets_per_array):
+			for bullet_n in range(bullets_per_array + mod_bullets_per_array):
 				angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
 				dir = Vector2(cos(angle), sin(angle))
 				
@@ -203,13 +207,35 @@ func _process(delta):
 				proj1_instance.shooter = shooter
 				proj1_instance.generator = self
 				proj1_instance.position = shooter.get_global_position()
-				proj1_instance.speed = bullet_speed
+				proj1_instance.speed = bullet_speed + mod_bullet_speed
 				proj1_instance.set_life(bullet_life)
-				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
-
+#				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
 				stage.add_child_below_node(character, proj1_instance)
 
 			start_angle += total_array_spread
+
+
+func update_diff(overall_diff):
+	if overall_diff < 5:
+		mod_fire_rate = 0
+		set_fire_rate(fire_rate, mod_fire_rate)
+
+		mod_spin_speed = 0
+		set_spin_speed(base_spin_speed, mod_spin_speed)
+
+		mod_bullet_speed = 0
+
+		mod_bullets_per_array = 0
+	elif overall_diff < 10:
+		mod_fire_rate = 5
+		set_fire_rate(fire_rate, mod_fire_rate)
+
+		mod_spin_speed = 5
+		set_spin_speed(base_spin_speed, mod_spin_speed)
+
+		mod_bullet_speed = 5
+
+		mod_bullets_per_array = 5
 
 
 func _on_FireRate_timeout():

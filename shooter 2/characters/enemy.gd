@@ -90,5 +90,4 @@ func die():
 
 func _on_StartMove_tween_all_completed():
 	for generator in $Generators.get_children():
-#		return
 		generator.start()

@@ -113,12 +113,12 @@ func _on_TotalArraySpreadUp_pressed():
 
 
 func _on_BaseSpinSpeedDown_pressed():
-	generator.set_spin_speed(generator.base_spin_speed - 5)
+	generator.set_spin_speed(generator.base_spin_speed - 5, generator.mod_spin_speed)
 	$Buttons/BaseSpinSpeed/Number.set_text(str(generator.base_spin_speed))
 
 
 func _on_BaseSpinSpeedUp_pressed():
-	generator.set_spin_speed(generator.base_spin_speed + 5)
+	generator.set_spin_speed(generator.base_spin_speed + 5, generator.mod_spin_speed)
 	$Buttons/BaseSpinSpeed/Number.set_text(str(generator.base_spin_speed))
 
 
@@ -148,9 +148,9 @@ func _on_FireRateDown_pressed():
 	if generator.fire_rate <= 1:
 		var inverse = 1/generator.fire_rate
 		inverse += 1
-		generator.set_fire_rate(1/inverse)
+		generator.set_fire_rate(1/inverse, generator.mod_fire_rate)
 	else:
-		generator.set_fire_rate(generator.fire_rate - 1)
+		generator.set_fire_rate(generator.fire_rate - 1, generator.mod_fire_rate)
 	$Buttons/FireRate/Numbers/Number1.set_text(str(generator.fire_rate))
 	$Buttons/FireRate/Numbers/Number2.set_text(str(1/generator.fire_rate))
 

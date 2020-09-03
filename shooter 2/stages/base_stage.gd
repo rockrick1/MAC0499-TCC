@@ -28,6 +28,11 @@ func remove_bullet():
 	stats.update_bullets(n_bullets)
 
 
-func update_diff(accumulated_diff):
-	overall_difficulty += accumulated_diff
+func update_diff(accumulated_diff, overall_diff):
+	overall_difficulty = overall_diff
+	stats.update_diff(accumulated_diff, overall_difficulty)
+	
+	for enemy in $Enemies.get_children():
+		for generator in enemy.get_node("Generators").get_children():
+			generator.update_diff(overall_difficulty)
 	

@@ -87,7 +87,7 @@ FIRE_RATE = 0.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ShotEffect" type="Sprite" parent="."]
@@ -133,4 +133,9 @@ default_color = Color( 0.92549, 0.0666667, 0.0666667, 1 )
 
 [node name="FireRate" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="DiffUpdate" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]
+[connection signal="timeout" from="DiffUpdate" to="." method="_on_DiffUpdate_timeout"]

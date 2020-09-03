@@ -21,6 +21,7 @@ var stage
 var no_hit_time = 0
 
 var accumulated_diff = 0
+var overall_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
@@ -127,8 +128,6 @@ func _process(delta):
 	if len(stage.get_node("Enemies").get_children()) > 0:
 		no_hit_time += delta
 	stage.stats.update_hit_free_time(no_hit_time)
-	
-	calculate_difficulty()
 
 
 func take_damage(dmg):
@@ -138,13 +137,12 @@ func take_damage(dmg):
 #	$Particles2D.restart()
 	if HP <= 0:
 		die()
-		
+	
+	overall_diff /= 1.5
 #	$Camera2D/GUI/HealthBar.value = HP
 
 
 func calculate_difficulty():
-	var a = 1
-	var b = 10
 	if accumulated_diff > max_diff:
 		max_diff = accumulated_diff
 	if accumulated_diff < min_diff:
@@ -158,11 +156,11 @@ func calculate_difficulty():
 	
 	# Points gained from not getting hit, considering time and amount of
 	# bullets on screen
-	no_hit_points = pow((pow(no_hit_time, 1.1) * stage.n_bullets) / 500, 1)
+	no_hit_points = pow(no_hit_time, 1.15) * stage.n_bullets / 500
 	
-	accumulated_diff = floor(no_hit_points / 2)
-	
-	stage.stats.update_difficulty(accumulated_diff)
+	accumulated_diff = no_hit_points / 2
+	overall_diff = floor(overall_diff + accumulated_diff)
+	stage.update_diff(accumulated_diff, overall_diff)
 
 
 func die():
@@ -182,3 +180,6 @@ func _notification(what):
 func _on_FireRate_timeout():
 	can_shoot = true
 
+
+func _on_DiffUpdate_timeout():
+	calculate_difficulty()

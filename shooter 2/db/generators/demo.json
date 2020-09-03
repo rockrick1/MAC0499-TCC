@@ -8,7 +8,6 @@
 	"spin_speed_period" : 1,
 	"spin_variation" : 0,
 	"fire_rate" : 8,
-	"fire_interval" : 0,
 	"cycles_per_interval" : 1,
 	"bullet_speed" : 1,
 	"bullet_life" : 5,
