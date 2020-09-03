@@ -226,14 +226,15 @@ func update_diff(overall_diff):
 		mod_bullet_speed = 0
 
 		mod_bullets_per_array = 0
+	
 	elif overall_diff < 10:
-		mod_fire_rate = 5
+		mod_fire_rate = 3
 		set_fire_rate(fire_rate, mod_fire_rate)
 
-		mod_spin_speed = 5
+		mod_spin_speed = 0
 		set_spin_speed(base_spin_speed, mod_spin_speed)
 
-		mod_bullet_speed = 5
+		mod_bullet_speed = 0.3
 
 		mod_bullets_per_array = 5
 
