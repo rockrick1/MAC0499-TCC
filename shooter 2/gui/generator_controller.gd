@@ -159,11 +159,15 @@ func _on_FireRateUp_pressed():
 	if generator.fire_rate < 1:
 		var inverse = 1/generator.fire_rate
 		inverse -= 1
-		generator.set_fire_rate(1/inverse)
+		generator.set_fire_rate(1/inverse, generator.mod_fire_rate)
 	else:
-		generator.set_fire_rate(generator.fire_rate + 1)
+		generator.set_fire_rate(generator.fire_rate + 1, generator.mod_fire_rate)
 	$Buttons/FireRate/Numbers/Number1.set_text(str(generator.fire_rate))
 	$Buttons/FireRate/Numbers/Number2.set_text(str(1/generator.fire_rate))
+
+
+func _on_AimAtCharacter_toggled(button_pressed):
+	generator.aim_at_character = button_pressed
 
 
 func _on_CyclesPerIntervalDown_pressed():
@@ -210,8 +214,9 @@ func update_numbers():
 	$Buttons/FireRate/Numbers/Number2.set_text(str(1/generator.fire_rate))
 	$Buttons/BulletSpeed/Number.set_text(str(generator.bullet_speed))
 	$Buttons/BulletLife/Number.set_text(str(generator.bullet_life))
+	$Buttons/AimAtCharacter/AimAtCharacter.toggle_mode = generator.aim_at_character
 
 
 func _on_Export_pressed():
 	var params = generator.get_params()
-	
+

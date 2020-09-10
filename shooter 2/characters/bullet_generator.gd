@@ -23,6 +23,7 @@ Variables: {
 	base_spin_speed
 	spin_speed_period
 	spin_variation
+	aim_at_character
 	fire_rate
 	cycles_per_interval
 	bullet_speed
@@ -35,11 +36,11 @@ Variables: {
 
 # Time in seconds the generator stays active
 export (float) var life
+
 # Amount of bullets in an array
 export (int) var bullets_per_array
 # Angle of spread of the whole array
 export (float) var individual_array_spread
-
 # Numer of arrays
 export (int) var total_bullet_arrays
 # Spread between different arrays
@@ -55,6 +56,9 @@ var spin_speed
 # Auxiliary variable
 var next_variation
 var current_rotation = 0
+
+# Overrides array angle with direction to character if true
+export (bool) var aim_at_character
 
 # Fire rate in bullets/sec
 export (float) var fire_rate
@@ -97,6 +101,7 @@ func set_params(params):
 	spin_speed = base_spin_speed
 	spin_speed_period = params.spin_speed_period
 	spin_variation = params.spin_variation
+	aim_at_character = params.aim_at_character
 	fire_rate = params.fire_rate
 	bullet_speed = params.bullet_speed
 	bullet_life = params.bullet_life
@@ -119,6 +124,7 @@ func get_params():
 		"base_spin_speed" : base_spin_speed,
 		"spin_speed_period" : spin_speed_period,
 		"spin_variation" : spin_variation,
+		"aim_at_character" : aim_at_character,
 		"fire_rate" : fire_rate,
 		"bullet_speed" : bullet_speed,
 		"bullet_life" : bullet_life,
@@ -192,18 +198,30 @@ func _process(delta):
 		var angle
 		var dir
 		
+		
 		for array in range(total_bullet_arrays):
 			
 			if bullets_per_array != 0:
 				angle_between_bullets = individual_array_spread/bullets_per_array
 			
 			for bullet_n in range(bullets_per_array + mod_bullets_per_array):
-				angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
-				dir = Vector2(cos(angle), sin(angle))
+				if not aim_at_character:
+					angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
+					dir = Vector2(cos(angle), sin(angle))
+				else:
+					dir = -(get_global_position() - character.get_global_position()).normalized()
+					var offset = 0
+					if bullets_per_array > 1:
+						angle_between_bullets = individual_array_spread/(bullets_per_array - 1)
+						offset = -individual_array_spread/2 + (angle_between_bullets * bullet_n) 
+						print(bullet_n," ", offset)
+					dir = dir.rotated(deg2rad(offset))
 				
 				proj1_instance = proj1.instance()
 				
-				proj1_instance.set_direction(dir.rotated(deg2rad(current_rotation)).normalized())
+				if not aim_at_character:
+					dir = dir.rotated(deg2rad(current_rotation)).normalized()
+				proj1_instance.set_direction(dir)
 				proj1_instance.shooter = shooter
 				proj1_instance.generator = self
 				proj1_instance.position = shooter.get_global_position()
