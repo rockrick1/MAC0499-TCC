@@ -28,7 +28,21 @@ func remove_bullet():
 	stats.update_bullets(n_bullets)
 
 
-func update_diff(accumulated_diff, overall_diff):
+func update_diff(accumulated_diff, overall_diff, no_hit_time):
+	var core_action_points = 0
+	
+	var no_hit_points = 0
+	var graze_points = 0
+	
+	# Points gained from not getting hit, considering time and amount of
+	# bullets on screen
+	no_hit_points = pow(no_hit_time, 1.15) * n_bullets / 500
+	core_action_points = no_hit_points + graze_points
+	
+	accumulated_diff = core_action_points / 2
+	overall_diff = floor(overall_diff + accumulated_diff)
+	
+	
 	overall_difficulty = overall_diff
 	stats.update_diff(accumulated_diff, overall_difficulty)
 	

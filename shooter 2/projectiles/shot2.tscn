@@ -15,7 +15,7 @@ damage = 10
 life = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.5 )
+modulate = Color( 1, 1, 1, 0.501961 )
 position = Vector2( 1, 0 )
 rotation = 1.5708
 texture = ExtResource( 1 )

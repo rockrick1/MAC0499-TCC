@@ -142,27 +142,6 @@ func take_damage(dmg):
 #	$Camera2D/GUI/HealthBar.value = HP
 
 
-func calculate_difficulty():
-	if accumulated_diff > max_diff:
-		max_diff = accumulated_diff
-	if accumulated_diff < min_diff:
-		min_diff = accumulated_diff
-	
-	var core_action_points = 0
-	
-	var no_hit_points = 0
-	var graze_points = 0
-	
-	# Points gained from not getting hit, considering time and amount of
-	# bullets on screen
-	no_hit_points = pow(no_hit_time, 1.15) * stage.n_bullets / 500
-	core_action_points = no_hit_points + graze_points
-	
-	accumulated_diff = core_action_points / 2
-	overall_diff = floor(overall_diff + accumulated_diff)
-	stage.update_diff(accumulated_diff, overall_diff)
-
-
 func die():
 	return
 	print("shiet mang im ded")
@@ -216,4 +195,4 @@ func _on_FireRate_timeout():
 
 
 func _on_DiffUpdate_timeout():
-	calculate_difficulty()
+	stage.update_diff(accumulated_diff, overall_diff, no_hit_time)
