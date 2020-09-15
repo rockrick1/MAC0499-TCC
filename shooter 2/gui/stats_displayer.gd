@@ -15,7 +15,7 @@ func _process(delta):
 
 func update_diff(acc_diff, overall_diff):
 	$e.set_text("acc diff: "+str(acc_diff))
-	$f.set_text("overall diff: "+str(overall_diff))
+	$f.set_text("overall diff: "+str(floor(overall_diff)))
 
 
 func update_hit_free_time(time):

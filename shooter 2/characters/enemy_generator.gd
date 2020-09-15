@@ -19,6 +19,7 @@ var spawn_complete = false
 
 const enemy_scenes = {
 	"test_enemy" : preload("res://characters/test_enemy.tscn"),
+	"simple_enemy" : preload("res://characters/simple_enemy.tscn"),
 }
 
 func _ready():
@@ -70,6 +71,7 @@ func spawn_next_enemy():
 		# Set enemy variables
 		enemy_instance.position += convert_pos(enemy.pos_override)
 		enemy_instance.generator_scripts = enemy.generators
+		enemy_instance.pos_override = enemy.pos_override
 		
 		wrs.append(weakref(enemy_instance))
 		

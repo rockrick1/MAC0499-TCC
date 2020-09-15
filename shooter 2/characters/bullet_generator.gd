@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const proj1 = preload("res://projectiles/proj2.1.tscn")
+var proj
 
 var shooting = false
 var can_shoot = true
@@ -15,6 +15,7 @@ var active_projectiles = []
 
 """
 Variables: {
+	proj_type
 	life
 	bullets_per_array
 	individual_array_spread
@@ -33,6 +34,9 @@ Variables: {
 """
 
 ########################### Generator base variables ###########################
+
+# Projectile scene to be used
+export (String) var proj_type
 
 # Time in seconds the generator stays active
 export (float) var life
@@ -93,6 +97,8 @@ func _ready():
 func set_params(params):
 	life = params.life
 	$LifeTimer.wait_time = life
+	proj_type = params.proj_type
+	proj = load("res://projectiles/"+proj_type+".tscn")
 	bullets_per_array = params.bullets_per_array
 	individual_array_spread = params.individual_array_spread
 	total_bullet_arrays = params.total_bullet_arrays
@@ -192,7 +198,7 @@ func _process(delta):
 		can_shoot = false
 		$FireRate.start()
 		
-		var proj1_instance
+		var proj_instance
 		var start_angle = 0
 		var angle_between_bullets
 		var angle
@@ -217,23 +223,31 @@ func _process(delta):
 						print(bullet_n," ", offset)
 					dir = dir.rotated(deg2rad(offset))
 				
-				proj1_instance = proj1.instance()
+				proj_instance = proj.instance()
 				
 				if not aim_at_character:
 					dir = dir.rotated(deg2rad(current_rotation)).normalized()
-				proj1_instance.set_direction(dir)
-				proj1_instance.shooter = shooter
-				proj1_instance.generator = self
-				proj1_instance.position = shooter.get_global_position()
-				proj1_instance.speed = bullet_speed + mod_bullet_speed
-				proj1_instance.set_life(bullet_life)
-#				proj1_instance.get_node("Sprite").set_self_modulate(bullet_color)
-				stage.add_child_below_node(character, proj1_instance)
+				proj_instance.set_direction(dir)
+				proj_instance.shooter = shooter
+				proj_instance.generator = self
+				proj_instance.position = shooter.get_global_position()
+				proj_instance.speed = bullet_speed + mod_bullet_speed
+				proj_instance.set_life(bullet_life)
+#				proj_instance.get_node("Sprite").set_self_modulate(bullet_color)
+				stage.add_child_below_node(character, proj_instance)
 
 			start_angle += total_array_spread
 
 
 func update_diff(overall_diff):
+	"""
+	Currently moddable attributes are:
+		fire rate
+		spin speed
+		bullet speed
+		bullets per array
+	"""
+		
 	if overall_diff < 5:
 		mod_fire_rate = 0
 		set_fire_rate(fire_rate, mod_fire_rate)
@@ -244,8 +258,8 @@ func update_diff(overall_diff):
 		mod_bullet_speed = 0
 
 		mod_bullets_per_array = 0
-	
-	elif overall_diff < 10:
+
+	else:
 		mod_fire_rate = 3
 		set_fire_rate(fire_rate, mod_fire_rate)
 

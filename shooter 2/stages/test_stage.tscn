@@ -17,7 +17,6 @@ script = ExtResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_right = 128.0
 margin_bottom = 300.0
 color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
@@ -27,7 +26,6 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 300.0

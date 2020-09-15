@@ -28,7 +28,7 @@ func remove_bullet():
 	stats.update_bullets(n_bullets)
 
 
-func update_diff(accumulated_diff, overall_diff, no_hit_time):
+func update_diff(no_hit_time):
 	var core_action_points = 0
 	
 	var no_hit_points = 0
@@ -39,14 +39,11 @@ func update_diff(accumulated_diff, overall_diff, no_hit_time):
 	no_hit_points = pow(no_hit_time, 1.15) * n_bullets / 500
 	core_action_points = no_hit_points + graze_points
 	
-	accumulated_diff = core_action_points / 2
-	overall_diff = floor(overall_diff + accumulated_diff)
-	
-	
-	overall_difficulty = overall_diff
+	var accumulated_diff = core_action_points / 2
+	overall_difficulty = overall_difficulty + accumulated_diff
+
 	stats.update_diff(accumulated_diff, overall_difficulty)
 	
 	for enemy in $Enemies.get_children():
 		for generator in enemy.get_node("Generators").get_children():
 			generator.update_diff(overall_difficulty)
-	

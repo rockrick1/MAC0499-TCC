@@ -138,7 +138,7 @@ func take_damage(dmg):
 	if HP <= 0:
 		die()
 	
-	overall_diff /= 1.5
+	stage.overall_difficulty /= 1.5
 #	$Camera2D/GUI/HealthBar.value = HP
 
 
@@ -195,4 +195,4 @@ func _on_FireRate_timeout():
 
 
 func _on_DiffUpdate_timeout():
-	stage.update_diff(accumulated_diff, overall_diff, no_hit_time)
+	stage.update_diff(no_hit_time)

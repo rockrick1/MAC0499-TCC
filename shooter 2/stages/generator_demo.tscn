@@ -93,6 +93,6 @@ __meta__ = {
 position = Vector2( 256, -15 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 0, 56 )
+position = Vector2( 0, 1 )
 HP = 1e+06
 amount_to_move = 0.0
