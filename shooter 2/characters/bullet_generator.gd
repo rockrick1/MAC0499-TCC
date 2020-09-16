@@ -220,17 +220,14 @@ func _process(delta):
 					if bullets_per_array > 1:
 						angle_between_bullets = individual_array_spread/(bullets_per_array - 1)
 						offset = -individual_array_spread/2 + (angle_between_bullets * bullet_n) 
-						print(bullet_n," ", offset)
 					dir = dir.rotated(deg2rad(offset))
-				
+
 				proj_instance = proj.instance()
 				
 				if not aim_at_character:
 					dir = dir.rotated(deg2rad(current_rotation)).normalized()
-				proj_instance.set_direction(dir)
-				proj_instance.shooter = shooter
+				proj_instance.set_vars(shooter.get_global_position(), shooter, dir, true)
 				proj_instance.generator = self
-				proj_instance.position = shooter.get_global_position()
 				proj_instance.speed = bullet_speed + mod_bullet_speed
 				proj_instance.set_life(bullet_life)
 #				proj_instance.get_node("Sprite").set_self_modulate(bullet_color)

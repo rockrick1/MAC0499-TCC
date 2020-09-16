@@ -25,7 +25,7 @@ var overall_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
-const shot = preload("res://projectiles/shot2.tscn")
+const shot = preload("res://projectiles/shot2lv2.tscn")
 
 ########################### action recording ###################################
 const ActionRecorder = preload("res://scripts/action_recorder.gd")
@@ -104,12 +104,9 @@ func _process(delta):
 			can_shoot = false
 			$FireRate.start()
 			var shot_instance = shot.instance()
-			shot_instance.position = $ShotOrigin.get_global_position()
-			shot_instance.shooter = self
-			shot_instance.set_direction(Vector2(0,-1))
+			shot_instance.set_vars($ShotOrigin.get_global_position(), self, Vector2(0,-1))
 			stage.add_child_below_node(self, shot_instance)
-			
-		
+
 		shooting = true
 	elif shooting:
 		$ShotEffect/AnimationPlayer.stop()

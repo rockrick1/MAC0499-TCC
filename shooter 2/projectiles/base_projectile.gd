@@ -18,16 +18,22 @@ var wr
 func _ready():
 	# circus mode
 #	$Sprite.set_self_modulate(Color(randf(), randf(), randf()))
-	enemy = shooter.enemy
-	wr = weakref(shooter)
 	character = MainNodes.get_character()
 	stage = MainNodes.get_stage()
 	stage.add_bullet()
 	set_life()
 
-func set_direction(dir):
+func set_vars(pos, sh, dir, rotate):
+	position = pos
 	direction = dir
-	set_rotation(dir.angle())
+	shooter = sh
+
+	if rotate:
+		set_rotation(dir.angle())
+
+	enemy = shooter.enemy
+	wr = weakref(shooter)
+	
 	set_process(true)
 
 func set_life(l = 5):
@@ -85,3 +91,7 @@ func die():
 
 
 
+
+
+func _on_Projectile2_body_entered(body):
+	pass # Replace with function body.
