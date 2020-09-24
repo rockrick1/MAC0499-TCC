@@ -48,6 +48,10 @@ __meta__ = {
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256, 278 )
+RUN_ACC = 30
+MAX_RUN_SPEED = 2.0
+MAX_STRAFE_SPEED = 0.85
+DEF = 0
 
 [node name="StageBorder" type="StaticBody2D" parent="."]
 __meta__ = {

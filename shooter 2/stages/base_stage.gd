@@ -28,7 +28,7 @@ func remove_bullet():
 	stats.update_bullets(n_bullets)
 
 
-func update_diff(no_hit_time):
+func update_diff(no_hit_time, grazed_bullets):
 	var core_action_points = 0
 	
 	var no_hit_points = 0

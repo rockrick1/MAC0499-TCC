@@ -11,7 +11,7 @@ func spawn_drop():
 	var instance
 	if spawned_drops < num_drops:
 		instance = drop1.instance()
-		var offset = Vector2(randf() - .5,randf() - .5) * 40
+		var offset = Vector2(randf() - .5,randf() - .8).normalized() * 20
 		instance.global_position = self.get_global_position() + offset
 		stage.add_child(instance)
 		spawned_drops += 1

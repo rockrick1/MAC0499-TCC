@@ -5,6 +5,7 @@ export (int) var damage
 export (float) var life
 
 export (int) var dist_threshold = 25
+export (int) var graze_threshold = 10
 
 var direction
 var shooter
@@ -12,6 +13,8 @@ var stage
 var generator
 var enemy
 var character
+
+var grazed = false
 
 var wr
 
@@ -57,10 +60,6 @@ func _on_Projectile_body_entered(body):
 	die()
 
 
-func _on_DeathTimer_timeout():
-	die()
-
-
 func get_dist_to_char():
 	return get_global_position().distance_to(character.get_global_position())
 
@@ -77,10 +76,14 @@ func is_on_screen():
 func _on_CharSearchRefresh_timeout():
 	if character != null and get_dist_to_char() < dist_threshold:
 #		$Sprite.set_modulate(Color(200,200,200,1))
-		$CollisionShape2D.set_disabled(false)
+		$CollisionPolygon2D.set_disabled(false)
+		if get_dist_to_char() < graze_threshold and not grazed:
+			grazed = true
+			character.graze()
+
 	elif enemy:
 #		$Sprite.set_modulate(Color(1,1,1,1))
-		$CollisionShape2D.set_disabled(true)
+		$CollisionPolygon2D.set_disabled(true)
 	if not is_on_screen():
 		die()
 
@@ -90,8 +93,5 @@ func die():
 	queue_free()
 
 
-
-
-
-func _on_Projectile2_body_entered(body):
-	pass # Replace with function body.
+func _on_DeathTimer_timeout():
+	die()

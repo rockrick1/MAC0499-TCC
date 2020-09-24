@@ -20,6 +20,7 @@ const enemy = false
 var stage
 
 var no_hit_time = 0
+var grazed_bullets = 0
 
 var accumulated_diff = 0
 var overall_diff = 0
@@ -134,11 +135,17 @@ func _process(delta):
 
 
 func gain_drop():
-	POWER += 10 + (randf()*3)
+	POWER += 1 + (randf()*3)
 	if POWER > 100:
 		shot_lv = min(shot_lv + 1, len(shots))
 		POWER = 0
 	stage.stats.update_power(POWER)
+
+
+# Character grazed a bullet
+func graze():
+	grazed_bullets += 1
+	$Sprite/AnimationPlayer.play("Blink")
 
 
 func take_damage(dmg):
@@ -206,7 +213,8 @@ func _on_FireRate_timeout():
 
 
 func _on_DiffUpdate_timeout():
-	stage.update_diff(no_hit_time)
+	stage.update_diff(no_hit_time, grazed_bullets)
+	grazed_bullets = 0
 #	if stage.overall_difficulty > 10:
 #		shot_lv = 2
 #	else:
