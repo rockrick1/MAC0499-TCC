@@ -80,3 +80,13 @@ text = "accuracy: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="g" type="Label" parent="."]
+margin_top = 84.0
+margin_right = 512.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 2 )
+text = "accuracy: "
+__meta__ = {
+"_edit_use_anchors_": false
+}

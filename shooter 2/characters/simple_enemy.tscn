@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.1
 step = 0.05
 tracks/0/type = "value"
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
 emission_box_extents = Vector3( 5, 3, 0 )
 flag_disable_z = true
@@ -41,7 +41,8 @@ collision_mask = 3
 mode = 1
 script = ExtResource( 4 )
 RUN_SPEED = 1.0
-HP = 100.0
+HP = 1.0
+NUM_DROPS = 5
 TYPE = "Melee"
 amount_to_move = 75.0
 move_period = 2.0
@@ -65,7 +66,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/take damage" = SubResource( 3 )
+"anims/take damage" = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
@@ -73,7 +74,7 @@ emitting = false
 amount = 5
 one_shot = true
 explosiveness = 0.8
-process_material = SubResource( 4 )
+process_material = SubResource( 3 )
 
 [node name="Generators" type="Node2D" parent="."]
 

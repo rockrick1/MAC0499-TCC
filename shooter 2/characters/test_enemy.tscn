@@ -42,9 +42,13 @@ mode = 1
 script = ExtResource( 4 )
 RUN_SPEED = 1.0
 HP = 100.0
+HIT_REWARD = null
+NUM_DROPS = 5
 TYPE = "Melee"
+DISTANCE = null
 amount_to_move = 75.0
 move_period = 2.0
+generator_scripts = null
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 modulate = Color( 1, 84.89, 1, 1 )

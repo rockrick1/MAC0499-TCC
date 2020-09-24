@@ -9,6 +9,7 @@ export (float) var FIRE_RATE
 
 var RUN_SPEED = 0
 var HP
+var POWER = 0
 
 var mot = Vector2(0,0)
 var shooting = false
@@ -132,6 +133,14 @@ func _process(delta):
 	stage.stats.update_hit_free_time(no_hit_time)
 
 
+func gain_drop():
+	POWER += 10 + (randf()*3)
+	if POWER > 100:
+		shot_lv = min(shot_lv + 1, len(shots))
+		POWER = 0
+	stage.stats.update_power(POWER)
+
+
 func take_damage(dmg):
 	no_hit_time = 0
 	HP -= dmg
@@ -198,7 +207,7 @@ func _on_FireRate_timeout():
 
 func _on_DiffUpdate_timeout():
 	stage.update_diff(no_hit_time)
-	if stage.overall_difficulty > 10:
-		shot_lv = 2
-	else:
-		shot_lv = 1
+#	if stage.overall_difficulty > 10:
+#		shot_lv = 2
+#	else:
+#		shot_lv = 1

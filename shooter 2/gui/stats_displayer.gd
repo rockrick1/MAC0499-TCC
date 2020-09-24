@@ -20,3 +20,7 @@ func update_diff(acc_diff, overall_diff):
 
 func update_hit_free_time(time):
 	$d.set_text("time without hits: "+str(time))
+
+
+func update_power(power):
+	$g.set_text("power: "+str(power))
