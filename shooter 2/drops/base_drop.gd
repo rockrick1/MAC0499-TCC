@@ -23,10 +23,16 @@ func die():
 	queue_free()
 
 
-func _on_Drop_body_entered(body):
-	follow = true
-
-
 func _on_DeathTimer_timeout():
 	character.gain_drop()
 	die()
+
+
+func _on_Drop_body_shape_entered(body_id, body, body_shape, area_shape):
+	# Collision with the sage border's bottom kills drop
+	if area_shape == 1 and body.get_name() == "StageBorder" and body_shape == 3:
+		die()
+	# Collision of PlayerFollow and Character will move drop to character
+	# and run pickup
+	elif "Char" in body.get_name() or "Bottom" in body.get_name():
+		follow = true

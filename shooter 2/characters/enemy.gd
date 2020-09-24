@@ -26,6 +26,7 @@ var pos_override
 var spawned_drops = 0
 
 
+var is_dead = false
 var exit = false
 
 
@@ -73,6 +74,15 @@ func set_generators(generators):
 			$Generators.add_child(g)
 
 
+func spawn_drops():
+	var spawner_instance = drop_spawner.instance()
+	spawner_instance.num_drops = NUM_DROPS
+	spawner_instance.stage = stage
+	spawner_instance.spawned_drops = 0
+	spawner_instance.global_position = get_global_position()
+	stage.add_child(spawner_instance)
+
+
 # Called when the enemy takes damage
 func take_damage(dmg):
 	HP -= dmg
@@ -87,17 +97,18 @@ func _process(delta):
 
 func die():
 	if not exit:
-		self.visible = false
-		$Hitbox.disabled = true
 		kill_generators()
 		character.stats.enemies_killed += 1
-	else:
-		var spawner_instance = drop_spawner.instance()
-		spawner_instance.num_drops = NUM_DROPS
-		spawner_instance.stage = stage
-		stage.add_child(spawner_instance)
 		character.update_stats_display()
-		queue_free()
+	$Move.stop_all()
+	print("vo spawnar ",get_name())
+	
+	# Prevents method from being called multiple times when getting hit
+	# by multiple projectiles in the same frame
+	if not is_dead:
+		is_dead = true
+		spawn_drops()
+	queue_free()
 
 
 func kill_generators():

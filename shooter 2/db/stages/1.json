@@ -8,7 +8,7 @@
             "enemies" :
             [
                 {
-                    "name" : "test_enemy",
+                    "name" : "simple_enemy",
                     "generators" : ["spinning6", "spinning-6"],
                     "pos_override" : "center",
                 },

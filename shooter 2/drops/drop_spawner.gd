@@ -4,7 +4,8 @@ const drop1 = preload("res://drops/drop1.tscn")
 
 var stage
 var num_drops
-var spawned_drops = 0
+var spawned_drops
+
 
 func spawn_drop():
 	var instance
@@ -13,7 +14,6 @@ func spawn_drop():
 		var offset = Vector2(randf() - .5,randf() - .5) * 40
 		instance.global_position = self.get_global_position() + offset
 		stage.add_child(instance)
-		print(instance.global_position)
 		spawned_drops += 1
 	else:
 		queue_free()

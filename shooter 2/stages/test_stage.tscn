@@ -54,7 +54,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StageBorder"]
+[node name="Left" type="CollisionShape2D" parent="StageBorder"]
 position = Vector2( 120, 152 )
 scale = Vector2( 1, 20 )
 shape = SubResource( 1 )
@@ -62,7 +62,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StageBorder"]
+[node name="Right" type="CollisionShape2D" parent="StageBorder"]
 position = Vector2( 392, 152 )
 scale = Vector2( 1, 20 )
 shape = SubResource( 1 )
@@ -70,7 +70,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StageBorder"]
+[node name="Top" type="CollisionShape2D" parent="StageBorder"]
 position = Vector2( 256, -8 )
 scale = Vector2( 17, 1 )
 shape = SubResource( 1 )
@@ -78,7 +78,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StageBorder"]
+[node name="Bottom" type="CollisionShape2D" parent="StageBorder"]
 position = Vector2( 256, 308 )
 scale = Vector2( 17, 1 )
 shape = SubResource( 1 )
