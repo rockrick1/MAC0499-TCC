@@ -24,6 +24,7 @@ var muzzlepos
 var move_pattern
 var pos_override
 var spawned_drops = 0
+var exit_time = -1
 
 
 var is_dead = false
@@ -40,6 +41,10 @@ func _ready():
 func start():
 	set_generators(generator_scripts)
 	run_move("enter")
+	if exit_time != -1:
+		print("EU VO SAIR DAQUI UM DIA")
+		$ExitTimer.wait_time = exit_time
+		$ExitTimer.start()
 
 
 func run_move(name):

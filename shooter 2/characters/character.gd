@@ -215,7 +215,3 @@ func _on_FireRate_timeout():
 func _on_DiffUpdate_timeout():
 	stage.update_diff(no_hit_time, grazed_bullets)
 	grazed_bullets = 0
-#	if stage.overall_difficulty > 10:
-#		shot_lv = 2
-#	else:
-#		shot_lv = 1

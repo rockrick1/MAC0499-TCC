@@ -29,7 +29,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 resource_name = "Blink"
 length = 0.05
 step = 0.025
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.1
 loop = true
 step = 0.05
@@ -63,11 +63,10 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=8]
 radius = 1.41729
 
-[sub_resource type="Animation" id=8]
-resource_name = "HideHitbox"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
@@ -81,8 +80,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "ShowHitbox"
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
@@ -104,21 +102,21 @@ FIRE_RATE = 0.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/Blink = SubResource( 10 )
+anims/Blink = SubResource( 6 )
 
 [node name="ShotEffect" type="Sprite" parent="."]
 position = Vector2( 0, -18 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ShotEffect"]
-anims/Shooting = SubResource( 6 )
+anims/Shooting = SubResource( 7 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Hitbox"]
 modulate = Color( 1, 1, 1, 0 )
@@ -126,8 +124,8 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hitbox"]
-anims/HideHitbox = SubResource( 8 )
-anims/ShowHitbox = SubResource( 9 )
+anims/HideHitbox = SubResource( 9 )
+anims/ShowHitbox = SubResource( 10 )
 
 [node name="Center" type="Node2D" parent="."]
 

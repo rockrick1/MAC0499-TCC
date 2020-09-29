@@ -78,8 +78,8 @@ export (Color) var bullet_color = Color(1, 1, 1)
 ############################# Difficulty modifiers #############################
 
 var mod_bullets_per_array = 0
-var mod_spin_speed = 0
-var mod_fire_rate = 0
+var mod_spin_speed = 1
+var mod_fire_rate = 1
 var mod_bullet_speed = 0
 
 ################################################################################
@@ -140,7 +140,7 @@ func get_params():
 
 func set_fire_rate(rate, modifier):
 	fire_rate = rate
-	$FireRate.wait_time = 1/float(fire_rate + modifier)
+	$FireRate.wait_time = 1/float(fire_rate * modifier)
 
 
 func set_spin_speed(speed, modifier):
@@ -184,7 +184,7 @@ func _process(delta):
 #	print(get_name(), ': ', spin_speed, ' ', base_spin_speed)
 #	print(get_name(), ': ', base_spin_speed,': ', current_rotation, ' -> ', fmod(current_rotation + spin_speed*delta, 360))
 #	print(get_name(), ': ', spin_speed)
-	current_rotation = fmod(current_rotation + (spin_speed + mod_spin_speed)*delta, 360)
+	current_rotation = fmod(current_rotation + (spin_speed * mod_spin_speed)*delta, 360)
 	if spin_variation != 0:
 		change_current_spin_speed()
 #	print(spin_speed)
@@ -204,21 +204,23 @@ func _process(delta):
 		var angle
 		var dir
 		
+		# Apply bullets per array modifier
+		var actual_bullets_per_array = bullets_per_array + mod_bullets_per_array
 		
 		for array in range(total_bullet_arrays):
 			
 			if bullets_per_array != 0:
-				angle_between_bullets = individual_array_spread/bullets_per_array
+				angle_between_bullets = individual_array_spread/actual_bullets_per_array
 			
-			for bullet_n in range(bullets_per_array + mod_bullets_per_array):
+			for bullet_n in range(actual_bullets_per_array):
 				if not aim_at_character:
 					angle = deg2rad((angle_between_bullets * bullet_n) + start_angle)
 					dir = Vector2(cos(angle), sin(angle))
 				else:
 					dir = -(get_global_position() - character.get_global_position()).normalized()
 					var offset = 0
-					if bullets_per_array > 1:
-						angle_between_bullets = individual_array_spread/(bullets_per_array - 1)
+					if actual_bullets_per_array > 1:
+						angle_between_bullets = individual_array_spread/(actual_bullets_per_array - 1)
 						offset = -individual_array_spread/2 + (angle_between_bullets * bullet_n) 
 					dir = dir.rotated(deg2rad(offset))
 
@@ -244,28 +246,21 @@ func update_diff(overall_diff):
 		bullet speed
 		bullets per array
 	"""
+	
+	if overall_diff > 1:
+		mod_bullet_speed = pow(overall_diff, 0.05) - 1
+		mod_spin_speed = 1
+		set_spin_speed(base_spin_speed, mod_spin_speed)
 		
-	if overall_diff < 5:
-		mod_fire_rate = 0
-		set_fire_rate(fire_rate, mod_fire_rate)
-
-		mod_spin_speed = 0
-		set_spin_speed(base_spin_speed, mod_spin_speed)
-
-		mod_bullet_speed = 0
-
+		if overall_diff > 10:
+			mod_fire_rate = log(overall_diff) / log(10)
+			set_fire_rate(fire_rate, mod_fire_rate)
+	
+	if overall_diff < 50:
 		mod_bullets_per_array = 0
-
+	
 	else:
-		mod_fire_rate = 3
-		set_fire_rate(fire_rate, mod_fire_rate)
-
-		mod_spin_speed = 0
-		set_spin_speed(base_spin_speed, mod_spin_speed)
-
-		mod_bullet_speed = 0.3
-
-		mod_bullets_per_array = 5
+		mod_bullets_per_array = 1
 
 
 func _on_FireRate_timeout():

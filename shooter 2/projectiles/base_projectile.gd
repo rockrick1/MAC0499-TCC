@@ -19,24 +19,28 @@ var grazed = false
 var wr
 
 func _ready():
+	pass
 	# circus mode
 #	$Sprite.set_self_modulate(Color(randf(), randf(), randf()))
-	character = MainNodes.get_character()
-	stage = MainNodes.get_stage()
-	stage.add_bullet()
-	set_life()
 
 func set_vars(pos, sh, dir, rotate):
 	position = pos
 	direction = dir
 	shooter = sh
+	
+	character = MainNodes.get_character()
+	stage = MainNodes.get_stage()
+	set_life()
 
 	if rotate:
 		set_rotation(dir.angle())
 
 	enemy = shooter.enemy
+	
 	wr = weakref(shooter)
 	
+	if enemy:
+		stage.add_bullet()
 	set_process(true)
 
 func set_life(l = 5):
@@ -89,7 +93,8 @@ func _on_CharSearchRefresh_timeout():
 
 
 func die():
-	stage.remove_bullet()
+	if enemy:
+		stage.remove_bullet()
 	queue_free()
 
 

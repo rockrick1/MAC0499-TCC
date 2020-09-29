@@ -72,6 +72,7 @@ func spawn_next_enemy():
 		enemy_instance.position += convert_pos(enemy.pos_override)
 		enemy_instance.generator_scripts = enemy.generators
 		enemy_instance.pos_override = enemy.pos_override
+		enemy_instance.exit_time = enemy.exit_time
 		
 		wrs.append(weakref(enemy_instance))
 		
