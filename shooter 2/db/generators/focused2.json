@@ -1,6 +1,6 @@
 {
 	"proj_type" : "proj2.1",
-	"life" : 2,
+	"life" : 3,
 	"bullets_per_array" : 2,
 	"individual_array_spread" : 25,
 	"total_bullet_arrays" : 1,

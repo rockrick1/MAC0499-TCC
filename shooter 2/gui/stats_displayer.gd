@@ -24,3 +24,7 @@ func update_hit_free_time(time):
 
 func update_power(power):
 	$g.set_text("power: "+str(power))
+
+
+func set_debug_1(msg):
+	$h.set_text(str(msg))

@@ -9,29 +9,18 @@
             [
                 {
                     "name" : "simple_enemy",
-                    "generators" : ["spinning6", "spinning-6"],
-                    "pos_override" : "center",
-                    "exit_time" : -1,
-                },
-
-                {
-                    "name" : "simple_enemy",
                     "generators" : ["focused2", ],
                     "pos_override" : "left",
-                    "exit_time" : 5,
+                    "exit_time" : 15,
                 },
 
                 {
                     "name" : "simple_enemy",
                     "generators" : ["focused3", ],
                     "pos_override" : "right",
-                    "exit_time" : 5,
+                    "exit_time" : 15,
                 },
             ],
-        },
-
-        {
-            "enemy_spawn_delay" : 3,
         },
 
         {

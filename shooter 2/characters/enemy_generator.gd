@@ -44,6 +44,7 @@ func parse_vars(params):
 
 func start_next_wave():
 	spawn_complete = false
+	MainNodes.get_stats().set_debug_1(spawn_complete)
 	if (repeat and cur_wave_n == len(waves) - 1):
 		cur_wave_n = 0
 	else:
@@ -62,6 +63,7 @@ func spawn_next_enemy():
 	else: # No more enemies to spawn
 		cur_enemy_n = -1
 		spawn_complete = true
+		MainNodes.get_stats().set_debug_1(spawn_complete)
 		return
 	
 	var enemy = current_wave.enemies[cur_enemy_n]

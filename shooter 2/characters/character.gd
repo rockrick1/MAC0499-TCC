@@ -27,7 +27,7 @@ var overall_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
-var shot_lv = 1
+var shot_lv = 2
 
 const shots = [
 	preload("res://projectiles/shot2lv1.tscn"),
