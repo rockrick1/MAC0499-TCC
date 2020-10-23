@@ -30,9 +30,11 @@ func _on_Drop_body_shape_entered(body_id, body, body_shape, area_shape):
 	# Collision of PlayerFollow and Character will move drop to character
 	# and run pickup
 	elif body.get_name() == "Character":
+		# If it's the smaller one, the character picks the drop up
 		if area_shape == 1:
 			character.gain_drop()
 			die()
+		# If it's the bigger area entering the character, only follows
 		follow = true
 	
 	
