@@ -13,10 +13,10 @@ func _ready():
 
 func _process(delta):
 	if follow:
-		dir = -(get_global_position() - character.get_global_position()).normalized() * 120
-		if $DeathTimer.is_stopped():
-			$DeathTimer.start()
+		dir = -(get_global_position() - character.get_global_position()).normalized() * 170
 	self.position += dir*delta
+	if character.is_in_auto_zone:
+		follow = true
 
 
 func die():
@@ -34,5 +34,10 @@ func _on_Drop_body_shape_entered(body_id, body, body_shape, area_shape):
 		die()
 	# Collision of PlayerFollow and Character will move drop to character
 	# and run pickup
-	elif "Char" in body.get_name() or "Bottom" in body.get_name():
+	elif body.get_name() == "Character":
+		if area_shape == 1:
+			character.gain_drop()
+			die()
 		follow = true
+	
+	

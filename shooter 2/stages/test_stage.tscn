@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stages/test_stage.gd" type="Script" id=3]
@@ -51,6 +51,9 @@ extents = Vector2( 8, 7.99999 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 128, 150 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 128, 48 )
 
 [node name="Stage" type="Node2D"]
 script = ExtResource( 3 )
@@ -159,8 +162,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="AutoCollectZone" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoCollectZone"]
+position = Vector2( 256, 48 )
+shape = SubResource( 6 )
+
 [node name="EnemyGenerator" parent="." instance=ExtResource( 5 )]
 stagename = "1"
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 256, -15 )
+[connection signal="body_shape_entered" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_entered"]
+[connection signal="body_shape_exited" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_exited"]

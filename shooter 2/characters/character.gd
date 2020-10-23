@@ -15,6 +15,7 @@ var mot = Vector2(0,0)
 var shooting = false
 var can_shoot = true
 var strafing = false
+var is_in_auto_zone = false
 
 const enemy = false
 var stage
