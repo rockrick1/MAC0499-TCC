@@ -51,7 +51,6 @@ func set_life(l = 5):
 
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
-	# Only checks collision with the nearest bullets
 	position += direction * speed * _delta * 50
 
 

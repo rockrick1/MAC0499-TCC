@@ -98,7 +98,7 @@ func set_params(params):
 	life = params.life
 	$LifeTimer.wait_time = life
 	proj_type = params.proj_type
-	proj = load("res://projectiles/"+proj_type+".tscn")
+	proj = load("res://projectiles/enemy/"+proj_type+".tscn")
 	bullets_per_array = params.bullets_per_array
 	individual_array_spread = params.individual_array_spread
 	total_bullet_arrays = params.total_bullet_arrays

@@ -30,8 +30,8 @@ var min_diff = 1
 var shot_lv = 2
 
 const shots = [
-	preload("res://projectiles/shot2lv1.tscn"),
-	preload("res://projectiles/shot2lv2.tscn"),
+	preload("res://projectiles/character/shot2lv1.tscn"),
+	preload("res://projectiles/character/shot2lv2.tscn"),
 ]
 
 ########################### action recording ###################################

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://projectiles/shot2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://projectiles/base_shot.gd" type="Script" id=2]
-
-[node name="Projectile" type="Node2D"]
-script = ExtResource( 2 )
-
-[node name="Projectile" parent="." instance=ExtResource( 1 )]
