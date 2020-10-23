@@ -1,37 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://projectiles/character/shot2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://projectiles/character/shot2lv2.gd" type="Script" id=2]
-
-[sub_resource type="Animation" id=1]
-resource_name = "Wave"
-length = 0.2
-loop = true
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Projectile3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 0.5, 2, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 12 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Projectile2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 0.5, 2, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -12 ), Vector2( 0, 0 ) ]
-}
 
 [node name="Projectile" type="Node2D"]
 script = ExtResource( 2 )
@@ -44,19 +14,10 @@ damage = 3
 [node name="Projectile3" parent="." instance=ExtResource( 1 )]
 damage = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Wave = SubResource( 1 )
-
 [node name="Tweens" type="Node2D" parent="."]
 
 [node name="1" type="Tween" parent="Tweens"]
 
-[node name="1b" type="Tween" parent="Tweens"]
-
 [node name="2" type="Tween" parent="Tweens"]
-
-[node name="2b" type="Tween" parent="Tweens"]
 [connection signal="tween_all_completed" from="Tweens/1" to="." method="_on_1_tween_all_completed"]
 [connection signal="tween_completed" from="Tweens/1" to="." method="_on_1_tween_completed"]
-[connection signal="tween_all_completed" from="Tweens/1b" to="." method="_on_1_tween_all_completed"]
-[connection signal="tween_completed" from="Tweens/1b" to="." method="_on_1_tween_completed"]
