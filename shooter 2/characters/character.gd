@@ -3,13 +3,11 @@ extends KinematicBody2D
 export (int) var RUN_ACC = 30
 export (float) var MAX_RUN_SPEED = 2
 export (float) var MAX_STRAFE_SPEED = .85
-export (float) var MAX_HP
 export (int) var DEF
 export (float) var FIRE_RATE
+export (int) var LIVES
 
 var RUN_SPEED = 0
-var HP
-var LIVES = 5
 var POWER = 0
 
 var control = true
@@ -55,11 +53,8 @@ var stats = {
 func _ready():
 	stage = get_parent()
 	action_recorder._ready()
-	HP = MAX_HP
 	$FireRate.wait_time = FIRE_RATE
 	$ShotEffect.visible = false
-#	$Camera2D/GUI/HealthBar.max_value = MAX_HP
-#	$Camera2D/GUI/HealthBar.value = HP
 
 
 func update_stats_display():
@@ -157,15 +152,6 @@ func graze():
 
 func take_damage(dmg):
 	die()
-	return
-	HP -= dmg
-#	$AnimationPlayer.play("take damage")
-#	$Particles2D.restart()
-	if HP <= 0:
-		die()
-	
-	stage.overall_difficulty /= 1.5
-#	$Camera2D/GUI/HealthBar.value = HP
 
 
 func die():
@@ -188,6 +174,7 @@ func die():
 	print("shiet mang im ded")
 	LIVES -= 1
 	stage.stats.update_lives(LIVES)
+	stage.overall_difficulty /= 1.5
 	if LIVES == 0:
 
 	# To understand the complexity of the next command, one must close their
@@ -248,7 +235,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Invincibility_timeout():
-	print("i am not inevitable")
 	invincible = false
 	$Hitbox.disabled = false
 	$Sprite/Invincible.stop()

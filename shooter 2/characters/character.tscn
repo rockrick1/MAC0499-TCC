@@ -132,12 +132,12 @@ tracks/0/keys = {
 position = Vector2( 256, 278 )
 collision_mask = 28
 script = ExtResource( 2 )
-MAX_HP = 150.0
 FIRE_RATE = 0.1
+LIVES = 5
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Blink" type="AnimationPlayer" parent="Sprite"]
