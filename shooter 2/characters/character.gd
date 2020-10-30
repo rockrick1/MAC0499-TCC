@@ -9,13 +9,16 @@ export (float) var FIRE_RATE
 
 var RUN_SPEED = 0
 var HP
+var LIVES = 5
 var POWER = 0
 
+var control = true
 var mot = Vector2(0,0)
 var shooting = false
 var can_shoot = true
 var strafing = false
 var is_in_auto_zone = false
+var invincible = false
 
 const enemy = false
 var stage
@@ -28,11 +31,12 @@ var overall_diff = 0
 var max_diff = 1.1
 var min_diff = 1
 
-var shot_lv = 2
+var shot_lv = 1
 
 const shots = [
 	preload("res://projectiles/character/shot2lv1.tscn"),
 	preload("res://projectiles/character/shot2lv2.tscn"),
+	preload("res://projectiles/character/shot2lv3.tscn"),
 ]
 
 ########################### action recording ###################################
@@ -65,12 +69,13 @@ func update_stats_display():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not control:
+		return
 #	var mouse_pos = get_global_mouse_position()
 	############################# movement #####################################
 	var dir = Vector2(0,0)
 	var moving = false
 	
-	# var data = {"type" : "movement", "info" : ""}
 	if Input.is_action_pressed("ui_left"):
 		moving = true
 		dir.x -= 1
@@ -103,8 +108,7 @@ func _process(delta):
 		mot = mot.normalized()*RUN_SPEED
 	if delta != 0:
 		move_and_slide(mot / delta)
-	############################################################################
-	
+		
 	############################# shooting #####################################
 	if Input.is_action_pressed("ui_action") or Input.is_action_pressed("ui_select"):
 		$ShotEffect/AnimationPlayer.play("Shooting")
@@ -125,9 +129,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_secondary_action"):
 		strafing = true
 		$Hitbox/AnimationPlayer.play("ShowHitbox")
-	elif Input.is_action_just_released("ui_secondary_action"):
+	elif strafing and not Input.is_action_pressed("ui_secondary_action"):
 		strafing = false
 		$Hitbox/AnimationPlayer.play("HideHitbox")
+		
 	############################################################################
 	
 	if len(stage.get_node("Enemies").get_children()) > 0:
@@ -145,12 +150,14 @@ func gain_drop():
 
 # Character grazed a bullet
 func graze():
-	grazed_bullets += 1
-	$Sprite/AnimationPlayer.play("Blink")
+	if invincible:
+		grazed_bullets += 1
+		$Sprite/Blink.play("Blink")
 
 
 func take_damage(dmg):
-	no_hit_time = 0
+	die()
+	return
 	HP -= dmg
 #	$AnimationPlayer.play("take damage")
 #	$Particles2D.restart()
@@ -162,9 +169,26 @@ func take_damage(dmg):
 
 
 func die():
-	return
+	control = false
+	invincible = true
+	$AnimationPlayer.play("death")
+	$Sprite/Invincible.play("Invincible")
+	$Invincibility.start()
+	
+	$ShotEffect/AnimationPlayer.stop()
+	$ShotEffect.set_visible(false)
+	strafing = false
+	$Hitbox/AnimationPlayer.play("HideHitbox")
+	$Hitbox.disabled = true
+	
+	shot_lv = 1
+	POWER = 0
+	no_hit_time = 0
+	
 	print("shiet mang im ded")
-	action_recorder.save()
+	LIVES -= 1
+	stage.stats.update_lives(LIVES)
+	if LIVES == 0:
 
 	# To understand the complexity of the next command, one must close their
 	# eyes and truly think: "Need we go further than this point? Is there 
@@ -200,7 +224,7 @@ func die():
 	# documentation. And with that power, you must now raise your fingers and
 	# let them descend in the order that the Great One foretold:
 
-	queue_free()
+		queue_free()
 
 
 func _notification(what):
@@ -216,3 +240,16 @@ func _on_FireRate_timeout():
 func _on_DiffUpdate_timeout():
 	stage.update_diff(no_hit_time, grazed_bullets)
 	grazed_bullets = 0
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "death":
+		control = true
+
+
+func _on_Invincibility_timeout():
+	print("i am not inevitable")
+	invincible = false
+	$Hitbox.disabled = false
+	$Sprite/Invincible.stop()
+	$Sprite.self_modulate = Color(1,1,1,1)

@@ -36,5 +36,3 @@ func _on_Drop_body_shape_entered(body_id, body, body_shape, area_shape):
 			die()
 		# If it's the bigger area entering the character, only follows
 		follow = true
-	
-	

@@ -23,8 +23,7 @@ func _ready():
 	# circus mode
 #	$Sprite.set_self_modulate(Color(randf(), randf(), randf()))
 
-func set_vars(pos, sh, dir, rotate):
-	position = pos
+func set_vars(sh, dir, rotate):
 	direction = dir
 	shooter = sh
 	
@@ -56,6 +55,8 @@ func _process(_delta):
 
 func _on_Projectile_body_entered(body):
 	if body.has_method("take_damage"):
+		if body.invincible:
+			return
 		body.take_damage(damage)
 		if wr.get_ref() and shooter.has_method("update_stats_display"):
 			shooter.stats.shots_hit += 1

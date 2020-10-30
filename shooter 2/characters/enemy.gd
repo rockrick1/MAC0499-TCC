@@ -26,7 +26,7 @@ var pos_override
 var spawned_drops = 0
 var exit_time = -1
 
-
+var invincible = false
 var is_dead = false
 var exit = false
 

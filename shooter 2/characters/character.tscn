@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/sprites/ship1.png" type="Texture" id=1]
 [ext_resource path="res://characters/character.gd" type="Script" id=2]
@@ -44,6 +44,24 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Invincible"
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 2.92817, 0.307786, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 40.1098, 39.5961, 39.3686, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -94,7 +112,24 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.378929, 1 ),
+"update": 0,
+"values": [ Vector2( 256, 340 ), Vector2( 256, 278 ) ]
+}
+
 [node name="Character" type="KinematicBody2D"]
+position = Vector2( 256, 278 )
 collision_mask = 28
 script = ExtResource( 2 )
 MAX_HP = 150.0
@@ -102,11 +137,14 @@ FIRE_RATE = 0.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+[node name="Blink" type="AnimationPlayer" parent="Sprite"]
 anims/Blink = SubResource( 6 )
+
+[node name="Invincible" type="AnimationPlayer" parent="Sprite"]
+anims/Invincible = SubResource( 12 )
 
 [node name="ShotEffect" type="Sprite" parent="."]
 position = Vector2( 0, -18 )
@@ -154,5 +192,14 @@ wait_time = 0.1
 [node name="DiffUpdate" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Invincibility" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 11 )
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]
 [connection signal="timeout" from="DiffUpdate" to="." method="_on_DiffUpdate_timeout"]
+[connection signal="timeout" from="Invincibility" to="." method="_on_Invincibility_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

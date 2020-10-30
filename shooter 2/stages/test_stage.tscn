@@ -114,7 +114,6 @@ lifetime = 5.0
 process_material = SubResource( 3 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 256, 278 )
 
 [node name="StageBorder" type="StaticBody2D" parent="."]
 __meta__ = {
@@ -164,6 +163,9 @@ __meta__ = {
 
 [node name="AutoCollectZone" type="Area2D" parent="."]
 collision_layer = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoCollectZone"]
 position = Vector2( 256, 48 )

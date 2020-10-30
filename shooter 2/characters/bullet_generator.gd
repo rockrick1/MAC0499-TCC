@@ -228,7 +228,8 @@ func _process(delta):
 				
 				if not aim_at_character:
 					dir = dir.rotated(deg2rad(current_rotation)).normalized()
-				proj_instance.set_vars(shooter.get_global_position(), shooter, dir, true)
+				proj_instance.set_vars(shooter, dir, true)
+				proj_instance.position = shooter.get_global_position()
 				proj_instance.generator = self
 				proj_instance.speed = bullet_speed + mod_bullet_speed
 				proj_instance.set_life(bullet_life)
