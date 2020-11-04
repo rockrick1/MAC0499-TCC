@@ -1,14 +1,22 @@
 extends KinematicBody2D
 
+# Character variables
 export (int) var RUN_ACC = 30
 export (float) var MAX_RUN_SPEED = 2
 export (float) var MAX_STRAFE_SPEED = .85
 export (int) var DEF
 export (float) var FIRE_RATE
 export (int) var LIVES
+export (int) var BOMBS
+
+# General global variables, like thresholds and constants
+export (int) var POWER_MAX
+export (int) var BOMB_CHARGE_MAX
+export (float) var DEATH_PENALTY
 
 var RUN_SPEED = 0
 var POWER = 0
+var BOMB_CHARGE = 0
 
 var control = true
 var mot = Vector2(0,0)
@@ -18,16 +26,17 @@ var strafing = false
 var is_in_auto_zone = false
 var invincible = false
 
+signal bomb
+
 const enemy = false
 var stage
 
+# Difficulty variables
 var no_hit_time = 0
 var grazed_bullets = 0
 
 var accumulated_diff = 0
 var overall_diff = 0
-var max_diff = 1.1
-var min_diff = 1
 
 var shot_lv = 1
 
@@ -53,6 +62,7 @@ var stats = {
 func _ready():
 	stage = get_parent()
 	action_recorder._ready()
+	
 	$FireRate.wait_time = FIRE_RATE
 	$ShotEffect.visible = false
 
@@ -105,7 +115,7 @@ func _process(delta):
 		move_and_slide(mot / delta)
 		
 	############################# shooting #####################################
-	if Input.is_action_pressed("ui_action") or Input.is_action_pressed("ui_select"):
+	if Input.is_action_pressed("ui_action_1"):
 		$ShotEffect/AnimationPlayer.play("Shooting")
 		if can_shoot:
 			can_shoot = false
@@ -121,13 +131,17 @@ func _process(delta):
 		shooting = false
 	
 	################################## strafe ##################################
-	if Input.is_action_just_pressed("ui_secondary_action"):
+	if Input.is_action_just_pressed("ui_action_2"):
 		strafing = true
 		$Hitbox/AnimationPlayer.play("ShowHitbox")
-	elif strafing and not Input.is_action_pressed("ui_secondary_action"):
+	elif strafing and not Input.is_action_pressed("ui_action_2"):
 		strafing = false
 		$Hitbox/AnimationPlayer.play("HideHitbox")
 		
+	################################### bomb ###################################
+	if Input.is_action_just_pressed("ui_action_3") and BOMBS > 0 and not $BombEffect/AnimationPlayer.is_playing():
+		bomb()
+
 	############################################################################
 	
 	if len(stage.get_node("Enemies").get_children()) > 0:
@@ -137,10 +151,15 @@ func _process(delta):
 
 func gain_drop():
 	POWER += 1 + (randf()*3)
-	if POWER > 100:
+	BOMB_CHARGE += 1 + (randf()*3)
+	if POWER > POWER_MAX:
 		shot_lv = min(shot_lv + 1, len(shots))
 		POWER = 0
+	if BOMB_CHARGE > BOMB_CHARGE_MAX:
+		BOMBS += 1
+		BOMB_CHARGE = 0
 	stage.stats.update_power(POWER)
+	stage.stats.update_bombs(BOMBS)
 
 
 # Character grazed a bullet
@@ -148,6 +167,14 @@ func graze():
 	if invincible:
 		grazed_bullets += 1
 		$Sprite/Blink.play("Blink")
+
+
+func bomb():
+	BOMBS -= 1
+	stage.stats.update_bombs(BOMBS)
+	$BombEffect/AnimationPlayer.play("Bomb")
+	# Emit signal to kill enemy bullets
+	emit_signal("bomb")
 
 
 func take_damage(dmg):
@@ -174,7 +201,7 @@ func die():
 	print("shiet mang im ded")
 	LIVES -= 1
 	stage.stats.update_lives(LIVES)
-	stage.overall_difficulty /= 1.5
+	stage.overall_difficulty /= DEATH_PENALTY
 	if LIVES == 0:
 
 	# To understand the complexity of the next command, one must close their

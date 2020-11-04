@@ -30,6 +30,7 @@ func set_vars(sh, dir, rotate):
 	character = MainNodes.get_character()
 	stage = MainNodes.get_stage()
 	set_life()
+	character.connect("bomb", self, "on_bomb")
 
 	if rotate:
 		set_rotation(dir.angle())
@@ -89,6 +90,11 @@ func _on_CharSearchRefresh_timeout():
 #		$Sprite.set_modulate(Color(1,1,1,1))
 		$CollisionPolygon2D.set_disabled(true)
 	if not is_on_screen():
+		die()
+
+
+func on_bomb():
+	if enemy:
 		die()
 
 

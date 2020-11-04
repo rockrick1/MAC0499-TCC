@@ -72,10 +72,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="e" type="Label" parent="."]
+[node name="d3" type="Label" parent="."]
 margin_top = 70.0
 margin_right = 512.0
 margin_bottom = 83.0
+custom_fonts/font = SubResource( 1 )
+text = "bombs: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e" type="Label" parent="."]
+margin_top = 84.0
+margin_right = 512.0
+margin_bottom = 97.0
 custom_fonts/font = SubResource( 2 )
 text = "acc diff: "
 __meta__ = {
@@ -83,9 +93,9 @@ __meta__ = {
 }
 
 [node name="f" type="Label" parent="."]
-margin_top = 84.0
+margin_top = 98.0
 margin_right = 512.0
-margin_bottom = 97.0
+margin_bottom = 111.0
 custom_fonts/font = SubResource( 2 )
 text = "overall diff: "
 __meta__ = {
@@ -93,9 +103,9 @@ __meta__ = {
 }
 
 [node name="g" type="Label" parent="."]
-margin_top = 98.0
+margin_top = 112.0
 margin_right = 512.0
-margin_bottom = 111.0
+margin_bottom = 125.0
 custom_fonts/font = SubResource( 2 )
 text = "power: "
 __meta__ = {
@@ -103,9 +113,9 @@ __meta__ = {
 }
 
 [node name="h" type="Label" parent="."]
-margin_top = 112.0
+margin_top = 126.0
 margin_right = 512.0
-margin_bottom = 125.0
+margin_bottom = 139.0
 custom_fonts/font = SubResource( 2 )
 text = "debug1"
 __meta__ = {

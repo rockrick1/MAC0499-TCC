@@ -6,6 +6,7 @@ export (float) var HIT_REWARD
 export (int) var NUM_DROPS
 export (String) var TYPE
 export (float) var DISTANCE
+export (float) var BOMB_DMG = 20
 
 export (float) var amount_to_move
 export (float) var move_period
@@ -34,6 +35,7 @@ var exit = false
 func _ready():
 	stage = get_parent().get_parent()
 	character = stage.get_node("Character")
+	character.connect("bomb", self, "on_bomb")
 	$ColorRect.set_frame_color(Color(randf(), randf(), randf()))
 	start()
 
@@ -94,6 +96,10 @@ func take_damage(dmg):
 	$AnimationPlayer.play("take damage")
 	if HP <= 0:
 		die()
+
+
+func on_bomb():
+	take_damage(BOMB_DMG)
 
 
 func _process(delta):

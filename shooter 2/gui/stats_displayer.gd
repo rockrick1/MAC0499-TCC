@@ -17,6 +17,13 @@ func update_lives(lives):
 	$d2.set_text("lives: "+str(lives))
 
 
+func update_bombs(bombs):
+	var s = ""
+	for i in range(bombs):
+		s += "=D "
+	$d3.set_text("bombs: "+s)
+
+
 func update_diff(acc_diff, overall_diff):
 	$e.set_text("acc diff: "+str(acc_diff))
 	$f.set_text("overall diff: "+str(floor(overall_diff)))
