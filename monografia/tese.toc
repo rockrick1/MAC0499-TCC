@@ -2,33 +2,17 @@
 \babel@toc {brazilian}{}
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivação}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Considerações de Estilo}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Ferramentas Bibliográficas}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}O Que o IME Espera}{3}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Usando o \LaTeX {} e este modelo}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Instalação do \LaTeX {}}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Documentação sobre \LaTeX }{9}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Do zero ao mínimo com \LaTeX {}}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Visão Geral}{12}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Estrutura de um Documento \LaTeX {}}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Executando \LaTeX {} e Comandos Auxiliares}{14}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Mais sobre Estrutura}{14}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Referências Cruzadas e \emph {Floats}}{15}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Fórmulas Matemáticas}{16}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Referências Bibliográficas e Bibliografia}{16}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Imagens, Ilustrações, Diagramas e Gráficos}{18}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Formatação Manual}{18}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Detalhes da Linguagem}{19}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Versões do \LaTeX {}}{20}{section.3.11}%
-\contentsline {section}{\numberline {3.12}Limitações do \LaTeX {} e Algumas Dicas}{21}{section.3.12}%
-\contentsline {chapter}{\numberline {4}Alguns Exemplos de Comandos \LaTeX {}}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Bibliografia e Referências}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modo Matemático}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}\emph {Floats} (Tabelas e Figuras)}{24}{section.4.3}%
+\contentsline {section}{\numberline {1.2}Objetivos}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Considerações de Estilo}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Ferramentas Bibliográficas}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}O Que o IME Espera}{4}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Introdução}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Motivação}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Objetivos}{7}{section.2.2}%
 \protect \appendixTOCLine 
-\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{29}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{9}{appendix.A}%
 \protect \annexTOCLine 
-\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{31}{annex.A}%
+\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{11}{annex.A}%
 \vspace {2\baselineskip plus .5\baselineskip minus .5\baselineskip }
-\contentsline {chapter}{Refer\^encias}{33}{annex*.15}%
-\contentsline {chapter}{\'Indice Remissivo}{35}{section*.16}%
+\contentsline {chapter}{Refer\^encias}{13}{annex*.9}%
+\contentsline {chapter}{\'Indice Remissivo}{15}{section*.10}%

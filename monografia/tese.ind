@@ -1,103 +1,92 @@
 \begin{theindex}
 {\bfseries B}\nopagebreak
 
-  \item biber, \hyperpage{2}, \hyperpage{16}
-  \item biblatex, \hyperpage{2}, \hyperpage{8}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item bibtex, \hyperpage{2}, \hyperpage{8}, \hyperpage{16}, 
-		\hyperpage{31}
+  \item biber, \hyperpage{3}
+  \item biblatex, \hyperpage{3}, \hyperpage{11}
+  \item bibtex, \hyperpage{3}, \hyperpage{11}
 
   \indexspace
 {\bfseries C}\nopagebreak
 
-  \item Captions, \hyperindexformat{\see{Legendas}}{x}
+  \item Captions, \hyperindexformat{\see{Legendas}}{ix}
   \item CiteULike, \hyperpage{3}
-  \item Código-fonte, \hyperindexformat{\see{Floats}}{x}
+  \item Código-fonte, \hyperindexformat{\see{Floats}}{ix}
 
   \indexspace
 {\bfseries E}\nopagebreak
 
-  \item Equações, \hyperindexformat{\see{Modo Matemático}}{x}
+  \item Equações, \hyperindexformat{\see{Modo Matemático}}{ix}
 
   \indexspace
 {\bfseries F}\nopagebreak
 
-  \item Figuras, \hyperindexformat{\see{Floats}}{x}
-  \item Floats, \hyperpage{2}, \hyperpage{24}, \hyperpage{26}
-    \subitem Algoritmo, \hyperindexformat{\see{Floats, Ordem}}{x}
-    \subitem Ordem, \hyperpage{15}
+  \item Figuras, \hyperindexformat{\see{Floats}}{ix}
+  \item Floats, \hyperpage{3}
+    \subitem Algoritmo, \hyperindexformat{\see{Floats, Ordem}}{ix}
   \item Formatação, \hyperpage{4}
-  \item Fórmulas, \hyperindexformat{\see{Modo Matemático}}{x}
+  \item Fórmulas, \hyperindexformat{\see{Modo Matemático}}{ix}
 
   \indexspace
 {\bfseries G}\nopagebreak
 
-  \item Google Scholar, \hyperpage{3}
+  \item Google Scholar, \hyperpage{3, 4}
 
   \indexspace
 {\bfseries I}\nopagebreak
 
-  \item Inglês, \hyperindexformat{\see{Língua estrangeira}}{x}
-
-  \indexspace
-{\bfseries J}\nopagebreak
-
-  \item Java, \hyperpage{25}
+  \item Inglês, \hyperindexformat{\see{Língua estrangeira}}{ix}
 
   \indexspace
 {\bfseries L}\nopagebreak
 
-  \item Legendas, \hyperpage{2}, \hyperpage{15}, \hyperpage{24}, 
-		\hyperpage{32}
-  \item Língua estrangeira, \hyperpage{2}
+  \item Legendas, \hyperpage{3}, \hyperpage{12}
+  \item Língua estrangeira, \hyperpage{3}
 
   \indexspace
 {\bfseries M}\nopagebreak
 
-  \item Mendeley, \hyperpage{3}, \hyperpage{18}, \hyperpage{32}
-  \item Modo Matemático, \hyperpage{23}
+  \item Mendeley, \hyperpage{3}, \hyperpage{12}
 
   \indexspace
 {\bfseries N}\nopagebreak
 
-  \item natbib, \hyperpage{2}, \hyperpage{8}, \hyperpage{16}
-  \item Notas de rodapé, \hyperpage{2}, \hyperpage{15}
+  \item natbib, \hyperpage{2, 3}
+  \item Notas de rodapé, \hyperpage{2}
 
   \indexspace
 {\bfseries P}\nopagebreak
 
   \item Palavras estrangeiras, 
-		\hyperindexformat{\see{Língua estrangeira}}{x}
+		\hyperindexformat{\see{Língua estrangeira}}{ix}
 
   \indexspace
 {\bfseries R}\nopagebreak
 
-  \item Rodapé, notas, \hyperindexformat{\see{Notas de rodapé}}{x}
+  \item Rodapé, notas, \hyperindexformat{\see{Notas de rodapé}}{ix}
 
   \indexspace
 {\bfseries S}\nopagebreak
 
   \item Scopus, \hyperpage{3}
-  \item Subcaptions, \hyperindexformat{\see{Subfiguras}}{x}
-  \item Subfiguras, \hyperpage{24}
-  \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{x}
+  \item Subcaptions, \hyperindexformat{\see{Subfiguras}}{ix}
+  \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{ix}
 
   \indexspace
 {\bfseries T}\nopagebreak
 
-  \item Tabelas, \hyperindexformat{\see{Floats}}{x}
+  \item Tabelas, \hyperindexformat{\see{Floats}}{ix}
   \item Tese/Dissertação
     \subitem itens obrigatórios, \hyperpage{4}
     \subitem itens opcionais, \hyperpage{4}
-    \subitem versões, \hyperpage{3}
+    \subitem versões, \hyperpage{4}
 
   \indexspace
 {\bfseries V}\nopagebreak
 
   \item Versão corrigida, 
-		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
+		\hyperindexformat{\see{Tese/Dissertação, versões}}{ix}
   \item Versão original, 
-		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
+		\hyperindexformat{\see{Tese/Dissertação, versões}}{ix}
 
   \indexspace
 {\bfseries W}\nopagebreak
@@ -107,6 +96,6 @@
   \indexspace
 {\bfseries Z}\nopagebreak
 
-  \item Zotero, \hyperpage{3}, \hyperpage{18}, \hyperpage{32}
+  \item Zotero, \hyperpage{3}, \hyperpage{12}
 
 \end{theindex}
