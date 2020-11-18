@@ -1,15 +1,13 @@
 \begin{theindex}
 {\bfseries B}\nopagebreak
 
-  \item biber, \hyperpage{3}
-  \item biblatex, \hyperpage{3}, \hyperpage{11}
-  \item bibtex, \hyperpage{3}, \hyperpage{11}
+  \item biblatex, \hyperpage{9}
+  \item bibtex, \hyperpage{9}
 
   \indexspace
 {\bfseries C}\nopagebreak
 
   \item Captions, \hyperindexformat{\see{Legendas}}{ix}
-  \item CiteULike, \hyperpage{3}
   \item Código-fonte, \hyperindexformat{\see{Floats}}{ix}
 
   \indexspace
@@ -21,15 +19,9 @@
 {\bfseries F}\nopagebreak
 
   \item Figuras, \hyperindexformat{\see{Floats}}{ix}
-  \item Floats, \hyperpage{3}
+  \item Floats
     \subitem Algoritmo, \hyperindexformat{\see{Floats, Ordem}}{ix}
-  \item Formatação, \hyperpage{4}
   \item Fórmulas, \hyperindexformat{\see{Modo Matemático}}{ix}
-
-  \indexspace
-{\bfseries G}\nopagebreak
-
-  \item Google Scholar, \hyperpage{3, 4}
 
   \indexspace
 {\bfseries I}\nopagebreak
@@ -39,19 +31,12 @@
   \indexspace
 {\bfseries L}\nopagebreak
 
-  \item Legendas, \hyperpage{3}, \hyperpage{12}
-  \item Língua estrangeira, \hyperpage{3}
+  \item Legendas, \hyperpage{10}
 
   \indexspace
 {\bfseries M}\nopagebreak
 
-  \item Mendeley, \hyperpage{3}, \hyperpage{12}
-
-  \indexspace
-{\bfseries N}\nopagebreak
-
-  \item natbib, \hyperpage{2, 3}
-  \item Notas de rodapé, \hyperpage{2}
+  \item Mendeley, \hyperpage{10}
 
   \indexspace
 {\bfseries P}\nopagebreak
@@ -67,7 +52,6 @@
   \indexspace
 {\bfseries S}\nopagebreak
 
-  \item Scopus, \hyperpage{3}
   \item Subcaptions, \hyperindexformat{\see{Subfiguras}}{ix}
   \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{ix}
 
@@ -75,10 +59,6 @@
 {\bfseries T}\nopagebreak
 
   \item Tabelas, \hyperindexformat{\see{Floats}}{ix}
-  \item Tese/Dissertação
-    \subitem itens obrigatórios, \hyperpage{4}
-    \subitem itens opcionais, \hyperpage{4}
-    \subitem versões, \hyperpage{4}
 
   \indexspace
 {\bfseries V}\nopagebreak
@@ -89,13 +69,8 @@
 		\hyperindexformat{\see{Tese/Dissertação, versões}}{ix}
 
   \indexspace
-{\bfseries W}\nopagebreak
-
-  \item Web of Science, \hyperpage{3}
-
-  \indexspace
 {\bfseries Z}\nopagebreak
 
-  \item Zotero, \hyperpage{3}, \hyperpage{12}
+  \item Zotero, \hyperpage{10}
 
 \end{theindex}
