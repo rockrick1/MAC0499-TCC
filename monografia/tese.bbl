@@ -58,6 +58,34 @@
       \field{pages}{19}
       \range{pages}{1}
     \endentry
+    \entry{Zork:81}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e409eb2ba6eb6801f52763ae370c350e}{%
+           family={BYTE},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Perspectiva}%
+      }
+      \strng{namehash}{e409eb2ba6eb6801f52763ae370c350e}
+      \strng{fullhash}{e409eb2ba6eb6801f52763ae370c350e}
+      \strng{bibnamehash}{e409eb2ba6eb6801f52763ae370c350e}
+      \strng{authorbibnamehash}{e409eb2ba6eb6801f52763ae370c350e}
+      \strng{authornamehash}{e409eb2ba6eb6801f52763ae370c350e}
+      \strng{authorfullhash}{e409eb2ba6eb6801f52763ae370c350e}
+      \field{labelalpha}{BYT81}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{"Zork, The Great Underground Empire}
+      \field{year}{1981}
+      \field{pages}{262\bibrangedash 264}
+      \range{pages}{3}
+    \endentry
     \entry{VideoGameBusiness}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=efa9d2db698ca337cfffac8f41efacdd}{%
@@ -194,6 +222,74 @@
       \field{year}{2009}
       \field{pages}{13}
       \range{pages}{1}
+      \verb{urlraw}
+      \verb https://www.jesperjuul.net/text/fearoffailing/
+      \endverb
+      \verb{url}
+      \verb https://www.jesperjuul.net/text/fearoffailing/
+      \endverb
+    \endentry
+    \entry{GameTime}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fc565d484f6865a5b11bada002a18569}{%
+           family={Moran},
+           familyi={M\bibinitperiod},
+           given={Chuk},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fc565d484f6865a5b11bada002a18569}
+      \strng{fullhash}{fc565d484f6865a5b11bada002a18569}
+      \strng{bibnamehash}{fc565d484f6865a5b11bada002a18569}
+      \strng{authorbibnamehash}{fc565d484f6865a5b11bada002a18569}
+      \strng{authornamehash}{fc565d484f6865a5b11bada002a18569}
+      \strng{authorfullhash}{fc565d484f6865a5b11bada002a18569}
+      \field{labelalpha}{Mor10}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Playing with Game Time: Auto-Saves and Undoing Despite the ‘Magic Circle’}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb http://sixteen.fibreculturejournal.org/playing-with-game-time-auto-saves-and-undoing-despite-the-magic-circle/
+      \endverb
+      \verb{url}
+      \verb http://sixteen.fibreculturejournal.org/playing-with-game-time-auto-saves-and-undoing-despite-the-magic-circle/
+      \endverb
+    \endentry
+    \entry{Geemu}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ee9abe7b9febfea2bde3d86672b8129e}{%
+           family={Picard},
+           familyi={P\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \strng{fullhash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \strng{bibnamehash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \strng{authorbibnamehash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \strng{authornamehash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \strng{authorfullhash}{ee9abe7b9febfea2bde3d86672b8129e}
+      \field{labelalpha}{Pic13}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Foundation of Geemu: A Brief History of Early Japanese video games}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb http://www.gamestudies.org/1302/articles/picard
+      \endverb
+      \verb{url}
+      \verb http://www.gamestudies.org/1302/articles/picard
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

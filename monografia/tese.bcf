@@ -2355,7 +2355,10 @@
     <bcf:citekey order="3">VideoGameBusiness</bcf:citekey>
     <bcf:citekey order="4">DynamicDiffAdjustment</bcf:citekey>
     <bcf:citekey order="5">ArcadeGaming</bcf:citekey>
-    <bcf:citekey order="6">STG</bcf:citekey>
+    <bcf:citekey order="6">Zork:81</bcf:citekey>
+    <bcf:citekey order="7">GameTime</bcf:citekey>
+    <bcf:citekey order="8">STG</bcf:citekey>
+    <bcf:citekey order="9">Geemu</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
