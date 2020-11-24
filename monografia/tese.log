@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  23 NOV 2020 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  23 NOV 2020 22:19
 entering extended mode
 **d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
 (d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
@@ -2381,6 +2381,10 @@ LaTeX Warning: Reference `chap:exemplos' on page 16 undefined on input line 42.
 Package biblatex Warning: No driver for entry type 'forum'.
 (biblatex)                Using fallback driver on input line 312.
 
+
+Package biblatex Warning: No driver for entry type 'forum'.
+(biblatex)                Using fallback driver on input line 312.
+
 [17.33
 
 
@@ -2413,17 +2417,17 @@ Package logreq Info: Writing requests to 'tese.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59537 strings out of 479799
- 1281781 string characters out of 2881986
- 2173303 words of memory out of 3000000
- 74820 multiletter control sequences out of 15000+200000
- 813464 words of font info for 450 fonts, out of 3000000 for 9000
+ 59544 strings out of 479799
+ 1282022 string characters out of 2881986
+ 2173368 words of memory out of 3000000
+ 74823 multiletter control sequences out of 15000+200000
+ 813841 words of font info for 452 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
  103i,13n,138p,1365b,2606s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMR.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusSYM.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMI.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}<D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><D:/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb>
-Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (35 pages, 752353 bytes).
+Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (35 pages, 755199 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 483 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
  58129 words of extra memory for PDF output out of 61914 (max. 10000000)
 

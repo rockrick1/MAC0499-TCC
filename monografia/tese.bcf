@@ -2363,6 +2363,7 @@
     <bcf:citekey order="11">Touhou</bcf:citekey>
     <bcf:citekey order="12">Ikaruga</bcf:citekey>
     <bcf:citekey order="13">DynamicDiffAdjustment</bcf:citekey>
+    <bcf:citekey order="14">VideoGameJuice</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

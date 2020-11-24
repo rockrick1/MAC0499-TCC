@@ -229,6 +229,37 @@
       \verb https://www.jesperjuul.net/text/fearoffailing/
       \endverb
     \endentry
+    \entry{VideoGameJuice}{forum}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c8dd84290fc30454a1528926f6785171}{%
+           family={Lovato},
+           familyi={L\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c8dd84290fc30454a1528926f6785171}
+      \strng{fullhash}{c8dd84290fc30454a1528926f6785171}
+      \strng{bibnamehash}{c8dd84290fc30454a1528926f6785171}
+      \strng{authorbibnamehash}{c8dd84290fc30454a1528926f6785171}
+      \strng{authornamehash}{c8dd84290fc30454a1528926f6785171}
+      \strng{authorfullhash}{c8dd84290fc30454a1528926f6785171}
+      \field{labelalpha}{Lov15}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Squeezing more juice out of your game design!}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://gameanalytics.com/blog/squeezing-more-juice-out-of-your-game-design/
+      \endverb
+      \verb{url}
+      \verb https://gameanalytics.com/blog/squeezing-more-juice-out-of-your-game-design/
+      \endverb
+    \endentry
     \entry{Touhou}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=89a8f72652cab38554ee5b595b6ba07f}{%
