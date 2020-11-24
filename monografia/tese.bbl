@@ -229,6 +229,37 @@
       \verb https://www.jesperjuul.net/text/fearoffailing/
       \endverb
     \endentry
+    \entry{Touhou}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=89a8f72652cab38554ee5b595b6ba07f}{%
+           family={Loxely},
+           familyi={L\bibinitperiod},
+           given={Morgan},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{89a8f72652cab38554ee5b595b6ba07f}
+      \strng{fullhash}{89a8f72652cab38554ee5b595b6ba07f}
+      \strng{bibnamehash}{89a8f72652cab38554ee5b595b6ba07f}
+      \strng{authorbibnamehash}{89a8f72652cab38554ee5b595b6ba07f}
+      \strng{authornamehash}{89a8f72652cab38554ee5b595b6ba07f}
+      \strng{authorfullhash}{89a8f72652cab38554ee5b595b6ba07f}
+      \field{labelalpha}{Lox13}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{‘Touhou Project’ offers tough levels, hours of fun}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://www.eghsguardian.com/2010/entertainment/touhou-project-offers-tough-levels-hours-of-fun/
+      \endverb
+      \verb{url}
+      \verb https://www.eghsguardian.com/2010/entertainment/touhou-project-offers-tough-levels-hours-of-fun/
+      \endverb
+    \endentry
     \entry{GameTime}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=fc565d484f6865a5b11bada002a18569}{%
@@ -260,6 +291,34 @@
       \verb http://sixteen.fibreculturejournal.org/playing-with-game-time-auto-saves-and-undoing-despite-the-magic-circle/
       \endverb
     \endentry
+    \entry{DosNDontsShmups}{forum}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=66f3c66bd32b2074388b39fcab14a26c}{%
+           family={Nexic},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{66f3c66bd32b2074388b39fcab14a26c}
+      \strng{fullhash}{66f3c66bd32b2074388b39fcab14a26c}
+      \strng{bibnamehash}{66f3c66bd32b2074388b39fcab14a26c}
+      \strng{authorbibnamehash}{66f3c66bd32b2074388b39fcab14a26c}
+      \strng{authornamehash}{66f3c66bd32b2074388b39fcab14a26c}
+      \strng{authorfullhash}{66f3c66bd32b2074388b39fcab14a26c}
+      \field{labelalpha}{Nex06}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Do's and Don'ts of a Good Shmup}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://shmups.system11.org/viewtopic.php?t=7874
+      \endverb
+      \verb{url}
+      \verb https://shmups.system11.org/viewtopic.php?t=7874
+      \endverb
+    \endentry
     \entry{Geemu}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ee9abe7b9febfea2bde3d86672b8129e}{%
@@ -289,6 +348,42 @@
       \endverb
       \verb{url}
       \verb http://www.gamestudies.org/1302/articles/picard
+      \endverb
+    \endentry
+    \entry{Ikaruga}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=25a606884b58f380258cc865c3161060}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Tyrone},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IGN}%
+      }
+      \strng{namehash}{25a606884b58f380258cc865c3161060}
+      \strng{fullhash}{25a606884b58f380258cc865c3161060}
+      \strng{bibnamehash}{25a606884b58f380258cc865c3161060}
+      \strng{authorbibnamehash}{25a606884b58f380258cc865c3161060}
+      \strng{authornamehash}{25a606884b58f380258cc865c3161060}
+      \strng{authorfullhash}{25a606884b58f380258cc865c3161060}
+      \field{labelalpha}{Rod03}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{IKARUGA}
+      \field{year}{2003}
+      \field{pages}{2}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://web.archive.org/web/20160502211507/http://www.ign.com/articles/2003/04/09/ikaruga-3
+      \endverb
+      \verb{url}
+      \verb https://web.archive.org/web/20160502211507/http://www.ign.com/articles/2003/04/09/ikaruga-3
       \endverb
     \endentry
   \enddatalist

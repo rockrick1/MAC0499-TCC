@@ -1,76 +1,76 @@
 \begin{theindex}
 {\bfseries B}\nopagebreak
 
-  \item biblatex, \hyperpage{9}
-  \item bibtex, \hyperpage{9}
+  \item biblatex, \hyperpage{15}
+  \item bibtex, \hyperpage{15}
 
   \indexspace
 {\bfseries C}\nopagebreak
 
-  \item Captions, \hyperindexformat{\see{Legendas}}{ix}
-  \item Código-fonte, \hyperindexformat{\see{Floats}}{ix}
+  \item Captions, \hyperindexformat{\see{Legendas}}{x}
+  \item Código-fonte, \hyperindexformat{\see{Floats}}{x}
 
   \indexspace
 {\bfseries E}\nopagebreak
 
-  \item Equações, \hyperindexformat{\see{Modo Matemático}}{ix}
+  \item Equações, \hyperindexformat{\see{Modo Matemático}}{x}
 
   \indexspace
 {\bfseries F}\nopagebreak
 
-  \item Figuras, \hyperindexformat{\see{Floats}}{ix}
+  \item Figuras, \hyperindexformat{\see{Floats}}{x}
   \item Floats
-    \subitem Algoritmo, \hyperindexformat{\see{Floats, Ordem}}{ix}
-  \item Fórmulas, \hyperindexformat{\see{Modo Matemático}}{ix}
+    \subitem Algoritmo, \hyperindexformat{\see{Floats, Ordem}}{x}
+  \item Fórmulas, \hyperindexformat{\see{Modo Matemático}}{x}
 
   \indexspace
 {\bfseries I}\nopagebreak
 
-  \item Inglês, \hyperindexformat{\see{Língua estrangeira}}{ix}
+  \item Inglês, \hyperindexformat{\see{Língua estrangeira}}{x}
 
   \indexspace
 {\bfseries L}\nopagebreak
 
-  \item Legendas, \hyperpage{10}
+  \item Legendas, \hyperpage{16}
 
   \indexspace
 {\bfseries M}\nopagebreak
 
-  \item Mendeley, \hyperpage{10}
+  \item Mendeley, \hyperpage{16}
 
   \indexspace
 {\bfseries P}\nopagebreak
 
   \item Palavras estrangeiras, 
-		\hyperindexformat{\see{Língua estrangeira}}{ix}
+		\hyperindexformat{\see{Língua estrangeira}}{x}
 
   \indexspace
 {\bfseries R}\nopagebreak
 
-  \item Rodapé, notas, \hyperindexformat{\see{Notas de rodapé}}{ix}
+  \item Rodapé, notas, \hyperindexformat{\see{Notas de rodapé}}{x}
 
   \indexspace
 {\bfseries S}\nopagebreak
 
-  \item Subcaptions, \hyperindexformat{\see{Subfiguras}}{ix}
-  \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{ix}
+  \item Subcaptions, \hyperindexformat{\see{Subfiguras}}{x}
+  \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{x}
 
   \indexspace
 {\bfseries T}\nopagebreak
 
-  \item Tabelas, \hyperindexformat{\see{Floats}}{ix}
+  \item Tabelas, \hyperindexformat{\see{Floats}}{x}
 
   \indexspace
 {\bfseries V}\nopagebreak
 
   \item Versão corrigida, 
-		\hyperindexformat{\see{Tese/Dissertação, versões}}{ix}
+		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
   \item Versão original, 
-		\hyperindexformat{\see{Tese/Dissertação, versões}}{ix}
+		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
 
   \indexspace
 {\bfseries Z}\nopagebreak
 
-  \item Zotero, \hyperpage{10}
+  \item Zotero, \hyperpage{16}
 
 \end{theindex}

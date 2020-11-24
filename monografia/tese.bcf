@@ -2358,7 +2358,11 @@
     <bcf:citekey order="6">Zork:81</bcf:citekey>
     <bcf:citekey order="7">GameTime</bcf:citekey>
     <bcf:citekey order="8">STG</bcf:citekey>
-    <bcf:citekey order="9">Geemu</bcf:citekey>
+    <bcf:citekey order="9">DosNDontsShmups</bcf:citekey>
+    <bcf:citekey order="10">Geemu</bcf:citekey>
+    <bcf:citekey order="11">Touhou</bcf:citekey>
+    <bcf:citekey order="12">Ikaruga</bcf:citekey>
+    <bcf:citekey order="13">DynamicDiffAdjustment</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
