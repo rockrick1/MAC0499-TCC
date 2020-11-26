@@ -3,11 +3,11 @@
 % para saber mais: https://tex.stackexchange.com/q/78101/183146
 
 %% ------------------------------------------------------------------------- %%
-\chapter{Processo de Desenvolvimento}
+\chapter{Decisões de \textit{Design}}
 \label{cap:processo de desenvolvimento}
 \section{Ideias Iniciais}
 
-Inicialmente, foram avaliadas possibilidades de gêneros diversas para o jogo. Artigos como o de~\citet{DynamicDiffAdjustment} mostra as vantagens de uma abordagem baseada em colocar o jogador em uma situação onde enfrenta diversos inimigos, em oposição a um jogo de luta, onde ele poderia enfrentar apenas um, ou jogos de quebra-cabeça, onde normalmente não existem inimigos. Para isso, foi desenvolvido um pequeno protótipo no estilo \textit{top-down}\footnote{
+Inicialmente, foram avaliadas diversas possibilidades de gêneros para o jogo. O Artigo de~\citet{DynamicDiffAdjustment} mostra as vantagens de uma abordagem baseada em colocar o jogador em uma situação onde enfrenta diversos inimigos, em oposição a um jogo de luta, onde ele poderia enfrentar apenas um, ou jogos de quebra-cabeça, onde normalmente não existem inimigos. Para isso, foi desenvolvido um pequeno protótipo no estilo \textit{top-down}\footnote{
     Jogos definidos pelo ângulo de visão do jogo, vendo o personagem por cima, em oposição à visão pelos lados, usada em jogos como \textit{Super Mario Bros}.
 }, onde o personagem principal podia atirar em qualquer direção usando uma gama de armas selecináveis, em uma \textit{arena}. Isso é, ele se encontrava em uma fase fechada, com apenas algumas portas localizadas nos cantos, de onde os inimigos surgiam em ondas. Os inimigos então se direcionavam ao personagem, causando dano caso entrassem em contato com ele. Inimigos de tipos diferentes também foram desenvolvidos, como um personagem que se aproximava do jogador, e quando dentro de uma certa distância dele, atirava projéteis em sua direção.
 
@@ -15,7 +15,7 @@ Conforme estes tipos diferentes ameaças eram introduzidas, a ideia para o cálc
 
 Com isso, a exploração de outro gênero tornou-se um caminho mais apropriado para os objetivos deste estudo. A simplicidade dos \textit{Shmups}, quando comparados aos jogos de \textit{Arena} em qualquer estilo, provou facilitar consideravelmente esta interpretação de ações do jogador para formação da métrica de dificuldade. Não se limitando a isso, porém, foi possível também generalizar o modelo dos inimigos de forma que, lendo essa métrica gerada, entre outras variáveis, o nível do inimigo se adapta em tempo real, tanto quando a dificuldade é aumentada, quanto diminuída.
 
-\section{Decisões de \textit{Design}}
+\section{\textit{Design} do Protótipo}
 
 Em um cenário de desenvolvimento de jogos, é necessário definir firmemente os conceitos fundamentais do jogo, não apenas de um ponto de vista de \textit{design}, pensando nos objetivos do jogo, quais mecânicas serão implementadas, mas também de um ponto de vista técnico, dessa vez pensando em que ferramentas utilizar e tipos de arquitetura de jogos para usar como base. Esta seção será dedicada a essas especificações funcionais e técnicas do jogo.
 
@@ -29,11 +29,11 @@ falar mais aqui talvez?
 
 \subsection{Progressão e Ondas}
 
-Ao iniciar um \textit{Novo Jogo}, o jogador depara-se com a tela de seleção de personagens (naves) mecionada anteriormente. Ao escolher entre uma das naves, uma tela contendo apenas a nave escolhida, o fundo temático do espaço sideral e indicadores da quantidade de vidas e de bombas do jogador é apresentada na sequência. O jogador pode se mover livremente dentro das delimitações laterais da tela e atirar sem se preocupar com sua munição. Após alguns segundos, os primeiros inimigos aparecerão pelo canto superior da tela. Estes fazem parte da primeira onda de inimigos. Os inimigos então começarão a disparar projéteis, diretamente em direção à nave principal ou não, de maneiras pré programadas. Cada inimigo permanece um tempo determinado na tela antes de ser arrastado para sua lateral mais próxima e \textit{despawnando}\footnote{
+Ao iniciar um \textit{Novo Jogo}, o jogador depara-se com a tela de seleção de personagens (naves) mecionada anteriormente. Ao escolher entre uma das naves, uma tela contendo apenas a nave escolhida, o fundo temático do espaço sideral e indicadores da quantidade de vidas e de bombas do jogador é apresentada na sequência. O jogador pode se mover livremente dentro das delimitações laterais da tela e atirar sem se preocupar com sua munição. Após alguns segundos, os primeiros inimigos aparecerão pelo canto superior da tela. Estes fazem parte da primeira onda de inimigos. Os inimigos então começarão a disparar projéteis, em direção à nave principal ou não, de maneiras pré programadas. Cada inimigo permanece um tempo determinado na tela antes de ser arrastado para sua lateral mais próxima e \textit{despawnando}\footnote{
     Em oposição ao \textit{spawn}, que significa o \textit{inserir} de uma entidade no estado atual do jogo, o \textit{despawn} é quando uma entidade é liberada e deletada da cena atual do jogo.
 }, caso não seja derrotado pelo jogador antes. Quando todos os inimigos de uma \textit{onda} são derrotados ou \textit{despawnados}, é iniciada a onda seguinte de inimigos, podendo conter inimigos mais fortes, mais fracos, em maior ou menor quantidade, parâmetro a ser definido no banco de dados do jogo.
 
-Ao chegar na última onda de inimigos, o jogador é apresentado ao chefe principal da fase. O chefe possui uma quantidade considerável a mais de pontos de vida, tornando mais difícil de matar, assim como ataques bastante distintos dos de inimigos comuns, e também em maior variedade. O chefe também pode se movimentar uniformemente pelo topo da fase, de forma a forçar o deslocamento do jogador caso este esteja focando seu posicionamento em um único ponto. Podem também haver \textit{sub-chefes} ou \textit{mini-chefes} antes da onda final da fase, estes proporcionando uma batalha similar à com o chefe final, porém em uma dificuldade levemente menos elevada. Ao derrotar o chefe final, a fase atual acaba e o jogador vence o jogo após ser parabenizado.
+Ao chegar na última onda de inimigos, o jogador é apresentado ao chefe principal da fase. O chefe possui uma quantidade considerável a mais de pontos de vida, tornando mais difícil de matar, assim como ataques bastante distintos dos de inimigos comuns, e também em maior variedade. O chefe também pode se movimentar uniformemente pelo topo da fase, de forma a forçar o deslocamento do jogador caso este esteja focando seu posicionamento em um único ponto. Podem também haver \textit{sub-chefes} ou \textit{mini-chefes} antes da onda final da fase, estes proporcionando uma batalha similar à com o chefe final, porém em uma dificuldade levemente inferior. Ao derrotar o chefe final, a fase atual acaba e o jogador vence o jogo após ser parabenizado.
 
 \subsection{Poderes Especiais}
 
@@ -53,11 +53,25 @@ Por último, foi implementada uma habilidade muito comumente encontrada em \text
 
 \subsection{Visuais e Sons}
 
-Indicadores visuais e/ou sonoros provam-se convenientes ao permitir que o jogo expresse eventos que, de outra forma, não seriam notados pelo jogador. Eventos como 
+Indicadores visuais e/ou sonoros provam-se convenientes ao permitir que o jogo expresse eventos que, de outra forma, não seriam notados pelo jogador. O artigo de~\citet{VideoGameJuice} apresenta boa parte dos conceitos básicos de \textit{expressão} em jogos e como o uso de certas técnicas consegue separar um simples protótipo de um jogo completo. A mais importante delas, o \textit{tweening}, ou \textit{inbetweening}, é uma técnica de interpolação de valores utilizada constantemente em jogos. Quando se trata de animar movimentos, usar uma interpolação não linear pode ser a chave para um resultado natural, uma vez que praticamente nada no mundo real se move ou se comporta de forma totalmente linear, como citado por~\citet{VideoGameJuice}
 
-\citep{VideoGameJuice} ler isso depois
+\begin{figure}
+    \centering
+
+    \begin{subfigure}{.9\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{easeing}
+    \end{subfigure}
+
+    \caption{Funções comumente usadas em interpolações de valores\label{fig:subfigures} (Imagem retirada do artigo de~\cite{VideoGameJuice})}
+\end{figure}
+
+O uso de \textit{tweens} se torna extremamente aparente quando utilizamos funções quadráticas, cúbicas, senoidais ou até mesmo elásticas para realizarmos a interpolação. Este efeito pode ser visto, por exemplo, no uso da bomba. Quando uma bomba é utilizada, uma circunferência (efeito da explosão) envolvendo a nave é rapidamente desenhada, tendo seu raio aumentado através de um \textit{tween} baseado em uma função cúbica. Após algumas frações de segundos, o raio da circunferência passa a ser aumentado em uma taxa consideravelmente menor, até finalmente parar e desaparecer, passando assim a imagem de uma explosão para o jogador.
+
+Já não dependendo tanto dos \textit{tweens}, alguns dos \textit{sprites} de balas utilizados no jogos possuem um formato similar a de um losango achatado, com o intuito de clareza quanto à direção em que a bala se move. Balas circulares, por outro lado, podem deixar o entendimento de sua direção mais difícil para o jogador, e por conta disso são utilizadas mais frequentemente por chefes e sub-chefes.
+
+Não se limitando aos visuais, a expressividade do jogo depende também de como os efeitos sonoros são utilizados. Eventos como \textit{ganhar uma vida} e \textit{ganhar uma bomba} são convenientemente demonstrados através de um efeito sonoro curto, distintos entre si, podendo também ser acompanhados de um pequeno indicador visual acima da nave. Neste caso, o \textit{tweening} também se mostra conveniente para suavizar a animação do texto (algo como \textit{Life up!} ou \textit{Bomb get!}) para cima e tornar o evento menos engessado.
 
 indicadores de qualquer coisa, mencionar a dificuldade depois só
 
-inimigos diferentes, balas maiores, sons e musica?? ofuck
-
+Variações em tempo real dos visuais gerais do jogo podem se mostrar úteis para indicação 

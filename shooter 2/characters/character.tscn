@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "Bomb"
 length = 1.3
 tracks/0/type = "value"
@@ -93,7 +93,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 0.267943, 1 ),
+"transitions": PoolRealArray( 0.3, 1 ),
 "update": 0,
 "values": [ Vector2( 0.001, 0.001 ), Vector2( 3.5, 3.5 ) ]
 }
@@ -122,10 +122,10 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=10]
 radius = 1.41729
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
@@ -139,7 +139,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
@@ -153,7 +153,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -181,7 +181,7 @@ DEATH_PENALTY = 1.5
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Blink" type="AnimationPlayer" parent="Sprite"]
@@ -199,16 +199,14 @@ texture = ExtResource( 3 )
 anims/Shooting = SubResource( 8 )
 
 [node name="BombEffect" type="Sprite" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 3.5, 3.5 )
+scale = Vector2( 0.001, 0.001 )
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BombEffect"]
-anims/Bomb = SubResource( 13 )
+anims/Bomb = SubResource( 9 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Hitbox"]
 modulate = Color( 1, 1, 1, 0 )
@@ -216,8 +214,8 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hitbox"]
-anims/HideHitbox = SubResource( 10 )
-anims/ShowHitbox = SubResource( 11 )
+anims/HideHitbox = SubResource( 11 )
+anims/ShowHitbox = SubResource( 12 )
 
 [node name="Center" type="Node2D" parent="."]
 
@@ -252,7 +250,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 12 )
+anims/death = SubResource( 13 )
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]
 [connection signal="timeout" from="DiffUpdate" to="." method="_on_DiffUpdate_timeout"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_Invincibility_timeout"]

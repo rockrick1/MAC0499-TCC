@@ -5,5 +5,25 @@
 %% ------------------------------------------------------------------------- %%
 \chapter{Plataforma de Desenvolvimento}
 \label{cap:plataforma de desenvolvimento}
-\section{Ideias Iniciais}
+\section{Estrutura Básica}
 
+Quando se trata de desenvolvimento de jogos, o conceito de programação não pode se limitar aos tipos de programa \textquotedbl{\textit{batch mode}}\textquotedbl{}, isso é, programas que são executados em apenas duas etapas: o programador executa o programa; o programa devolve um resultado~\citep{IAEmTowerDefense}. Esse modelo é frequentemente usado, ainda mesmo nos dias atuais, para processamento de grandes volumes de dados, suportar reprodutibilidade, flexibilidade em termos de momento de execução, e geração de logs detalhados, entre outros cenários~\citep{BatchProgramming}.
+
+Os programas interativos, por sua vez, compõem a estrutura dos jogos digitais como conhecidos atualmente. Este modelo, por sua vez, se resume ao pequeno bloco de código a seguir.
+
+\begin{program}
+    \lstinputlisting[
+      language=pseudocode,
+      style=pseudocode,
+      style=wider,
+      functions={},
+      specialidentifiers={},
+    ]
+    {conteudo/gameloop.py}
+  
+    \caption{Game Loop\label{prog:gameloop}}
+\end{program}
+
+Essa estrutura é conhecida como \textit{Game Loop}~\citep{GameProgramming}. O jogo primeiramente processa o input recebido pelo usuário, atualiza as variáveis do jogo de acordo e, finalmente, desenha os resultados na tela. Este pequeno trecho de código é projetado para ser executado, idealmente, um total de 60 vezes por segundo, em intervalos de tempos iguais, gerando a denominada \textit{frame}\footnote{
+    Um \textquotedbl{quadro}\textquotedbl{} do jogo. A rápida sequência de quadros gerados pelo \textit{game loop} resulta na animação geral do jogo.
+}. Com isso, cada \textit{frame} do jogo será apresentada apenas durante aproximadamente 0.016 segundos até ser substituída pela próxima pelo código do \textit{Game Loop}.

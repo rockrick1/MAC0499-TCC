@@ -7,19 +7,19 @@
 \contentsline {section}{\numberline {2.1}Arcades e Consoles}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Cenário Atual}{4}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Gênero Escolhido}{5}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Processo de Desenvolvimento}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Decisões de \textit {Design}}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Ideias Iniciais}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Decisões de \textit {Design}}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.2}\textit {Design} do Protótipo}{8}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Estrutura Geral}{8}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Progressão e Ondas}{8}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Poderes Especiais}{9}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Visuais e Sons}{10}{subsection.3.2.4}%
-\contentsline {chapter}{\numberline {4}Plataforma de Desenvolvimento}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Ideias Iniciais}{11}{section.4.1}%
+\contentsline {chapter}{\numberline {4}Plataforma de Desenvolvimento}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estrutura Básica}{13}{section.4.1}%
 \protect \appendixTOCLine 
-\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{13}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{15}{appendix.A}%
 \protect \annexTOCLine 
-\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{15}{annex.A}%
+\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{17}{annex.A}%
 \vspace {2\baselineskip plus .5\baselineskip minus .5\baselineskip }
-\contentsline {chapter}{Refer\^encias}{17}{annex*.7}%
-\contentsline {chapter}{\'Indice Remissivo}{19}{section*.8}%
+\contentsline {chapter}{Refer\^encias}{19}{annex*.9}%
+\contentsline {chapter}{\'Indice Remissivo}{21}{section*.10}%
