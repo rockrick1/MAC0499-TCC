@@ -16,10 +16,13 @@
 \contentsline {subsection}{\numberline {3.2.4}Visuais e Sons}{10}{subsection.3.2.4}%
 \contentsline {chapter}{\numberline {4}Plataforma de Desenvolvimento}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Estrutura Básica}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Sobre a Godot Engine}{14}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Nós}{14}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Cenas}{15}{subsection.4.2.2}%
 \protect \appendixTOCLine 
-\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{15}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{17}{appendix.A}%
 \protect \annexTOCLine 
-\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{17}{annex.A}%
+\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{19}{annex.A}%
 \vspace {2\baselineskip plus .5\baselineskip minus .5\baselineskip }
-\contentsline {chapter}{Refer\^encias}{19}{annex*.9}%
-\contentsline {chapter}{\'Indice Remissivo}{21}{section*.10}%
+\contentsline {chapter}{Refer\^encias}{21}{annex*.11}%
+\contentsline {chapter}{\'Indice Remissivo}{23}{section*.12}%

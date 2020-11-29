@@ -21,7 +21,7 @@ Em um cenário de desenvolvimento de jogos, é necessário definir firmemente os
 
 \subsection{Estrutura Geral}
 
-Para entendimento da estrutura geral do jogo, utiliza-se a metodologia de \textit{cenas}. Uma cena pode ser interpretada de formas diferentes dentro do jogo. Uma boa maneira de se visualizá-las é pensando em um \textquotedbl{estado de jogo}\textquotedbl{}. Por exemplo, o \textit{menu} principal do jogo terá uma cena dedicada apenas a ele, assim como o local onde o jogo se passa, neste caso, no espaço, também está separado em uma cena específica. Os tipos diferentes de cenas e suas funcionalidades serão aprofundadas em um capitulo mais adiante.
+Para entendimento da estrutura geral do jogo, utiliza-se a metodologia de \textit{cenas}\label{Cenas}. Uma cena pode ser interpretada de formas diferentes dentro do jogo. Uma boa maneira de se visualizá-las é pensando em um \textquotedbl{estado de jogo}\textquotedbl{}. Por exemplo, o \textit{menu} principal do jogo terá uma cena dedicada apenas a ele, assim como o local onde o jogo se passa, neste caso, no espaço, também está separado em uma cena específica. Os tipos diferentes de cenas e suas funcionalidades serão aprofundadas em um capitulo mais adiante.
 
 O menu principal do jogo possui as opções de \textit{Novo Jogo}, iniciando assim um jogo no modo padrão, logo após uma tela de seleção de personagens; \textit{Tutorial}, colocando o jogador em uma fase guiada por instruções de como jogar, quais botões utilizar e explicando todas as mecânicas implementadas que o jogador precisa saber; \textit{Demo}, levando-o a uma demonstração de que tipos de padrões de tiros os inimigos podem gerar, o qual será aprofundado em um capitulo futuro também; e por fim, \textit{Sair}, que fecha o jogo.
 
@@ -53,7 +53,7 @@ Por último, foi implementada uma habilidade muito comumente encontrada em \text
 
 \subsection{Visuais e Sons}
 
-Indicadores visuais e/ou sonoros provam-se convenientes ao permitir que o jogo expresse eventos que, de outra forma, não seriam notados pelo jogador. O artigo de~\citet{VideoGameJuice} apresenta boa parte dos conceitos básicos de \textit{expressão} em jogos e como o uso de certas técnicas consegue separar um simples protótipo de um jogo completo. A mais importante delas, o \textit{tweening}, ou \textit{inbetweening}, é uma técnica de interpolação de valores utilizada constantemente em jogos. Quando se trata de animar movimentos, usar uma interpolação não linear pode ser a chave para um resultado natural, uma vez que praticamente nada no mundo real se move ou se comporta de forma totalmente linear, como citado por~\citet{VideoGameJuice}
+Indicadores visuais e/ou sonoros provam-se convenientes ao permitir que o jogo expresse eventos que, de outra forma, não seriam notados pelo jogador. O artigo de~\citet{VideoGameJuice} apresenta boa parte dos conceitos básicos de \textit{expressão} em jogos e como o uso de certas técnicas consegue separar um simples protótipo de um jogo completo. A mais importante delas, o \textit{tweening}, ou \textit{inbetweening}, é uma técnica de interpolação de valores utilizada constantemente em jogos. Quando se trata de animar movimentos, usar uma interpolação não linear pode ser a chave para um resultado natural, uma vez que praticamente nada no mundo real se move ou se comporta de forma totalmente linear, como citado por~\cite{VideoGameJuice}.
 
 \begin{figure}
     \centering
@@ -72,6 +72,6 @@ Já não dependendo tanto dos \textit{tweens}, alguns dos \textit{sprites} de ba
 
 Não se limitando aos visuais, a expressividade do jogo depende também de como os efeitos sonoros são utilizados. Eventos como \textit{ganhar uma vida} e \textit{ganhar uma bomba} são convenientemente demonstrados através de um efeito sonoro curto, distintos entre si, podendo também ser acompanhados de um pequeno indicador visual acima da nave. Neste caso, o \textit{tweening} também se mostra conveniente para suavizar a animação do texto (algo como \textit{Life up!} ou \textit{Bomb get!}) para cima e tornar o evento menos engessado.
 
-indicadores de qualquer coisa, mencionar a dificuldade depois só
+% indicadores de qualquer coisa, mencionar a dificuldade depois só
 
-Variações em tempo real dos visuais gerais do jogo podem se mostrar úteis para indicação 
+% Variações em tempo real dos visuais gerais do jogo podem se mostrar úteis para indicação 

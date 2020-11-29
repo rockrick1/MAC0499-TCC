@@ -94,24 +94,36 @@ __meta__ = {
 
 [node name="Stars" type="Node2D" parent="Background"]
 modulate = Color( 1, 1, 1, 0.545098 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StarsN" type="Particles2D" parent="Background/Stars"]
 position = Vector2( 256, 0 )
 amount = 20
 lifetime = 5.0
 process_material = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StarsF" type="Particles2D" parent="Background/Stars"]
 position = Vector2( 256, 0 )
 amount = 20
 lifetime = 5.0
 process_material = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StarsS" type="Particles2D" parent="Background/Stars"]
 position = Vector2( 256, 0 )
 amount = 40
 lifetime = 5.0
 process_material = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 
