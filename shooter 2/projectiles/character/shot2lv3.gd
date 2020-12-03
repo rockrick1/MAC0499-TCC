@@ -1,8 +1,6 @@
 extends "../base_shot.gd"
 
 
-
-
 func _ready():
 	$Projectile4.rotate(-.06)
 	$Projectile4.direction = $Projectile4.direction.rotated(-.06)

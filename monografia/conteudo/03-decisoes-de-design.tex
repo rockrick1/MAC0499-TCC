@@ -27,7 +27,7 @@ O menu principal do jogo possui as opções de \textit{Novo Jogo}, iniciando ass
 
 falar mais aqui talvez?
 
-\subsection{Progressão e Ondas}
+\subsection{Progressão e Ondas}\label{ONDASNOMAR}
 
 Ao iniciar um \textit{Novo Jogo}, o jogador depara-se com a tela de seleção de personagens (naves) mecionada anteriormente. Ao escolher entre uma das naves, uma tela contendo apenas a nave escolhida, o fundo temático do espaço sideral e indicadores da quantidade de vidas e de bombas do jogador é apresentada na sequência. O jogador pode se mover livremente dentro das delimitações laterais da tela e atirar sem se preocupar com sua munição. Após alguns segundos, os primeiros inimigos aparecerão pelo canto superior da tela. Estes fazem parte da primeira onda de inimigos. Os inimigos então começarão a disparar projéteis, em direção à nave principal ou não, de maneiras pré programadas. Cada inimigo permanece um tempo determinado na tela antes de ser arrastado para sua lateral mais próxima e \textit{despawnando}\footnote{
     Em oposição ao \textit{spawn}, que significa o \textit{inserir} de uma entidade no estado atual do jogo, o \textit{despawn} é quando uma entidade é liberada e deletada da cena atual do jogo.
@@ -63,7 +63,7 @@ Indicadores visuais e/ou sonoros provam-se convenientes ao permitir que o jogo e
         \includegraphics[width=1\textwidth]{easeing}
     \end{subfigure}
 
-    \caption{Funções comumente usadas em interpolações de valores\label{fig:subfigures} (Imagem retirada do artigo de~\cite{VideoGameJuice})}
+    \caption{Funções comumente usadas em interpolações de valores\label{fig:subfigures} (Imagem retirada do artigo de~\cite{VideoGameJuice}).}
 \end{figure}
 
 O uso de \textit{tweens} se torna extremamente aparente quando utilizamos funções quadráticas, cúbicas, senoidais ou até mesmo elásticas para realizarmos a interpolação. Este efeito pode ser visto, por exemplo, no uso da bomba. Quando uma bomba é utilizada, uma circunferência (efeito da explosão) envolvendo a nave é rapidamente desenhada, tendo seu raio aumentado através de um \textit{tween} baseado em uma função cúbica. Após algumas frações de segundos, o raio da circunferência passa a ser aumentado em uma taxa consideravelmente menor, até finalmente parar e desaparecer, passando assim a imagem de uma explosão para o jogador.

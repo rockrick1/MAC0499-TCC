@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  29 NOV 2020 02:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  2 DEC 2020 20:49
 entering extended mode
 **d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
 (d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
@@ -2219,7 +2219,7 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 37.
 [8.24] [9.25]
-<figuras//easeing.png, id=334, 764.8575pt x 384.43625pt>
+<figuras//easeing.png, id=381, 764.8575pt x 384.43625pt>
 File: figuras//easeing.png Graphic file (type png)
 <use figuras//easeing.png>
 Package pdftex.def Info: figuras//easeing.png  used on input line 63.
@@ -2257,18 +2257,40 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSerif-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figuras//tiposDeNos.png, id=379, 532.23843pt x 340.27126pt>
+<figuras//tiposDeNos.png, id=426, 532.23843pt x 340.27126pt>
 File: figuras//tiposDeNos.png Graphic file (type png)
 <use figuras//tiposDeNos.png>
 Package pdftex.def Info: figuras//tiposDeNos.png  used on input line 63.
 (pdftex.def)             Requested size: 389.23105pt x 248.84766pt.
 [14.30]
-<figuras//arvoreDeNos.png, id=387, 198.7425pt x 277.78781pt>
+<figuras//arvoreDeNos.png, id=434, 198.7425pt x 277.78781pt>
 File: figuras//arvoreDeNos.png Graphic file (type png)
 <use figuras//arvoreDeNos.png>
 Package pdftex.def Info: figuras//arvoreDeNos.png  used on input line 78.
 (pdftex.def)             Requested size: 172.99011pt x 241.80058pt.
-)) [15.31 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//tiposDeNos.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//arvoreDeNos.png>] [16.32
+[15.31 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//tiposDeNos.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//arvoreDeNos.png>]
+<figuras//playerGroup.png, id=444, 230.36063pt x 179.16937pt>
+File: figuras//playerGroup.png Graphic file (type png)
+<use figuras//playerGroup.png>
+Package pdftex.def Info: figuras//playerGroup.png  used on input line 111.
+(pdftex.def)             Requested size: 155.69003pt x 121.08994pt.
+<figuras//playerCollidable.png, id=445, 231.11343pt x 176.15813pt>
+File: figuras//playerCollidable.png Graphic file (type png)
+<use figuras//playerCollidable.png>
+Package pdftex.def Info: figuras//playerCollidable.png  used on input line 120.
+(pdftex.def)             Requested size: 155.69003pt x 118.67043pt.
+[16.32]
+
+LaTeX Warning: Reference `prog:main_nodes_getter' on page 17 undefined on input line 135.
+
+
+LaTeX Warning: Reference `prog:db_manager' on page 17 undefined on input line 151.
+
+[17.33 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerGroup.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerCollidable.png>]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/05-balanceamento.tex [18.34]
+Cap\'{\i }tulo 5.
+)) [19.35
+
+] [20.36
 
 ] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/apendices.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/apendice-pseudocodigo.tex
 Ap\^endice A.
@@ -2283,7 +2305,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-LaTeX Warning: Reference `prog:java' on page 17 undefined on input line 9.
+LaTeX Warning: Reference `prog:java' on page 21 undefined on input line 9.
 
 (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/euclid.psc
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/sc' will be
@@ -2318,7 +2340,7 @@ Overfull \hbox (35.0pt too wide) in paragraph at lines 57--57
 [] 
  []
 
-[17.33
+[21.37
 
 ]
 Underfull \hbox (badness 1521) in paragraph at lines 114--119
@@ -2330,7 +2352,7 @@ Underfull \hbox (badness 4886) in paragraph at lines 114--119
 \T1/LibertinusSerif-TLF/m/n/12 (+20) ``\T1/LibertinusSans-TLF/m/n/12 (+20) specialidentifiers\T1/LibertinusSerif-TLF/m/n/12 (+20) ''. Você pode usá-los com \T1/LibertinusSans-TLF/m/n/12 (+20) \spe-ci-a-lid{blah}\T1/LibertinusSerif-TLF/m/n/12 (+20) , com a op-ção
  []
 
-)) [18.34] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/anexos.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/anexo-faq.tex
+)) [22.38] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/anexos.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/anexo-faq.tex
 Anexo A.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
 (Font)              scaled to size 24.88pt on input line 7.
@@ -2385,24 +2407,24 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 10.20007pt on input line 15.
 
-LaTeX Warning: Reference `sec:limitations' on page 19 undefined on input line 18.
+LaTeX Warning: Reference `sec:limitations' on page 23 undefined on input line 18.
 
 
-LaTeX Warning: Reference `sec:limitations' on page 19 undefined on input line 21.
+LaTeX Warning: Reference `sec:limitations' on page 23 undefined on input line 21.
 
-[19.35
+[23.39
 
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 35.
 
-LaTeX Warning: Reference `chap:tutorial' on page 20 undefined on input line 42.
+LaTeX Warning: Reference `chap:tutorial' on page 24 undefined on input line 42.
 
 
-LaTeX Warning: Reference `chap:exemplos' on page 20 undefined on input line 42.
+LaTeX Warning: Reference `chap:exemplos' on page 24 undefined on input line 42.
 
-)) [20.36] [21.37
+)) [24.40] [25.41
 
 
 ]
@@ -2410,7 +2432,7 @@ LaTeX Warning: Reference `chap:exemplos' on page 20 undefined on input line 42.
 Package biblatex Warning: No driver for entry type 'forum'.
 (biblatex)                Using fallback driver on input line 312.
 
-[22.38] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.ind) (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-portuguese-brazil.tex
+[26.42] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.ind) (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-portuguese-brazil.tex
 Package babel Info: Importing font and identification data for brazilian
 (babel)             from babel-pt-BR.ini. Reported on input line 11.
 )) (D:\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
@@ -2420,7 +2442,7 @@ Package babel Info: Importing font and identification data for english
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (D:\Programs\MiKTeX\tex/generic/stringenc\se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [23.39
+) [27.43
 
 
 ]
@@ -2430,31 +2452,26 @@ Package imakeidx Warning: Remember to run (pdf)latex again after calling
 
 (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.aux)
 Package rerunfilecheck Info: File `tese.out' has not changed.
-(rerunfilecheck)             Checksum: 16FFEDDC0B984F0FA9486420E82BCD3F;3247.
+(rerunfilecheck)             Checksum: E4EF372726111C603998FD9DA9873F0E;4531.
 
 LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                tese
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'tese.run.xml'.
 \openout1 = `tese.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59689 strings out of 479799
- 1285763 string characters out of 2881986
- 2173840 words of memory out of 3000000
- 74890 multiletter control sequences out of 15000+200000
- 832485 words of font info for 484 fonts, out of 3000000 for 9000
+ 59752 strings out of 479799
+ 1287171 string characters out of 2881986
+ 2173998 words of memory out of 3000000
+ 74922 multiletter control sequences out of 15000+200000
+ 833616 words of font info for 490 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
  103i,13n,138p,1365b,3136s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMR.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusSYM.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMI.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}<D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><D:/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb>
-Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (39 pages, 847959 bytes).
+Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (43 pages, 887279 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 126 named destinations out of 1000 (max. 500000)
- 63288 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 654 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 63370 words of extra memory for PDF output out of 74296 (max. 10000000)
 
