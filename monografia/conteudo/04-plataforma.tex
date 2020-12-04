@@ -12,13 +12,7 @@ Quando se trata de desenvolvimento de jogos, o conceito de programação não po
 Os programas interativos, por sua vez, compõem a estrutura dos jogos digitais como conhecidos atualmente. Este modelo, por sua vez, se resume ao pequeno bloco de código a seguir.
 
 \begin{program}
-    \lstinputlisting[
-      language=pseudocode,
-      style=pseudocode,
-      style=wider,
-      functions={},
-      specialidentifiers={},
-    ]
+    \lstinputlisting[language=Python, style=wider]
     {conteudo/gameloop.py}
   
     \caption{Game Loop\label{prog:gameloop}.}
@@ -87,7 +81,7 @@ Ao executar o jogo, significa que uma cena é executada. É possível executar a
 
 \subsection{Instanciação}
 
-Ao estruturar uma cena, esta pode ser tratada como uma classe e ser instanciada como um objeto para fazer parte da hierarquia de qualqer outra cena, assim como nós simples. Isso provou-se extremamente útil no desenvolvimento do protótipo em questão para, por exemplo, geração de projéteis. Com o alto número de projéteis ativos em \textit{Shmups} no geral, basta definir um projétil simples e instanciá-lo diversas vezes na posição do personagem ou do inimigo para gerar um cenário simples de combate.
+Ao estruturar uma cena, esta pode ser tratada como uma classe e ser instanciada como um objeto para fazer parte da hierarquia de qualquer outra cena, assim como nós simples. Isso provou-se extremamente útil no desenvolvimento do protótipo em questão para, por exemplo, geração de projéteis. Com o alto número de projéteis ativos em \textit{Shmups} no geral, basta definir um projétil simples e instanciá-lo diversas vezes na posição do personagem ou do inimigo para gerar um cenário simples de combate.
 
 A depender do cenário em que uma cena é instanciada, porém, torna-se necessário carregá-la previamente através de um \textit{script}, para possibilitar sua instanciação sob demanda, por exemplo, do \textit{input}\footnote{
     Qualquer ação, parametrizada no jogo, vinda do jogador, como um clique do mouse, ou uma tecla apertada no teclado.
@@ -130,37 +124,13 @@ Isso é, o personagem poderá interagir apenas com objetos pertencentes aos grup
 
 Ao definir classes customizadas a partir de \textit{scripts}, é possível fazer com que outras cenas herdem (extendam) tanto classes padrão da \textit{Godot} quanto o \textit{script} criado, dando acesso a métodos e atributos da classe herdada. Cenas como os diferentes níveis de projéteis do jogador herdam a classe base de \textquotedbl{projétil}\textquotedbl{}. Nela, são definidos métodos de movimento básico do projétil, tratamento de colisão e atributos básicos como velocidade, direção e dano. Cálculos mais avançados e específicos do personagem são feitos em classes mais abaixo na herança.
 
-\subsection{Singletons}\label{Singletons}
+\subsection{Singletons}\label{sec:Singletons}
 
 Com o uso de \textit{Singletons} é possível ter acesso globalmente a métodos e variáveis definidas no nessa classe, por qualquer outro \textit{script}. Similarmente ao uso de sinais, o uso de \textit{Singletons} permite uma rápida e simples comunicação entre cenas distintas. O código \ref{prog:main_nodes_getter}, usado no protótipo em muitas cenas, auxilia, por meio de \textit{setters} e \textit{getters}, o acesso às cenas do personagem, fase principal, e \textit{stats}, uma cena utilizada durante o desenvolvimento, dedicada a expor de variáveis na tela, como número de vidas, bombas, número de balas ativas e outras variáveis utilizadas no cálculo da dificuldade.
 
-% \begin{program}
-%     \lstinputlisting[
-%       language=pseudocode,
-%       style=pseudocode,
-%       style=wider,
-%       functions={},
-%       specialidentifiers={},
-%     ]
-%     {conteudo/main_nodes_getter.gd}
-%     \caption{Singleton (\ref{Singletons}) para recuperação de nós importantes para o jogo\label{prog:main_nodes_getter}.}
-% \end{program}
-
 \subsection{Banco de Dados}
 
-Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco de dados facilita na definição e na variação de diferentes objetos. No protótipo desenvolvido, esses objetos foram, principalmente, as fases e os inimigos. Como a \textit{Godot} não inicializa projetos por padrão com bancos de dados, foi utilizado um outro \textit{Singleton} (\ref{prog:db_manager}) a fim de criar um gerenciador simples de banco de dados para uso interno no jogo, com foco na recuperação de dados. Para definição de fases e ondas (\ref{ONDASNOMAR}), assim como padrões de ataques de inimigos, foram utilizados arquivos \textit{JSON}, os quais são recuperados utilizando as funções do singleton em questão e, em seguida, utilizados na a instanciação de cenas sob demanda.
-
-% \begin{program}
-%     \lstinputlisting[
-%       language=pseudocode,
-%       style=pseudocode,
-%       style=wider,
-%       functions={},
-%       specialidentifiers={},
-%     ]
-%     {conteudo/db_manager.gd}
-%     \caption{Singleton (\ref{Singletons}) para recuperação de arquivos no banco de dados do jogo\label{prog:db_manager}.}
-% \end{program}
+Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco de dados facilita na definição e na variação de diferentes objetos. No protótipo desenvolvido, esses objetos foram, principalmente, as fases e os inimigos. Como a \textit{Godot} não inicializa projetos por padrão com bancos de dados, foi utilizado um outro \textit{Singleton} (\ref{prog:db_manager}) a fim de criar um gerenciador simples de banco de dados para uso interno no jogo, com foco na recuperação de dados. Para definição de fases e ondas (\ref{ONDASNOMAR}), assim como padrões de ataques de inimigos, foram utilizados arquivos \textit{JSON}, os quais são recuperados utilizando as funções do singleton em questão e, em seguida, utilizados na instanciação de cenas sob demanda.
 
 \subsection{Linguagem de Programação}
 
@@ -177,6 +147,3 @@ Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco d
 \end{itemize}
 
 Além disso, o editor possui diversas ferramentas dedicadas à depuração do código, permitindo o uso de \textit{breakpoints}, inspecionar o estado atual da execução, valores de variáveis, chamadas de funções e tempo de execução em cada uma delas, essa última sendo crucial para a etapa de otimização do jogo mencionada em \ref{Grupos}.
-
-
-BOTAR OS CODIGOS FONTEEEEEAAAAAAAAAAAA

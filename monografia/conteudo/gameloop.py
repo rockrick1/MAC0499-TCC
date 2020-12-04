@@ -1,5 +1,4 @@
-while (True) {
+while True:
     processInput()
     update()
     render()
-}

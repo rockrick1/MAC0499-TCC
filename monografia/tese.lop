@@ -1,3 +1,5 @@
 \contentsline {program}{\numberline {4.1}{\ignorespaces Game Loop.\relax }}{13}{program.caption.7}%
-\contentsline {program}{\numberline {A.1}{\ignorespaces Máximo divisor comum (arquivo importado).\relax }}{21}{program.caption.11}%
-\contentsline {program}{\numberline {A.2}{\ignorespaces Máximo divisor comum (em português).}}{21}{program.A.2}%
+\contentsline {program}{\numberline {A.1}{\ignorespaces Máximo divisor comum (arquivo importado).\relax }}{23}{program.caption.11}%
+\contentsline {program}{\numberline {A.2}{\ignorespaces Máximo divisor comum (em português).}}{23}{program.A.2}%
+\contentsline {program}{\numberline {B.1}{\ignorespaces Singleton (\ref {sec:Singletons}) para recuperação de nós importantes para o jogo.\relax }}{25}{program.caption.12}%
+\contentsline {program}{\numberline {B.2}{\ignorespaces Singleton (\ref {sec:Singletons}) para recuperação de arquivos no banco de dados do jogo.\relax }}{26}{program.caption.13}%
