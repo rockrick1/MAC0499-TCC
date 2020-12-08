@@ -164,7 +164,7 @@ func gain_drop():
 
 # Character grazed a bullet
 func graze():
-	if invincible:
+	if not invincible:
 		grazed_bullets += 1
 		$Sprite/Blink.play("Blink")
 
