@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 MainNodes="*res://scripts/main_nodes_getter.gd"
 DBManager="*res://scripts/db_manager.gd"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=512

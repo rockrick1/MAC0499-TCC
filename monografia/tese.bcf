@@ -2370,6 +2370,10 @@
     <bcf:citekey order="19">IAEmTowerDefense</bcf:citekey>
     <bcf:citekey order="20">BatchProgramming</bcf:citekey>
     <bcf:citekey order="21">GameProgramming</bcf:citekey>
+    <bcf:citekey order="22">ExperimentalValidation</bcf:citekey>
+    <bcf:citekey order="23">ExperimentalValidation</bcf:citekey>
+    <bcf:citekey order="24">FearOfFailing</bcf:citekey>
+    <bcf:citekey order="25">Touhou</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

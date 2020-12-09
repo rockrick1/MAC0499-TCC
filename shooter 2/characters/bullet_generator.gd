@@ -254,6 +254,7 @@ func update_diff(overall_diff):
 		set_spin_speed(base_spin_speed, mod_spin_speed)
 		
 		if overall_diff > 10:
+			print(log(10))
 			mod_fire_rate = log(overall_diff) / log(10)
 			set_fire_rate(fire_rate, mod_fire_rate)
 	

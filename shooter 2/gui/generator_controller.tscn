@@ -495,11 +495,11 @@ margin_top = 282.0
 margin_right = 500.0
 margin_bottom = 297.0
 
-[node name="Export" type="Button" parent="ExtraButtons"]
-margin_right = 28.0
+[node name="ZeroDiff" type="Button" parent="ExtraButtons"]
+margin_right = 33.0
 margin_bottom = 15.0
 custom_fonts/font = ExtResource( 1 )
-text = "Export"
+text = "Zero Diff"
 [connection signal="pressed" from="Buttons/Generator/GeneratorDown" to="." method="_on_GeneratorDown_pressed"]
 [connection signal="pressed" from="Buttons/Generator/GeneratorUp" to="." method="_on_GeneratorUp_pressed"]
 [connection signal="pressed" from="Buttons/Generator/GeneratorAdd" to="." method="_on_GeneratorAdd_pressed"]
@@ -528,4 +528,4 @@ text = "Export"
 [connection signal="pressed" from="Buttons/BulletSpeed/BulletSpeedUp" to="." method="_on_BulletSpeedUp_pressed"]
 [connection signal="pressed" from="Buttons/BulletLife/BulletLifeDown" to="." method="_on_BulletLifeDown_pressed"]
 [connection signal="pressed" from="Buttons/BulletLife/BulletLifeUp" to="." method="_on_BulletLifeUp_pressed"]
-[connection signal="pressed" from="ExtraButtons/Export" to="." method="_on_Export_pressed"]
+[connection signal="pressed" from="ExtraButtons/ZeroDiff" to="." method="_on_ZeroDiff_pressed"]

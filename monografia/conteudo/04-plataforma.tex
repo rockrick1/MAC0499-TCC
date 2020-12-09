@@ -126,11 +126,80 @@ Ao definir classes customizadas a partir de \textit{scripts}, é possível fazer
 
 \subsection{Singletons}\label{sec:Singletons}
 
-Com o uso de \textit{Singletons} é possível ter acesso globalmente a métodos e variáveis definidas no nessa classe, por qualquer outro \textit{script}. Similarmente ao uso de sinais, o uso de \textit{Singletons} permite uma rápida e simples comunicação entre cenas distintas. O código \ref{prog:main_nodes_getter}, usado no protótipo em muitas cenas, auxilia, por meio de \textit{setters} e \textit{getters}, o acesso às cenas do personagem, fase principal, e \textit{stats}, uma cena utilizada durante o desenvolvimento, dedicada a expor de variáveis na tela, como número de vidas, bombas, número de balas ativas e outras variáveis utilizadas no cálculo da dificuldade.
+Com o uso de \textit{Singletons} é possível ter acesso globalmente a métodos e variáveis definidas no nessa classe, por qualquer outro \textit{script}. Similarmente ao uso de sinais, o uso de \textit{Singletons} permite uma rápida e simples comunicação entre cenas distintas. O código a seguir, usado no protótipo em muitas cenas, auxilia, por meio de \textit{setters} e \textit{getters}, o acesso às cenas do personagem, fase principal, e \textit{stats}, uma cena utilizada durante o desenvolvimento, dedicada a expor de variáveis na tela, como número de vidas, bombas, número de balas ativas e outras variáveis utilizadas no cálculo da dificuldade.
 
-\subsection{Banco de Dados}
+\pagebreak
 
-Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco de dados facilita na definição e na variação de diferentes objetos. No protótipo desenvolvido, esses objetos foram, principalmente, as fases e os inimigos. Como a \textit{Godot} não inicializa projetos por padrão com bancos de dados, foi utilizado um outro \textit{Singleton} (\ref{prog:db_manager}) a fim de criar um gerenciador simples de banco de dados para uso interno no jogo, com foco na recuperação de dados. Para definição de fases e ondas (\ref{ONDASNOMAR}), assim como padrões de ataques de inimigos, foram utilizados arquivos \textit{JSON}, os quais são recuperados utilizando as funções do singleton em questão e, em seguida, utilizados na instanciação de cenas sob demanda.
+\begin{programruledcaption}{\textit{Main Nodes Getter}.\label{prog:main_nodes_getter}}
+    \begin{lstlisting}[
+        language=Python,
+        style=wider,
+        functions={},
+        specialidentifiers={},
+    ]
+        extends Node
+
+        var character
+        var stage
+        var stats
+        
+        func get_character():
+            return character
+        
+        func set_character(node):
+            character = node
+        
+        func get_stage():
+            return stage
+        
+        func set_stage(node):
+            stage = node
+        
+        func get_stats():
+            return stats
+        
+        func set_stats(node):
+            stats = node
+        
+    
+    \end{lstlisting}
+\end{programruledcaption}
+
+\subsection{Banco de Dados}\label{BancoDeDados}
+
+Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco de dados facilita na definição e na variação de diferentes objetos. No protótipo desenvolvido, esses objetos foram, principalmente, as fases e os inimigos. Como a \textit{Godot} não inicializa projetos por padrão com bancos de dados, foi utilizado um outro \textit{Singleton} a fim de criar um gerenciador simples de banco de dados para uso interno no jogo, com foco na recuperação de dados.
+
+\pagebreak
+
+\begin{programruledcaption}{\textit{Database Manager} utilizado no protótipo.\label{prog:db_manager}}
+    \begin{lstlisting}[
+        language=Python,
+        style=wider,
+        functions={},
+        specialidentifiers={},
+    ]
+        extends Node
+
+        func get_vars(filename):
+            var params = {}
+            var file = File.new()
+            file.open("res://db/"+filename, file.READ)
+            var text = file.get_as_text()
+            params = parse_json(text)
+            file.close()
+            return params
+        
+        func get_bullet_gen(name):
+            return get_vars('generators/'+name+".json")
+        
+        func get_stage(name):
+            return get_vars('stages/'+name+".json")
+        
+    
+    \end{lstlisting}
+\end{programruledcaption}
+
+Para definição de fases e ondas (\ref{ONDASNOMAR}), assim como padrões de ataques de inimigos, foram utilizados arquivos \textit{JSON}, os quais são recuperados utilizando as funções do singleton em questão e, em seguida, utilizados na instanciação de cenas sob demanda.
 
 \subsection{Linguagem de Programação}
 

@@ -24,17 +24,21 @@
 \contentsline {subsection}{\numberline {4.2.5}Grupos}{16}{subsection.4.2.5}%
 \contentsline {subsection}{\numberline {4.2.6}Herança}{17}{subsection.4.2.6}%
 \contentsline {subsection}{\numberline {4.2.7}Singletons}{17}{subsection.4.2.7}%
-\contentsline {subsection}{\numberline {4.2.8}Banco de Dados}{17}{subsection.4.2.8}%
-\contentsline {subsection}{\numberline {4.2.9}Linguagem de Programação}{18}{subsection.4.2.9}%
-\contentsline {chapter}{\numberline {5}Balanceamento Dinâmico}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretação de Ações}{19}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Resultados}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}{21}{section.6.1}%
+\contentsline {subsection}{\numberline {4.2.8}Banco de Dados}{18}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Linguagem de Programação}{19}{subsection.4.2.9}%
+\contentsline {chapter}{\numberline {5}Balanceamento Dinâmico}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conceito de Interpretação}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Habilidades e Desafios Medidos}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Aplicação no Protótipo}{22}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Leitura}{22}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Alteração de Inimigos}{23}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Resultados}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}{27}{section.6.1}%
 \protect \appendixTOCLine 
-\contentsline {chapter}{\numberline {A}Código-Fonte e Pseudocódigo}{23}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Código-Fonte: Singletons}{25}{appendix.B}%
+\contentsline {chapter}{\numberline {A}\textit {Generator Demo}}{29}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Código-Fonte e Pseudocódigo}{31}{appendix.B}%
 \protect \annexTOCLine 
-\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{27}{annex.A}%
+\contentsline {chapter}{\numberline {A}Perguntas Frequentes sobre o Modelo}{33}{annex.A}%
 \vspace {2\baselineskip plus .5\baselineskip minus .5\baselineskip }
-\contentsline {chapter}{Refer\^encias}{29}{annex*.14}%
-\contentsline {chapter}{\'Indice Remissivo}{31}{section*.15}%
+\contentsline {chapter}{Refer\^encias}{35}{annex*.14}%
+\contentsline {chapter}{\'Indice Remissivo}{37}{section*.15}%

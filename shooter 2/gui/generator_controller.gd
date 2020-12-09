@@ -220,3 +220,7 @@ func update_numbers():
 func _on_Export_pressed():
 	var params = generator.get_params()
 
+
+
+func _on_ZeroDiff_pressed():
+	MainNodes.get_stage().overall_difficulty = 0
