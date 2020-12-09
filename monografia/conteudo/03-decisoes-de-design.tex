@@ -25,8 +25,6 @@ Para entendimento da estrutura geral do jogo, utiliza-se a metodologia de \texti
 
 O menu principal do jogo possui as opções de \textit{Novo Jogo}, iniciando assim um jogo no modo padrão, logo após uma tela de seleção de personagens; \textit{Tutorial}, colocando o jogador em uma fase guiada por instruções de como jogar, quais botões utilizar e explicando todas as mecânicas implementadas que o jogador precisa saber; \textit{Demo}, levando-o a uma demonstração de que tipos de padrões de tiros os inimigos podem gerar, o qual será aprofundado em um capitulo futuro também; e por fim, \textit{Sair}, que fecha o jogo.
 
-falar mais aqui talvez?
-
 \subsection{Progressão e Ondas}\label{ONDASNOMAR}
 
 Ao iniciar um \textit{Novo Jogo}, o jogador depara-se com a tela de seleção de personagens (naves) mecionada anteriormente. Ao escolher entre uma das naves, uma tela contendo apenas a nave escolhida, o fundo temático do espaço sideral e indicadores da quantidade de vidas e de bombas do jogador é apresentada na sequência. O jogador pode se mover livremente dentro das delimitações laterais da tela e atirar sem se preocupar com sua munição. Após alguns segundos, os primeiros inimigos aparecerão pelo canto superior da tela. Estes fazem parte da primeira onda de inimigos. Os inimigos então começarão a disparar projéteis, em direção à nave principal ou não, de maneiras pré programadas. Cada inimigo permanece um tempo determinado na tela antes de ser arrastado para sua lateral mais próxima e \textit{despawnando}\footnote{

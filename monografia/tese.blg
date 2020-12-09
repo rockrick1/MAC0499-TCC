@@ -1,15 +1,15 @@
 [0] Config.pm:312> INFO - This is Biber 2.15 (beta)
 [0] Config.pm:315> INFO - Logfile is 'tese.blg'
-[116] biber-MSWIN64:330> INFO - === 
-[138] Biber.pm:415> INFO - Reading 'tese.bcf'
-[270] Biber.pm:952> INFO - Found 16 citekeys in bib section 0
-[292] Biber.pm:4334> INFO - Processing section 0
-[309] Biber.pm:4523> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
-[326] bibtex.pm:1682> INFO - LaTeX decoding ...
-[391] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografia.bib'
-[515] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[516] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[516] Biber.pm:4162> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[516] Biber.pm:4168> INFO - No sort tailoring available for locale 'pt-BR'
-[542] bbl.pm:651> INFO - Writing 'tese.bbl' with encoding 'UTF-8'
-[551] bbl.pm:754> INFO - Output to tese.bbl
+[123] biber-MSWIN64:330> INFO - === 
+[145] Biber.pm:415> INFO - Reading 'tese.bcf'
+[277] Biber.pm:952> INFO - Found 16 citekeys in bib section 0
+[299] Biber.pm:4334> INFO - Processing section 0
+[317] Biber.pm:4523> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
+[334] bibtex.pm:1682> INFO - LaTeX decoding ...
+[401] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografia.bib'
+[529] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[530] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[530] Biber.pm:4162> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[530] Biber.pm:4168> INFO - No sort tailoring available for locale 'pt-BR'
+[556] bbl.pm:651> INFO - Writing 'tese.bbl' with encoding 'UTF-8'
+[565] bbl.pm:754> INFO - Output to tese.bbl
