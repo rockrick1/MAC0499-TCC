@@ -17,13 +17,6 @@ func update_lives(lives):
 	$d2.set_text("lives: "+str(lives))
 
 
-func update_bombs(bombs):
-	var s = ""
-	for i in range(bombs):
-		s += "=D "
-	$d3.set_text("bombs: "+s)
-
-
 func update_diff(acc_diff, overall_diff):
 	$e.set_text("acc diff: "+str(acc_diff))
 	$f.set_text("overall diff: "+str(floor(overall_diff)))
@@ -39,3 +32,18 @@ func update_power(power):
 
 func set_debug_1(msg):
 	$h.set_text(str(msg))
+
+
+func update_bars(character):
+	$LivesBar.set_max(character.LIFE_CHARGE_MAX)
+	$PowerBar.set_max(character.POWER_MAX)
+	$BombsBar.set_max(character.BOMB_CHARGE_MAX)
+
+	$LivesBar.value = character.LIFE_CHARGE
+	$LivesLabel.set_text('Lives: '+str(character.LIVES))
+
+	$PowerBar.value = character.POWER
+	$PowerLabel.set_text('Power: '+str(character.shot_lv))
+
+	$BombsBar.value = character.BOMB_CHARGE
+	$BombsLabel.set_text('Bombs: '+str(character.BOMBS))

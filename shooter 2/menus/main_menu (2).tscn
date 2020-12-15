@@ -1,0 +1,755 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/alterebro-pixel-font.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/sprites/shooter_man.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_scene"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=36]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "credits_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 346 ), Vector2( 120, 346 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "credits_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 346 ), Vector2( 72, 346 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 228 ), Vector2( 120, 228 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 228 ), Vector2( 72, 228 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "quit_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 405 ), Vector2( 120, 405 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "quit_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 405 ), Vector2( 72, 405 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "settings_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 286 ), Vector2( 120, 286 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "settings_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 286 ), Vector2( 72, 286 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "credits_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 346 ), Vector2( 120, 346 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "credits_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 346 ), Vector2( 72, 346 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "play_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 228 ), Vector2( 120, 228 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "play_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 228 ), Vector2( 72, 228 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "quit_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 405 ), Vector2( 120, 405 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "quit_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 405 ), Vector2( 72, 405 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "settings_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 286 ), Vector2( 120, 286 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "settings_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 286 ), Vector2( 72, 286 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "credits_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 346 ), Vector2( 120, 346 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "credits_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 346 ), Vector2( 72, 346 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "play_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 228 ), Vector2( 120, 228 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "play_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 228 ), Vector2( 72, 228 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "quit_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 405 ), Vector2( 120, 405 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "quit_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quit:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 405 ), Vector2( 72, 405 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "settings_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 286 ), Vector2( 120, 286 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "settings_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 286 ), Vector2( 72, 286 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "credits_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 346 ), Vector2( 120, 346 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "credits_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 346 ), Vector2( 72, 346 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "play_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 228 ), Vector2( 120, 228 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "play_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 228 ), Vector2( 72, 228 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "quit_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 405 ), Vector2( 120, 405 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "quit_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 405 ), Vector2( 72, 405 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "settings_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 286 ), Vector2( 120, 286 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "settings_unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Settings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 286 ), Vector2( 72, 286 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Main Menu" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1081.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fade" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 512.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.69
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 512.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 36 )
+text = "GALAXY RUSH"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 72.0
+margin_right = 512.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.25
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 116.0
+margin_right = 512.0
+margin_bottom = 149.0
+
+[node name="Play" type="TextureButton" parent="VBoxContainer/Buttons"]
+margin_right = 512.0
+margin_bottom = 21.0
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Buttons/Play"]
+anims/credits_hover = SubResource( 4 )
+anims/credits_unhover = SubResource( 5 )
+anims/play_hover = SubResource( 6 )
+anims/play_unhover = SubResource( 7 )
+anims/quit_hover = SubResource( 8 )
+anims/quit_unhover = SubResource( 9 )
+anims/settings_hover = SubResource( 10 )
+anims/settings_unhover = SubResource( 11 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Buttons/Play"]
+margin_left = 20.8884
+margin_top = 3.63515
+margin_right = 60.8884
+margin_bottom = 17.6352
+custom_fonts/font = ExtResource( 3 )
+text = "aaaaaaaaaaa"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="TextureButton" parent="VBoxContainer/Buttons"]
+margin_top = 25.0
+margin_right = 512.0
+margin_bottom = 25.0
+focus_neighbour_top = NodePath("../Play")
+focus_neighbour_bottom = NodePath("../Credits")
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Buttons/Settings"]
+anims/credits_hover = SubResource( 12 )
+anims/credits_unhover = SubResource( 13 )
+anims/play_hover = SubResource( 14 )
+anims/play_unhover = SubResource( 15 )
+anims/quit_hover = SubResource( 16 )
+anims/quit_unhover = SubResource( 17 )
+anims/settings_hover = SubResource( 18 )
+anims/settings_unhover = SubResource( 19 )
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer/Buttons"]
+margin_top = 29.0
+margin_right = 512.0
+margin_bottom = 29.0
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Quit")
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Buttons/Credits"]
+anims/credits_hover = SubResource( 20 )
+anims/credits_unhover = SubResource( 21 )
+anims/play_hover = SubResource( 22 )
+anims/play_unhover = SubResource( 23 )
+anims/quit_hover = SubResource( 24 )
+anims/quit_unhover = SubResource( 25 )
+anims/settings_hover = SubResource( 26 )
+anims/settings_unhover = SubResource( 27 )
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer/Buttons"]
+margin_top = 33.0
+margin_right = 512.0
+margin_bottom = 33.0
+focus_neighbour_top = NodePath("../Credits")
+focus_neighbour_bottom = NodePath("../Play")
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Buttons/Quit"]
+anims/credits_hover = SubResource( 28 )
+anims/credits_unhover = SubResource( 29 )
+anims/play_hover = SubResource( 30 )
+anims/play_unhover = SubResource( 31 )
+anims/quit_hover = SubResource( 32 )
+anims/quit_unhover = SubResource( 33 )
+anims/settings_hover = SubResource( 34 )
+anims/settings_unhover = SubResource( 35 )
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 153.0
+margin_right = 512.0
+margin_bottom = 300.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.55
+
+[node name="Title" type="TextureRect" parent="."]
+margin_left = 577.0
+margin_top = 118.0
+margin_right = 1313.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 368, 116 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+autoplay = "pulse"
+anims/pulse = SubResource( 3 )
+[connection signal="mouse_entered" from="VBoxContainer/Buttons/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Buttons/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Buttons/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Buttons/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/Buttons/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Buttons/Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/Buttons/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Buttons/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Quit" to="." method="_on_Quit_pressed"]

@@ -12,11 +12,13 @@ export (int) var BOMBS
 # General global variables, like thresholds and constants
 export (int) var POWER_MAX
 export (int) var BOMB_CHARGE_MAX
+export (int) var LIFE_CHARGE_MAX
 export (float) var DEATH_PENALTY
 
 var RUN_SPEED = 0
 var POWER = 0
 var BOMB_CHARGE = 0
+var LIFE_CHARGE = 0
 
 var control = true
 var mot = Vector2(0,0)
@@ -115,7 +117,7 @@ func _process(delta):
 		move_and_slide(mot / delta)
 		
 	############################# shooting #####################################
-	if Input.is_action_pressed("ui_action_1"):
+	if Input.is_action_pressed("ui_left_mb") or Input.is_action_pressed("ui_spacebar"):
 		$ShotEffect/AnimationPlayer.play("Shooting")
 		if can_shoot:
 			can_shoot = false
@@ -131,15 +133,15 @@ func _process(delta):
 		shooting = false
 	
 	################################## strafe ##################################
-	if Input.is_action_just_pressed("ui_action_2"):
+	if Input.is_action_just_pressed("ui_shift") or Input.is_action_just_pressed("ui_right_mb"):
 		strafing = true
 		$Hitbox/AnimationPlayer.play("ShowHitbox")
-	elif strafing and not Input.is_action_pressed("ui_action_2"):
+	elif strafing and not Input.is_action_pressed("ui_shift") and not Input.is_action_pressed("ui_right_mb"):
 		strafing = false
 		$Hitbox/AnimationPlayer.play("HideHitbox")
 		
 	################################### bomb ###################################
-	if Input.is_action_just_pressed("ui_action_3") and BOMBS > 0 and not $BombEffect/AnimationPlayer.is_playing():
+	if Input.is_action_just_pressed("ui_Q") and BOMBS > 0 and not $BombEffect/AnimationPlayer.is_playing():
 		bomb()
 
 	############################################################################
@@ -152,14 +154,17 @@ func _process(delta):
 func gain_drop():
 	POWER += 1 + (randf()*3)
 	BOMB_CHARGE += 1 + (randf()*3)
+	LIFE_CHARGE += 1 + (randf()*3)
 	if POWER > POWER_MAX:
 		shot_lv = min(shot_lv + 1, len(shots))
 		POWER = 0
 	if BOMB_CHARGE > BOMB_CHARGE_MAX:
 		BOMBS += 1
 		BOMB_CHARGE = 0
-	stage.stats.update_power(POWER)
-	stage.stats.update_bombs(BOMBS)
+	if LIFE_CHARGE > LIFE_CHARGE_MAX:
+		LIVES += 1
+		LIFE_CHARGE = 0
+	stage.stats.update_bars(self)
 
 
 # Character grazed a bullet
@@ -171,13 +176,14 @@ func graze():
 
 func bomb():
 	BOMBS -= 1
-	stage.stats.update_bombs(BOMBS)
 	$BombEffect/AnimationPlayer.play("Bomb")
 	# Emit signal to kill enemy bullets
 	emit_signal("bomb")
+	stage.stats.update_bars(self)
 
 
 func take_damage(dmg):
+	return
 	die()
 
 
