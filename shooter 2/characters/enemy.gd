@@ -75,9 +75,11 @@ func run_move(name):
 func set_generators(generators):
 	if generators:
 		for generator in generators:
+			var script = generator.s
+			var proj_type = generator.pt
 			var g = base_generator.instance()
-			var params = DBManager.get_bullet_gen(generator)
-			g.set_params(params)
+			var params = DBManager.get_bullet_gen(script)
+			g.set_params(params, proj_type)
 			$Generators.add_child(g)
 
 

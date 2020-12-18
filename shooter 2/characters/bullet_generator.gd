@@ -35,9 +35,6 @@ Variables: {
 
 ########################### Generator base variables ###########################
 
-# Projectile scene to be used
-export (String) var proj_type
-
 # Time in seconds the generator stays active
 export (float) var life
 
@@ -74,7 +71,6 @@ export (float) var bullet_speed
 export (float) var bullet_life
 export (Color) var bullet_color = Color(1, 1, 1)
 
-
 ############################# Difficulty modifiers #############################
 
 var mod_bullets_per_array = 0
@@ -86,7 +82,6 @@ var mod_bullet_speed = 0
 
 export (bool) var DEBUG
 
-
 func _ready():
 	set_process(false)
 	shooter = get_parent().get_parent()
@@ -94,10 +89,9 @@ func _ready():
 
 
 # Sets the patterns parameters
-func set_params(params):
+func set_params(params, proj_type):
 	life = params.life
 	$LifeTimer.wait_time = life
-	proj_type = params.proj_type
 	proj = load("res://projectiles/enemy/"+proj_type+".tscn")
 	bullets_per_array = params.bullets_per_array
 	individual_array_spread = params.individual_array_spread

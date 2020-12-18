@@ -1,0 +1,17 @@
+{
+	"proj_type" : "proj_circ1",
+	"life" : -1,
+	"bullets_per_array" : 6,
+	"individual_array_spread" : 360,
+	"total_bullet_arrays" : 1,
+	"total_array_spread" : 120,
+	"base_spin_speed" : -60,
+	"spin_speed_period" : 0,
+	"spin_variation" : 0,
+	"aim_at_character" : false,
+	"fire_rate" : 5.5,
+	"cycles_per_interval" : 1,
+	"bullet_speed" : 1,
+	"bullet_life" : 5,
+	"bullet_color" : {"r":1, "g":0.1, "b":0.2, "a":1},
+}

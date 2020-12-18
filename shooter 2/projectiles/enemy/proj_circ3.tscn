@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/sprites/proj2.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/M484BulletCollectionLarger.png" type="Texture" id=1]
 [ext_resource path="res://projectiles/base_projectile.gd" type="Script" id=2]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( -5, 0, 0, -8, 5, 0, 0, 8 )
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 555.095, 225.867, 25.7811, 23.4027 )
+
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="Projectile" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -15,12 +18,14 @@ speed = 10.0
 damage = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( 1.04284, 1.2097 )
+scale = Vector2( 0.922752, 0.969962 )
+texture = SubResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 27, 25 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource( 1 )
-disabled = true
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 5.0

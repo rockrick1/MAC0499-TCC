@@ -7,6 +7,8 @@ export (float) var life
 export (int) var dist_threshold = 25
 export (int) var graze_threshold = 10
 
+export (bool) var set_dir
+
 var direction
 var shooter
 var stage
@@ -32,7 +34,7 @@ func set_vars(sh, dir, rotate):
 	set_life()
 	character.connect("bomb", self, "on_bomb")
 
-	if rotate:
+	if rotate and set_dir:
 		set_rotation(dir.angle())
 
 	enemy = shooter.enemy
@@ -81,14 +83,14 @@ func is_on_screen():
 func _on_CharSearchRefresh_timeout():
 	if character != null and get_dist_to_char() < dist_threshold:
 #		$Sprite.set_modulate(Color(200,200,200,1))
-		$CollisionPolygon2D.set_disabled(false)
+		$Collision.set_disabled(false)
 		if get_dist_to_char() < graze_threshold and not grazed:
 			grazed = true
 			character.graze()
 
 	elif enemy:
 #		$Sprite.set_modulate(Color(1,1,1,1))
-		$CollisionPolygon2D.set_disabled(true)
+		$Collision.set_disabled(true)
 	if not is_on_screen():
 		die()
 

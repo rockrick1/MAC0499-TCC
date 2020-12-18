@@ -1,8 +1,360 @@
-[gd_scene format=2]
+[gd_scene load_steps=17 format=2]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/misc/stars.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/alterebro-pixel-font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_scene"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.01, 1.01 ), Vector2( 1, 1 ), Vector2( 0.9, 0.99 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Main Menu" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1081.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="fade" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItems" type="VBoxContainer" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="MenuItems"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 512.0
+margin_bottom = 31.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.61
+
+[node name="Label" type="Label" parent="MenuItems"]
+margin_top = 35.0
+margin_right = 512.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 256, 20 )
+custom_fonts/font = SubResource( 3 )
+text = "GALAXY RUSH"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Label"]
+anims/pulse = SubResource( 4 )
+
+[node name="StarsR" parent="MenuItems/Label" instance=ExtResource( 2 )]
+position = Vector2( 512, -38 )
+rotation = 1.5708
+scale = Vector2( 0.25, 1 )
+
+[node name="StarsL" parent="MenuItems/Label" instance=ExtResource( 2 )]
+position = Vector2( 0, 86 )
+rotation = 4.71239
+scale = Vector2( 0.25, 1 )
+
+[node name="HSeparator2" type="HSeparator" parent="MenuItems"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 81.0
+margin_right = 512.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.62
+
+[node name="Buttons" type="VBoxContainer" parent="MenuItems"]
+margin_left = 238.0
+margin_top = 135.0
+margin_right = 273.0
+margin_bottom = 207.0
+size_flags_horizontal = 4
+
+[node name="NewGame" type="Button" parent="MenuItems/Buttons"]
+margin_right = 35.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 17.5, 7.5 )
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+custom_fonts/font = ExtResource( 4 )
+text = "New Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/NewGame"]
+anims/hover = SubResource( 5 )
+anims/unhover = SubResource( 6 )
+
+[node name="Tutorial" type="Button" parent="MenuItems/Buttons"]
+margin_top = 19.0
+margin_right = 35.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 17.5, 7.5 )
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+custom_fonts/font = ExtResource( 4 )
+text = "Tutorial"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Tutorial"]
+anims/hover = SubResource( 7 )
+anims/unhover = SubResource( 8 )
+
+[node name="Settings" type="Button" parent="MenuItems/Buttons"]
+margin_top = 38.0
+margin_right = 35.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 17.5, 7.5 )
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+custom_fonts/font = ExtResource( 4 )
+text = "Settings"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Settings"]
+anims/hover = SubResource( 9 )
+anims/unhover = SubResource( 10 )
+
+[node name="Quit" type="Button" parent="MenuItems/Buttons"]
+margin_top = 57.0
+margin_right = 35.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 17.5, 7.5 )
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Quit"]
+anims/hover = SubResource( 11 )
+anims/unhover = SubResource( 12 )
+
+[node name="HSeparator3" type="HSeparator" parent="MenuItems"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 211.0
+margin_right = 512.0
+margin_bottom = 300.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.55
+
+[node name="Title" type="TextureRect" parent="."]
+margin_left = 577.0
+margin_top = 118.0
+margin_right = 1313.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 368, 116 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="MenuItems/Buttons/NewGame" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_mouse_exited"]
+[connection signal="pressed" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="MenuItems/Buttons/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="MenuItems/Buttons/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="MenuItems/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="MenuItems/Buttons/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MenuItems/Buttons/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MenuItems/Buttons/Quit" to="." method="_on_quit_pressed"]

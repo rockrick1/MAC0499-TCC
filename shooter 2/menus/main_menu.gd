@@ -160,4 +160,4 @@ func _on_settings_pressed():
 
 
 func _on_quit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
