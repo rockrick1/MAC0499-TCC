@@ -9,6 +9,7 @@ export (float) var DISTANCE
 export (float) var BOMB_DMG = 20
 
 export (float) var amount_to_move
+export (float) var where_to_move
 export (float) var move_period
 
 export (Array) var generator_scripts
@@ -22,8 +23,7 @@ var stage
 var dir
 var proj_dir
 var muzzlepos
-var move_pattern
-var pos_override
+var pos_h_override
 var spawned_drops = 0
 var exit_time = -1
 
@@ -36,7 +36,8 @@ func _ready():
 	stage = get_parent().get_parent()
 	character = stage.get_node("Character")
 	character.connect("bomb", self, "on_bomb")
-	$ColorRect.set_frame_color(Color(randf(), randf(), randf()))
+	if has_node("ColorRect"):
+		$ColorRect.set_frame_color(Color(randf(), randf(), randf()))
 	start()
 
 
@@ -50,25 +51,30 @@ func start():
 
 
 func run_move(name):
-	match name:
-		"enter":
-			move_pattern = Vector2(0, 75)
-		"exit_left":
-			exit = true
-			move_pattern = Vector2(-150, 0)
-		"exit_right":
-			exit = true
-			move_pattern = Vector2(150, 0)
-		"exit_center":
-			exit = true
-			move_pattern = Vector2(0,-75)
-
+	var move_pattern
+	if "exit_l" in name:
+		exit = true
+		move_pattern = Vector2(-150, 0)
+	elif "exit_r" in name:
+		exit = true
+		move_pattern = Vector2(150, 0)
+	elif "exit_center" in name:
+		exit = true
+		move_pattern = Vector2(0,-75)
+		
 	if $Move:
-		$Move.interpolate_property(self, "position",
-		get_position(),
-		get_position() + move_pattern,
-		2,
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		if move_pattern != null:
+			$Move.interpolate_property(self, "position",
+			get_position(),
+			get_position() + move_pattern,
+			2,
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		else:
+			$Move.interpolate_property(self, "position:y",
+			get_position().y,
+			where_to_move,
+			2,
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		$Move.start()
 
 
@@ -102,10 +108,6 @@ func take_damage(dmg):
 
 func on_bomb():
 	take_damage(BOMB_DMG)
-
-
-func _process(delta):
-	pass
 
 
 func die():
@@ -143,4 +145,5 @@ func _on_StartMove_tween_all_completed():
 # Enemy will exit the screen and die after a certain period of time
 func _on_ExitTimer_timeout():
 	kill_generators()
-	run_move("exit_" + pos_override)
+	print("vo embora por ","exit_"+pos_h_override)
+	run_move("exit_" + pos_h_override)

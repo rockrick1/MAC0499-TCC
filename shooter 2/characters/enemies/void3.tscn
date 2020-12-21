@@ -1,25 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://characters/enemy.gd" type="Script" id=4]
+[ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/void_sprite_frames.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 17.9794, 29.6935 )
 
 [sub_resource type="Animation" id=2]
 length = 0.1
 step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
@@ -39,30 +28,25 @@ color = Color( 0.956863, 0.0156863, 0.0156863, 1 )
 collision_layer = 4
 collision_mask = 3
 mode = 1
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 RUN_SPEED = 1.0
-HP = 100.0
+HP = 10.0
 NUM_DROPS = 5
 TYPE = "Melee"
 amount_to_move = 75.0
+where_to_move = 65.0
 move_period = 2.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 modulate = Color( 1, 84.89, 1, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 15.0
-margin_bottom = 13.0
-rect_scale = Vector2( 0.695522, 0.759719 )
-color = Color( 0.619608, 0.0941176, 0.0941176, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "void3"
+frame = 3
+playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

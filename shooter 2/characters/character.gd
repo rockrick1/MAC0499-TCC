@@ -65,6 +65,11 @@ func _ready():
 	stage = get_parent()
 	action_recorder._ready()
 	
+	# Sets character ship sprite/animation
+	var anim = MainNodes.get_ship()
+	if anim != null:
+		$Sprite.play(anim)
+	
 	$FireRate.wait_time = FIRE_RATE
 	$ShotEffect.visible = false
 
