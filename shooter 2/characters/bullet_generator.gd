@@ -201,7 +201,7 @@ func _process(delta):
 		# Apply bullets per array modifier
 		var actual_bullets_per_array = bullets_per_array + mod_bullets_per_array
 		
-		for array in range(total_bullet_arrays):
+		for _array in range(total_bullet_arrays):
 			
 			if bullets_per_array != 0:
 				angle_between_bullets = individual_array_spread/actual_bullets_per_array

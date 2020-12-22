@@ -103,24 +103,25 @@ func take_damage(dmg):
 	HP -= dmg
 	$AnimationPlayer.play("take damage")
 	if HP <= 0:
-		die()
+		die(true)
 
 
 func on_bomb():
 	take_damage(BOMB_DMG)
 
 
-func die():
+func die(spawn_drops):
 	if not exit:
 		kill_generators()
 		character.stats.enemies_killed += 1
 		character.update_stats_display()
 	$Move.stop_all()
-	print("vo spawnar ",get_name())
+	print("vo spawnar drops ",get_name())
 	
 	# Prevents method from being called multiple times when getting hit
 	# by multiple projectiles in the same frame
-	if not is_dead:
+	# Only spawns drops if killed by the player
+	if not is_dead and spawn_drops:
 		is_dead = true
 		spawn_drops()
 	queue_free()
@@ -131,15 +132,15 @@ func kill_generators():
 		generator.die()
 
 
-func _on_StartMove_tween_all_completed():
+func _on_Move_tween_all_completed():
+	print(exit)
 	# When a tween is completed, starts generators if is not an exit tween
 	if not exit:
 		for generator in $Generators.get_children():
 			generator.start()
-
-	# Kills enemy if exit tween
+	# Kills enemy if exit tween, and doesnt spawn drops
 	else:
-		die()
+		die(false)
 
 
 # Enemy will exit the screen and die after a certain period of time
