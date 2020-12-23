@@ -209,7 +209,6 @@ DEATH_PENALTY = 1.5
 scale = Vector2( 0.690292, 0.690292 )
 frames = SubResource( 9 )
 animation = "cruiser2"
-frame = 1
 playing = true
 
 [node name="Blink" type="AnimationPlayer" parent="Sprite"]

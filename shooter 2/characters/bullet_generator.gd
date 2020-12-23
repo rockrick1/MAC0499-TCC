@@ -37,6 +37,8 @@ Variables: {
 
 # Time in seconds the generator stays active
 export (float) var life
+# Time in seconds the generator takes to start
+export (float) var start_delay
 
 # Amount of bullets in an array
 export (int) var bullets_per_array
@@ -89,7 +91,9 @@ func _ready():
 
 
 # Sets the patterns parameters
-func set_params(params, proj_type):
+func set_params(params, proj_type, start_delay):
+	self.start_delay = start_delay
+	$StartTimer.wait_time = start_delay
 	life = params.life
 	$LifeTimer.wait_time = life
 	proj = load("res://projectiles/enemy/"+proj_type+".tscn")
@@ -141,6 +145,13 @@ func set_spin_speed(speed, modifier):
 	base_spin_speed = speed
 	spin_speed = speed
 
+
+# Starts the StartTimer if there is a time to wait, otherwise, starts shooting
+func start_on_timer():
+	if start_delay == 0:
+		start()
+	else:
+		$StartTimer.start()
 
 func start():
 	set_process(true)
@@ -270,3 +281,7 @@ func _on_LifeTimer_timeout():
 
 func die():
 	queue_free()
+
+	
+func _on_StartTimer_timeout():
+	start()

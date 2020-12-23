@@ -81,11 +81,15 @@ func run_move(name):
 func set_generators(generators):
 	if generators:
 		for generator in generators:
+			# presets the generator will use
 			var script = generator.s
+			# projectile type for the generator
 			var proj_type = generator.pt
+			# time in seconds the generator takes to start after enemy spawns
+			var start_delay = generator.delay
 			var g = base_generator.instance()
 			var params = DBManager.get_bullet_gen(script)
-			g.set_params(params, proj_type)
+			g.set_params(params, proj_type, start_delay)
 			$Generators.add_child(g)
 
 
@@ -137,7 +141,7 @@ func _on_Move_tween_all_completed():
 	# When a tween is completed, starts generators if is not an exit tween
 	if not exit:
 		for generator in $Generators.get_children():
-			generator.start()
+			generator.start_on_timer()
 	# Kills enemy if exit tween, and doesnt spawn drops
 	else:
 		die(false)

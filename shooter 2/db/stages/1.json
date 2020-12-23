@@ -10,7 +10,8 @@
                 {
                     "name" : "void1",
                     "generators" : [
-                        {"s" : "sprinkler4", "pt" : "proj_circ3small"}, 
+                        {"delay" : 1, "s" : "sprinkler4", "pt" : "proj_circ3small"}, 
+                        {"delay" : 0, "s" : "sprinkler4Rev", "pt" : "proj_circ3small"}, 
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
@@ -20,7 +21,7 @@
                 {
                     "name" : "void1",
                     "generators" : [
-                        {"s" : "spinning-16", "pt" : "proj_circ2"}, 
+                        {"delay" : 0, "s" : "spinning16", "pt" : "proj_circ2"}, 
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
@@ -37,8 +38,8 @@
                 {
                     "name" : "void2",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj2.1"},
-                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj2.1"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj2.1"}
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
@@ -48,8 +49,8 @@
                 {
                     "name" : "void2",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj_circ2"},
-                        {"s" : "spinning-6", "pt" : "proj_circ1small"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj_circ2"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj_circ1small"}
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
@@ -67,8 +68,8 @@
                 {
                     "name" : "void3",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj2.1"},
-                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj2.1"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj2.1"}
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
@@ -78,8 +79,8 @@
                 {
                     "name" : "void3",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj2.1"},
-                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj2.1"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj2.1"}
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "center",
@@ -89,8 +90,8 @@
                 {
                     "name" : "void3",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj_circ2"},
-                        {"s" : "spinning-6", "pt" : "proj_circ1small"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj_circ2"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj_circ1small"}
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
@@ -108,8 +109,8 @@
                 {
                     "name" : "void4",
                     "generators" : [
-                        {"s" : "spinning6", "pt" : "proj2.1"},
-                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                        {"delay" : 0, "s" : "spinning6", "pt" : "proj2.1"},
+                        {"delay" : 0, "s" : "spinning6Rev", "pt" : "proj2.1"}
                     ],
                     "pos_v_override" : "v4",
                     "pos_h_override" : "center",

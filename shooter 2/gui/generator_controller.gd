@@ -50,7 +50,7 @@ func _on_GeneratorAdd_pressed():
 	enemy.get_node("Generators").add_child(g)
 	generators = enemy.get_node("Generators").get_children()
 	generator = g
-	g.start()
+	g.start_on_timer()
 	$Buttons/Generator/Number.set_text(str(generator_n))
 	update_numbers()
 
