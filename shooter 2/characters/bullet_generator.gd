@@ -237,24 +237,25 @@ func update_diff(overall_diff):
 	"""
 	Currently moddable attributes are:
 		fire rate
-		spin speed
 		bullet speed
 		bullets per array
 	"""
 	
 	if overall_diff > 1:
-		mod_bullet_speed = pow(overall_diff, 0.05) - 1
+		mod_bullet_speed = pow(overall_diff, 0.0503) - 1
+		if overall_diff < 200:
+			mod_bullet_speed = mod_bullet_speed / pow(200/overall_diff, 0.7)
+
 		mod_spin_speed = 1
 		set_spin_speed(base_spin_speed, mod_spin_speed)
 		
-		if overall_diff > 10:
-			print(log(10))
-			mod_fire_rate = log(overall_diff) / log(10)
-			set_fire_rate(fire_rate, mod_fire_rate)
+		mod_fire_rate = (log(overall_diff) / log(10)) / 2
+		if mod_fire_rate <= 1:
+			mod_fire_rate = 1
+		set_fire_rate(fire_rate, mod_fire_rate)
 	
-	if overall_diff < 50:
+	if overall_diff < 300:
 		mod_bullets_per_array = 0
-	
 	else:
 		mod_bullets_per_array = 1
 

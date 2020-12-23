@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/misc/stars.tscn" type="PackedScene" id=2]
@@ -196,7 +196,38 @@ tracks/0/keys = {
 "values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=13]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
 [node name="Main Menu" type="Control"]
+modulate = Color( 0, 0, 0, 1 )
 margin_right = 1920.0
 margin_bottom = 1081.0
 script = ExtResource( 1 )
@@ -227,14 +258,14 @@ __meta__ = {
 [node name="HSeparator" type="HSeparator" parent="MenuItems"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 512.0
-margin_bottom = 31.0
+margin_bottom = 27.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.61
 
 [node name="Label" type="Label" parent="MenuItems"]
-margin_top = 35.0
+margin_top = 31.0
 margin_right = 512.0
-margin_bottom = 77.0
+margin_bottom = 73.0
 rect_pivot_offset = Vector2( 256, 20 )
 custom_fonts/font = SubResource( 3 )
 text = "GALAXY RUSH"
@@ -256,17 +287,17 @@ scale = Vector2( 0.25, 1 )
 
 [node name="HSeparator2" type="HSeparator" parent="MenuItems"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 81.0
+margin_top = 77.0
 margin_right = 512.0
-margin_bottom = 131.0
+margin_bottom = 122.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.62
 
 [node name="Buttons" type="VBoxContainer" parent="MenuItems"]
 margin_left = 238.0
-margin_top = 135.0
+margin_top = 126.0
 margin_right = 273.0
-margin_bottom = 207.0
+margin_bottom = 217.0
 size_flags_horizontal = 4
 
 [node name="NewGame" type="Button" parent="MenuItems/Buttons"]
@@ -313,7 +344,7 @@ text = "Settings"
 anims/hover = SubResource( 9 )
 anims/unhover = SubResource( 10 )
 
-[node name="Quit" type="Button" parent="MenuItems/Buttons"]
+[node name="Demo" type="Button" parent="MenuItems/Buttons"]
 margin_top = 57.0
 margin_right = 35.0
 margin_bottom = 72.0
@@ -322,15 +353,30 @@ focus_neighbour_top = NodePath("../Quit")
 focus_neighbour_bottom = NodePath("../Settings")
 mouse_filter = 1
 custom_fonts/font = ExtResource( 4 )
-text = "Quit"
+text = "Demo"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Quit"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Demo"]
 anims/hover = SubResource( 11 )
 anims/unhover = SubResource( 12 )
 
+[node name="Quit" type="Button" parent="MenuItems/Buttons"]
+margin_top = 76.0
+margin_right = 35.0
+margin_bottom = 91.0
+rect_pivot_offset = Vector2( 17.5, 7.5 )
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Settings")
+mouse_filter = 1
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuItems/Buttons/Quit"]
+anims/hover = SubResource( 13 )
+anims/unhover = SubResource( 14 )
+
 [node name="HSeparator3" type="HSeparator" parent="MenuItems"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 211.0
+margin_top = 221.0
 margin_right = 512.0
 margin_bottom = 300.0
 size_flags_vertical = 3
@@ -348,13 +394,16 @@ __meta__ = {
 }
 [connection signal="mouse_entered" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_exited"]
-[connection signal="pressed" from="MenuItems/Buttons/NewGame" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="MenuItems/Buttons/NewGame" to="." method="_on_newgame_pressed"]
 [connection signal="mouse_entered" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="mouse_exited" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_mouse_exited"]
 [connection signal="pressed" from="MenuItems/Buttons/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="mouse_entered" from="MenuItems/Buttons/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="mouse_exited" from="MenuItems/Buttons/Settings" to="." method="_on_settings_mouse_exited"]
 [connection signal="pressed" from="MenuItems/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="MenuItems/Buttons/Demo" to="." method="_on_demo_mouse_entered"]
+[connection signal="mouse_exited" from="MenuItems/Buttons/Demo" to="." method="_on_demo_mouse_exited"]
+[connection signal="pressed" from="MenuItems/Buttons/Demo" to="." method="_on_demo_pressed"]
 [connection signal="mouse_entered" from="MenuItems/Buttons/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="MenuItems/Buttons/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="MenuItems/Buttons/Quit" to="." method="_on_quit_pressed"]

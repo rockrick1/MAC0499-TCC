@@ -6,7 +6,6 @@
 [ext_resource path="res://characters/character.tscn" type="PackedScene" id=4]
 [ext_resource path="res://stages/generator_demo.gd" type="Script" id=5]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 7.99999 )
 
@@ -35,11 +34,12 @@ __meta__ = {
 }
 
 [node name="Stats" parent="CanvasLayer" instance=ExtResource( 3 )]
-margin_left = 386.988
-margin_right = 898.988
+margin_left = 384.0
+margin_right = 896.0
 
 [node name="GeneratorController" parent="CanvasLayer" instance=ExtResource( 1 )]
-margin_bottom = 292.0
+margin_right = 512.0
+margin_bottom = 300.0
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 512.0

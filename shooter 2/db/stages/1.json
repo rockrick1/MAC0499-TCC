@@ -9,15 +9,19 @@
             [
                 {
                     "name" : "void1",
-                    "generators" : [{"s" : "focused3", "pt" : "proj_circ3small"}, ],
+                    "generators" : [
+                        {"s" : "sprinkler4", "pt" : "proj_circ3small"}, 
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
-                    "exit_time" : 3,
+                    "exit_time" : -1,
                 },
 
                 {
                     "name" : "void1",
-                    "generators" : [{"s" : "focused2", "pt" : "proj_circ2"}, ],
+                    "generators" : [
+                        {"s" : "spinning-16", "pt" : "proj_circ2"}, 
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
                     "exit_time" : 3,
@@ -32,7 +36,10 @@
             [
                 {
                     "name" : "void2",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj2.1"}, {"s" : "spinning-6", "pt" : "proj2.1"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj2.1"},
+                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
                     "exit_time" : -1,
@@ -40,7 +47,10 @@
 
                 {
                     "name" : "void2",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj_circ2"}, {"s" : "spinning-6", "pt" : "proj_circ1small"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj_circ2"},
+                        {"s" : "spinning-6", "pt" : "proj_circ1small"}
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
                     "exit_time" : -1,
@@ -56,7 +66,10 @@
             [
                 {
                     "name" : "void3",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj2.1"}, {"s" : "spinning-6", "pt" : "proj2.1"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj2.1"},
+                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
                     "exit_time" : -1,
@@ -64,7 +77,10 @@
 
                 {
                     "name" : "void3",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj2.1"}, {"s" : "spinning-6", "pt" : "proj2.1"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj2.1"},
+                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "center",
                     "exit_time" : -1,
@@ -72,7 +88,10 @@
 
                 {
                     "name" : "void3",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj_circ2"}, {"s" : "spinning-6", "pt" : "proj_circ1small"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj_circ2"},
+                        {"s" : "spinning-6", "pt" : "proj_circ1small"}
+                    ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "r2",
                     "exit_time" : -1,
@@ -88,7 +107,10 @@
             [
                 {
                     "name" : "void4",
-                    "generators" : [{"s" : "spinning6", "pt" : "proj2.1"}, {"s" : "spinning-6", "pt" : "proj2.1"}],
+                    "generators" : [
+                        {"s" : "spinning6", "pt" : "proj2.1"},
+                        {"s" : "spinning-6", "pt" : "proj2.1"}
+                    ],
                     "pos_v_override" : "v4",
                     "pos_h_override" : "center",
                     "exit_time" : -1,

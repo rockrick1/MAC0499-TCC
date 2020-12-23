@@ -36,8 +36,8 @@ func update_diff(no_hit_time, grazed_bullets):
 	
 	# Points gained from not getting hit, considering time and amount of
 	# bullets on screen
-	no_hit_points = pow(no_hit_time, 1.15) * n_bullets / 500
-	graze_points = grazed_bullets * pow(overall_difficulty + 1, 0.2)
+	no_hit_points = pow(no_hit_time, 1.15) * n_bullets / 20000
+	graze_points = grazed_bullets * pow(overall_difficulty + 1, 0.42)
 
 	core_action_points = no_hit_points + graze_points
 	

@@ -53,7 +53,7 @@ func _input(event):
 			return
 		match hovering:
 			1:
-				_on_Play_pressed()
+				pass
 			4:
 				_on_Quit_pressed()
 
@@ -77,11 +77,6 @@ func change_button(prev, new):
 			_on_credits_mouse_entered()
 		4:
 			_on_quit_mouse_entered()
-
-func _on_Play_pressed():
-	if not $fade.is_playing():
-		$fade.play("fade_out")
-	set_process(false)
 
 
 func play_scene():
@@ -161,3 +156,25 @@ func _on_settings_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_demo_pressed():
+	get_tree().change_scene("res://stages/generator_demo.tscn")
+
+
+func _on_demo_mouse_entered():
+	hovering = 3
+	# $Buttons/Credits.texture_normal = credits_glow
+	$MenuItems/Buttons/Demo/AnimationPlayer.play("hover")
+
+
+func _on_demo_mouse_exited():
+	hovering = 0
+	# $Buttons/Credits.texture_normal = credits_glow
+	$MenuItems/Buttons/Demo/AnimationPlayer.play("unhover")
+
+
+func _on_newgame_pressed():
+	if not $fade.is_playing():
+		$fade.play("fade_out")
+	set_process(false)

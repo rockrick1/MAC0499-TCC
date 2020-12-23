@@ -22,8 +22,8 @@ def calculate_diff(no_hit_time, grazed_bullets):
 	
 	# Points gained from not getting hit, considering time and amount of
 	# bullets on screen
-	no_hit_points = (no_hit_time ** 1.15) * n_bullets / 500
-	graze_points = grazed_bullets * ((OD + 1)** 0.2)
+	no_hit_points = ((no_hit_time) * n_bullets ) / 20000
+	graze_points = grazed_bullets * ((OD + 1)** 0.42)
 
 	core_action_points = no_hit_points + graze_points
 	
@@ -44,13 +44,18 @@ def generator_diff(overall_diff):
 	global mod_bullet_speed
 	
 	if overall_diff > 1:
-		mod_bullet_speed = (overall_diff ** 0.05) - 1
+		mod_bullet_speed = (overall_diff ** 0.0503) - 1
+		if overall_diff < 200:
+			mod_bullet_speed = mod_bullet_speed / ((200/overall_diff)**0.7)
 		mod_spin_speed = 1
+		mod_fire_rate = np.log10(overall_diff) / 2
+		if mod_fire_rate <= 1:
+			mod_fire_rate = 1
+		# mod_fire_rate = (overall_diff ** 1/30)
 		
-		if overall_diff > 10:
-			mod_fire_rate = np.log10(overall_diff)
+		# if overall_diff > 10:
 	
-	if overall_diff < 50:
+	if overall_diff < 300:
 		mod_bullets_per_array = 0
 	
 	else:
@@ -87,7 +92,7 @@ def main():
 
 	CONSIDER_DEATH = False
 
-	MAX_TIME = 500.0
+	MAX_TIME = 600.0
 
 	values = [1, 10, 100]
 	n_bullets = 0
@@ -96,8 +101,8 @@ def main():
 	plt.figure(figsize=(9, 3))
 	# Simulates half second interval, implemented in-game
 	i = 0
-	colors = ['r-','b-','k-', 'g-']
-	for n in [100,200,400]:
+	colors = ['k-','y-','g-','b-']
+	for n in [200,200,200,200]:
 		no_hit_time = 0
 		last_hit = 0
 		OD = 0.001
@@ -110,19 +115,18 @@ def main():
 		mod_bullet_speed_plt = []
 		grazes = []
 		tim = []
+		grazetim = []
 		n_bullets = n + rand.randrange(-30,30)
-		print(n_bullets)
 		for t in np.arange(0, MAX_TIME, 0.5):
 			no_hit_time = t - last_hit
-			tim.append(t)	
+			tim.append(t)
 			graze = 0
 
 			r = rand.random()
-			if r > 0.75 ** (100/n):
+			if r > 0.75 ** (100/n) and i >= 2:
 				graze = 1
 				grazes.append(1)
-			else:
-				grazes.append(0)
+				grazetim.append(t)
 
 			r = rand.random()
 			
@@ -143,44 +147,44 @@ def main():
 
 		# MAKES PLOTS
 			
-		plt.subplot(611)
+		plt.subplot(411)
 		plt.grid(True)
 		plt.ylabel('overall_difficulty')
-		plt.xlabel('tempo')
+		plt.xlabel('time')
 		plt.plot(tim,ODs, colors[i-1] )
 
-		plt.subplot(612)
+		plt.subplot(412)
 		plt.grid(True)
 		plt.ylabel('mod_bullets_per_array')
-		plt.xlabel('tempo')
+		plt.xlabel('time')
 		plt.plot(tim,mod_bullets_per_array_plt, colors[i-1] )
 
-		plt.subplot(613)
-		plt.grid(True)
-		plt.ylabel('mod_spin_speed')
-		plt.xlabel('tempo')
-		plt.plot(tim,mod_spin_speed_plt, colors[i-1] )
+		# plt.subplot(513)
+		# plt.grid(True)
+		# plt.ylabel('mod_spin_speed')
+		# plt.xlabel('time')
+		# plt.plot(tim,mod_spin_speed_plt, colors[i-1] )
 
-		plt.subplot(614)
+		plt.subplot(413)
 		plt.grid(True)
 		plt.ylabel('mod_fire_rate')
-		plt.xlabel('tempo')
+		plt.xlabel('time')
 		plt.plot(tim,mod_fire_rate_plt, colors[i-1] )
 
-		plt.subplot(615)
+		plt.subplot(414)
 		plt.grid(True)
 		plt.ylabel('mod_bullet_speed')
-		plt.xlabel('tempo')
+		plt.xlabel('time')
 		plt.plot(tim,mod_bullet_speed_plt, colors[i-1] )
 
-		plt.subplot(616)
-		plt.grid(True)
-		plt.ylabel('grazes')
-		plt.xlabel('tempo')
-		plt.legend([sum(grazes)])
-		plt.plot(tim,grazes, colors[i-1] )
+		# plt.subplot(616)
+		# plt.grid(True)
+		# plt.ylabel('grazes')
+		# plt.xlabel('time')
+		# plt.legend([str(sum(grazes)) + colors[i-1][0]] )
+		# plt.plot(grazetim,grazes, colors[i-1][0]+'o' )
 		# plt.plot(tim,rODs, colors[i-1] )
-	
+	print(colors[0][0])
 	plt.suptitle('quero morrer')
 	plt.show()
 

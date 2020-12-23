@@ -14,6 +14,7 @@ export (int) var POWER_MAX
 export (int) var BOMB_CHARGE_MAX
 export (int) var LIFE_CHARGE_MAX
 export (float) var DEATH_PENALTY
+export (bool) var CAN_DIE
 
 var RUN_SPEED = 0
 var POWER = 0
@@ -157,12 +158,17 @@ func _process(delta):
 
 
 func gain_drop():
-	POWER += 1 + (randf()*3)
-	BOMB_CHARGE += 1 + (randf()*3)
-	LIFE_CHARGE += 1 + (randf()*3)
-	if POWER > POWER_MAX:
-		shot_lv = min(shot_lv + 1, len(shots))
-		POWER = 0
+	BOMB_CHARGE += 1 + (randf()*50)
+	LIFE_CHARGE += 1 + (randf()*50)
+	
+	
+	if shot_lv < len(shots):
+		POWER += 1 + (randf()*50)
+		if POWER > POWER_MAX:
+			shot_lv = min(shot_lv + 1, len(shots))
+			POWER = 0
+	else:
+		POWER = POWER_MAX
 	if BOMB_CHARGE > BOMB_CHARGE_MAX:
 		BOMBS += 1
 		BOMB_CHARGE = 0
@@ -188,11 +194,12 @@ func bomb():
 
 
 func take_damage(dmg):
-	return
 	die()
 
 
 func die():
+	if not CAN_DIE:
+		return
 	control = false
 	invincible = true
 	$AnimationPlayer.play("death")
@@ -211,8 +218,8 @@ func die():
 	
 	print("shiet mang im ded")
 	LIVES -= 1
-	stage.stats.update_lives(LIVES)
 	stage.overall_difficulty /= DEATH_PENALTY
+	stage.stats.update_bars(self)
 	if LIVES == 0:
 
 	# To understand the complexity of the next command, one must close their

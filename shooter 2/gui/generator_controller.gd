@@ -224,3 +224,4 @@ func _on_Export_pressed():
 
 func _on_ZeroDiff_pressed():
 	MainNodes.get_stage().overall_difficulty = 0
+	MainNodes.get_character().no_hit_time = 0
