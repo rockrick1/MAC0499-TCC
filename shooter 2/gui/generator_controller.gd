@@ -46,7 +46,7 @@ func _on_GeneratorAdd_pressed():
 
 	var g = base_generator.instance()
 	var params = DBManager.get_bullet_gen("demo")
-	g.set_params(params, params.proj_type)
+	g.set_params(params, params.proj_type, 0)
 	enemy.get_node("Generators").add_child(g)
 	generators = enemy.get_node("Generators").get_children()
 	generator = g

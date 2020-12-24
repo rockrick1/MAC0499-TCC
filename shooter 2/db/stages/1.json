@@ -10,8 +10,8 @@
                 {
                     "name" : "void1",
                     "generators" : [
-                        {"delay" : 1, "s" : "sprinkler4", "pt" : "proj_circ3small"}, 
-                        {"delay" : 0, "s" : "sprinkler4Rev", "pt" : "proj_circ3small"}, 
+                        {"delay" : 0.75, "s" : "ring24burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ3small"}, 
                     ],
                     "pos_v_override" : "v1",
                     "pos_h_override" : "l2",
