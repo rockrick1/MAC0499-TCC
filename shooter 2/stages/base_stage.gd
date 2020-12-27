@@ -45,6 +45,9 @@ func update_diff(no_hit_time, grazed_bullets):
 	overall_difficulty += accumulated_diff
 
 	stats.update_diff(accumulated_diff, overall_difficulty)
+
+	# Updates stars speed according to diff
+	$Background/Stars.update_diff(overall_difficulty)
 	
 	for enemy in $Enemies.get_children():
 		for generator in enemy.get_node("Generators").get_children():

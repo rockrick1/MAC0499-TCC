@@ -1,18 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="ParticlesMaterial" id=1]
-emission_shape = 2
-emission_box_extents = Vector3( 130, 1, 1 )
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 200.0
-initial_velocity_random = 0.24
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.5
-scale_random = 0.2
+[ext_resource path="res://assets/misc/stars.gd" type="Script" id=1]
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
@@ -26,6 +14,20 @@ initial_velocity_random = 0.24
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
+scale_random = 0.2
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 130, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+initial_velocity_random = 0.24
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
 scale_random = 0.2
 
 [sub_resource type="ParticlesMaterial" id=3]
@@ -43,32 +45,33 @@ scale_random = 0.2
 
 [node name="Stars" type="Node2D"]
 modulate = Color( 1, 1, 1, 0.545098 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StarsN" type="Particles2D" parent="."]
+[node name="Fast" type="Particles2D" parent="."]
 position = Vector2( 256, 0 )
 amount = 20
-lifetime = 5.0
-process_material = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StarsF" type="Particles2D" parent="."]
-position = Vector2( 256, 0 )
-amount = 20
-lifetime = 5.0
+lifetime = 2.0
 process_material = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StarsS" type="Particles2D" parent="."]
+[node name="Normal" type="Particles2D" parent="."]
+position = Vector2( 256, 0 )
+amount = 20
+lifetime = 2.0
+process_material = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Slow" type="Particles2D" parent="."]
 position = Vector2( 256, 0 )
 amount = 40
-lifetime = 5.0
+lifetime = 2.0
 process_material = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
