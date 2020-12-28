@@ -114,7 +114,7 @@ position = Vector2( 256, 40 )
 shape = SubResource( 3 )
 
 [node name="EnemyGenerator" parent="." instance=ExtResource( 5 )]
-stagename = "1"
+stagename = "2"
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 256, -15 )

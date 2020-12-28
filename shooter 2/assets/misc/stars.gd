@@ -14,6 +14,4 @@ func update_diff(diff):
 		var speed = base_speed * (log(diff) / log(10))
 		if speed <= base_speed:
 			speed = base_speed
-		print(emitter.name)
-		print(speed)
 		emitter.get_process_material().initial_velocity = speed

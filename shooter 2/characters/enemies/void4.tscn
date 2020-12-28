@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=1]
+[ext_resource path="res://characters/enemies/void4.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/void_sprite_frames.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -37,16 +37,16 @@ damping = 50.0
 color = Color( 0.956863, 0.0156863, 0.0156863, 1 )
 
 [node name="Enemy" type="RigidBody2D"]
+position = Vector2( 3.8147e-06, 0 )
 collision_layer = 4
 collision_mask = 3
 mode = 1
 script = ExtResource( 1 )
-RUN_SPEED = 1.0
-HP = 10000.0
+HP = 2000.0
 NUM_DROPS = 5
 TYPE = "Melee"
-amount_to_move = 150.0
-where_to_move = 60.0
+amount_to_move = 75.0
+where_to_move = 65.0
 move_period = 2.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -55,11 +55,9 @@ modulate = Color( 1, 84.89, 1, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "void4"
-frame = 3
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -77,9 +75,17 @@ process_material = SubResource( 3 )
 
 [node name="Move" type="Tween" parent="."]
 
+[node name="BossMove" type="Tween" parent="."]
+
 [node name="ExitTimer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 [connection signal="tween_all_completed" from="Move" to="." method="_on_Move_tween_all_completed"]
+[connection signal="tween_completed" from="Move" to="." method="_on_Move_tween_completed"]
+[connection signal="tween_all_completed" from="BossMove" to="." method="_on_Move_tween_all_completed"]
 [connection signal="timeout" from="ExitTimer" to="." method="_on_ExitTimer_timeout"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]

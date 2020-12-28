@@ -1,6 +1,8 @@
 extends Node2D
 
 
+export (bool) var is_demo
+
 var stats
 
 var start_border = Vector2(128,0)
@@ -29,6 +31,8 @@ func remove_bullet():
 
 
 func update_diff(no_hit_time, grazed_bullets):
+	if is_demo:
+		return
 	var core_action_points = 0
 	
 	var no_hit_points = 0

@@ -35,6 +35,8 @@ Variables: {
 
 ########################### Generator base variables ###########################
 
+export (String) var proj_type
+
 # Time in seconds the generator stays active
 export (float) var life
 # Time in seconds the generator takes to start
@@ -92,6 +94,7 @@ func _ready():
 
 # Sets the patterns parameters
 func set_params(params, proj_type, start_delay):
+	self.proj_type = proj_type
 	self.start_delay = start_delay
 	$StartTimer.wait_time = start_delay
 	life = params.life
@@ -148,6 +151,9 @@ func set_spin_speed(speed, modifier):
 
 # Starts the StartTimer if there is a time to wait, otherwise, starts shooting
 func start_on_timer():
+	print("VO COMEÇAR DEPOIS DESSE TEMPO AQUI")
+	print(start_delay)
+	print($StartTimer.wait_time)
 	if start_delay == 0:
 		start()
 	else:
@@ -284,4 +290,5 @@ func die():
 
 	
 func _on_StartTimer_timeout():
+	print("SOU UM GENERATOR, VOU COMEÇAR, COM LICENÇA " + proj_type)
 	start()

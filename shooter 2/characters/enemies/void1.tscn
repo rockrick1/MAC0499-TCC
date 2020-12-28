@@ -55,6 +55,7 @@ modulate = Color( 1, 84.89, 1, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "void1"
+frame = 3
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

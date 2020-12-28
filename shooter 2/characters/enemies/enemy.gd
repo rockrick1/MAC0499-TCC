@@ -44,6 +44,9 @@ func _ready():
 func start():
 	set_generators(generator_scripts)
 	run_move("enter")
+
+
+func start_life():
 	if exit_time != -1:
 		print("EU VO SAIR DAQUI UM DIA")
 		$ExitTimer.wait_time = exit_time
@@ -89,6 +92,9 @@ func set_generators(generators):
 			var start_delay = generator.delay
 			var g = base_generator.instance()
 			var params = DBManager.get_bullet_gen(script)
+			# life time override
+			if generator.has('l'):
+				params.life = generator.l + generator.delay
 			g.set_params(params, proj_type, start_delay)
 			$Generators.add_child(g)
 
@@ -120,7 +126,6 @@ func die(spawn_drops):
 		character.stats.enemies_killed += 1
 		character.update_stats_display()
 	$Move.stop_all()
-	print("vo spawnar drops ",get_name())
 	
 	# Prevents method from being called multiple times when getting hit
 	# by multiple projectiles in the same frame
@@ -137,11 +142,13 @@ func kill_generators():
 
 
 func _on_Move_tween_all_completed():
-	print(exit)
 	# When a tween is completed, starts generators if is not an exit tween
 	if not exit:
+		# Starts the enemies life time (that is, enemy exit time counts after
+		# generators have started)
 		for generator in $Generators.get_children():
 			generator.start_on_timer()
+		start_life()
 	# Kills enemy if exit tween, and doesnt spawn drops
 	else:
 		die(false)
@@ -152,3 +159,16 @@ func _on_ExitTimer_timeout():
 	kill_generators()
 	print("vo embora por ","exit_"+pos_h_override)
 	run_move("exit_" + pos_h_override)
+
+
+func _on_Move_tween_completed(object, key):
+	# When a tween is completed, starts generators if is not an exit tween
+	if not exit:
+		# Starts the enemies life time (that is, enemy exit time counts after
+		# generators have started)
+		for generator in $Generators.get_children():
+			generator.start_on_timer()
+		start_life()
+	# Kills enemy if exit tween, and doesnt spawn drops
+	else:
+		die(false)

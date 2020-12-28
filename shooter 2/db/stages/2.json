@@ -1,0 +1,22 @@
+{
+    "repeat" : true,
+    "waves" : 
+    [
+        {
+            "enemy_spawn_delay" : 0,
+            "enemies" :
+            [
+                {
+                    "name" : "void4",
+                    "generators" : [
+                        {"delay" : 1, "l" : 90.5, "s" : "focused3", "pt" : "proj_circ2small"}, 
+                        {"delay" : 3, "l" : 90.5, "s" : "focused3", "pt" : "proj_circ3"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "center",
+                    "exit_time" : -1,
+                },
+            ],
+        },
+    ]
+}

@@ -14,7 +14,6 @@ const base_generator = preload("res://characters/bullet_generator.tscn")
 func set_enemy(node):
 	enemy = node
 	generators = enemy.get_node("Generators").get_children()
-	print(enemy)
 
 
 func set_generator(node):

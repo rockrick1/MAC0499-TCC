@@ -42,7 +42,7 @@ collision_mask = 3
 mode = 1
 script = ExtResource( 1 )
 RUN_SPEED = 1.0
-HP = 100.0
+HP = 200.0
 NUM_DROPS = 5
 TYPE = "Melee"
 amount_to_move = 75.0
@@ -55,6 +55,7 @@ modulate = Color( 1, 84.89, 1, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "void2"
+frame = 2
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
