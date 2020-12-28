@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/misc/stars.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/alterebro-pixel-font.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/music/Venus.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
@@ -226,8 +227,23 @@ tracks/0/keys = {
 "values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 3.86374, 2.92817 ),
+"update": 0,
+"values": [ -10.0, -80.0 ]
+}
+
 [node name="Main Menu" type="Control"]
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0.5, 0.5, 0.5, 1 )
 margin_right = 1920.0
 margin_bottom = 1081.0
 script = ExtResource( 1 )
@@ -392,6 +408,14 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Fade" type="AnimationPlayer" parent="Music"]
+anims/fade_out = SubResource( 15 )
 [connection signal="mouse_entered" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="MenuItems/Buttons/NewGame" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="MenuItems/Buttons/NewGame" to="." method="_on_newgame_pressed"]

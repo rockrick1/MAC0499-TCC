@@ -176,5 +176,6 @@ func _on_demo_mouse_exited():
 
 func _on_newgame_pressed():
 	if not $fade.is_playing():
+		$Music/Fade.play("fade_out")
 		$fade.play("fade_out")
 	set_process(false)

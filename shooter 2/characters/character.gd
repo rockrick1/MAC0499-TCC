@@ -73,6 +73,7 @@ func _ready():
 	
 	$FireRate.wait_time = FIRE_RATE
 	$ShotEffect.visible = false
+	$Sprite.visible = true
 
 
 func update_stats_display():
@@ -82,7 +83,7 @@ func update_stats_display():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not control:
+	if not control or LIVES == 0:
 		return
 #	var mouse_pos = get_global_mouse_position()
 	############################# movement #####################################
@@ -158,6 +159,8 @@ func _process(delta):
 
 
 func gain_drop():
+	if LIVES == 0:
+		return
 	BOMB_CHARGE += 1 + (randf()*3)
 	LIFE_CHARGE += 1 + (randf()*3)
 	
@@ -188,6 +191,7 @@ func graze():
 func bomb():
 	BOMBS -= 1
 	$BombEffect/AnimationPlayer.play("Bomb")
+	$BombSound.play()
 	# Emit signal to kill enemy bullets
 	emit_signal("bomb")
 	stage.stats.update_bars(self)
@@ -198,13 +202,20 @@ func take_damage(dmg):
 
 
 func die():
+	LIVES -= 1
 	if not CAN_DIE:
+		return
+	if LIVES == 0:
+		stage.game_over()
+		$AnimationPlayer.play("game_over")
+		$Hitbox/AnimationPlayer.play("HideHitbox")
 		return
 	control = false
 	invincible = true
 	$AnimationPlayer.play("death")
 	$Sprite/Invincible.play("Invincible")
 	$Invincibility.start()
+	$DeathSound.play()
 	
 	$ShotEffect/AnimationPlayer.stop()
 	$ShotEffect.set_visible(false)
@@ -217,7 +228,6 @@ func die():
 	no_hit_time = 0
 	
 	print("shiet mang im ded")
-	LIVES -= 1
 	stage.overall_difficulty /= DEATH_PENALTY
 	stage.stats.update_bars(self)
 	if LIVES == 0:
@@ -256,7 +266,8 @@ func die():
 	# documentation. And with that power, you must now raise your fingers and
 	# let them descend in the order that the Great One foretold:
 
-		queue_free()
+		# queue_free()
+		pass
 
 
 func _notification(what):
@@ -270,6 +281,8 @@ func _on_FireRate_timeout():
 
 
 func _on_DiffUpdate_timeout():
+	if LIVES == 0:
+		return
 	stage.update_diff(no_hit_time, grazed_bullets)
 	grazed_bullets = 0
 
@@ -284,3 +297,7 @@ func _on_Invincibility_timeout():
 	$Hitbox.disabled = false
 	$Sprite/Invincible.stop()
 	$Sprite.self_modulate = Color(1,1,1,1)
+
+
+func goto_main_menu():
+	get_tree().change_scene("res://menus/main_menu.tscn")

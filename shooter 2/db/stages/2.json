@@ -27,6 +27,11 @@
                 },
             ],
         },
+
+        {
+            "enemy_spawn_delay" : 1,
+            "enemies" : []
+        },
         
         {
             "enemy_spawn_delay" : 0.5,

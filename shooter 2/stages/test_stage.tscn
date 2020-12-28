@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://characters/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/misc/stars.tscn" type="PackedScene" id=2]
 [ext_resource path="res://stages/test_stage.gd" type="Script" id=3]
 [ext_resource path="res://gui/stats_displayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/enemy_generator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/music/Mercury.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 7.99999 )
@@ -118,5 +119,10 @@ stagename = "2"
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 256, -15 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
 [connection signal="body_shape_entered" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_entered"]
 [connection signal="body_shape_exited" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_exited"]

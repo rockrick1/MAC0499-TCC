@@ -56,3 +56,14 @@ func update_diff(no_hit_time, grazed_bullets):
 	for enemy in $Enemies.get_children():
 		for generator in enemy.get_node("Generators").get_children():
 			generator.update_diff(overall_difficulty)
+
+
+func game_over():
+	$CanvasLayer.queue_free()
+	$Background/Stars.queue_free()
+	$Enemies.queue_free()
+	$EnemyGenerator.queue_free()
+	$Music.stop()
+	for proj in get_children():
+		if "Projectile" in proj.name or "Drop" in proj.name:
+			proj.queue_free()

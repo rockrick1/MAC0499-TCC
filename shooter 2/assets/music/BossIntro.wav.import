@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BossIntro.wav-a61f4589af6a8e0b09abb594c9a56587.sample"
+
+[deps]
+
+source_file="res://assets/music/BossIntro.wav"
+dest_files=[ "res://.import/BossIntro.wav-a61f4589af6a8e0b09abb594c9a56587.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
