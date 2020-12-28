@@ -1,13 +1,22 @@
 extends "enemy.gd"
 
 
+# for the love of god please do not connect the BossMove tween on the
+# _on_Move_tween_all_completed() of the base enemy script
+
+
 const move_pos = [
-	48,
-	0,
-	-48,
-	48,
-	0,
-	0
+	48, # 7.5
+	0,  # 15
+	-48,# 22.5
+	48, # 30
+	0,  # 37.5
+	0,  # 45
+	0,  # 45
+	0,  # 45
+	0,  # 45
+	0,  # 45
+	0,  # 45
 ]
 
 const move_interval = 7.5
@@ -32,7 +41,3 @@ func move():
 
 func _on_MoveTimer_timeout():
 	move()
-
-
-func _on_Move_tween_completed(object, key):
-	pass # Replace with function body.

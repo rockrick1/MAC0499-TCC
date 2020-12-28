@@ -158,12 +158,12 @@ func _process(delta):
 
 
 func gain_drop():
-	BOMB_CHARGE += 1 + (randf()*50)
-	LIFE_CHARGE += 1 + (randf()*50)
+	BOMB_CHARGE += 1 + (randf()*3)
+	LIFE_CHARGE += 1 + (randf()*3)
 	
 	
 	if shot_lv < len(shots):
-		POWER += 1 + (randf()*50)
+		POWER += 1 + (randf()*3)
 		if POWER > POWER_MAX:
 			shot_lv = min(shot_lv + 1, len(shots))
 			POWER = 0

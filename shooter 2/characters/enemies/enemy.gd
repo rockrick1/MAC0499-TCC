@@ -94,7 +94,7 @@ func set_generators(generators):
 			var params = DBManager.get_bullet_gen(script)
 			# life time override
 			if generator.has('l'):
-				params.life = generator.l + generator.delay
+				params.life = generator.l
 			g.set_params(params, proj_type, start_delay)
 			$Generators.add_child(g)
 
@@ -159,16 +159,3 @@ func _on_ExitTimer_timeout():
 	kill_generators()
 	print("vo embora por ","exit_"+pos_h_override)
 	run_move("exit_" + pos_h_override)
-
-
-func _on_Move_tween_completed(object, key):
-	# When a tween is completed, starts generators if is not an exit tween
-	if not exit:
-		# Starts the enemies life time (that is, enemy exit time counts after
-		# generators have started)
-		for generator in $Generators.get_children():
-			generator.start_on_timer()
-		start_life()
-	# Kills enemy if exit tween, and doesnt spawn drops
-	else:
-		die(false)

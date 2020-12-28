@@ -1,0 +1,17 @@
+{
+	"proj_type" : "proj2.1",
+	"life" : 3,
+	"bullets_per_array" : 1,
+	"individual_array_spread" : 25,
+	"total_bullet_arrays" : 1,
+	"total_array_spread" : 90,
+	"base_spin_speed" : 0,
+	"spin_speed_period" : 1,
+	"spin_variation" : 0,
+	"aim_at_character" : true,
+	"fire_rate" : 5,
+	"cycles_per_interval" : 1,
+	"bullet_speed" : 1.25,
+	"bullet_life" : 7,
+	"bullet_color" : {"r":1, "g":1, "b":1, "a":1},
+}

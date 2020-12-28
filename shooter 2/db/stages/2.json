@@ -3,14 +3,483 @@
     "waves" : 
     [
         {
-            "enemy_spawn_delay" : 0,
+            "enemy_spawn_delay" : 0.5,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l2",
+                    "exit_time" : 5,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r2",
+                    "exit_time" : 5,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.5,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r2",
+                    "exit_time" : 5,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l2",
+                    "exit_time" : 5,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused3", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "center",
+                    "exit_time" : 10,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 1,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 5,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 5,
+                },
+        
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring16slow", "pt" : "proj2.1"}, 
+                        {"delay" : 2, "s" : "focused2", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l1",
+                    "exit_time" : 8,
+                },
+        
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 2, "s" : "ring16slow", "pt" : "proj2.1"}, 
+                        {"delay" : 4, "s" : "focused2", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r1",
+                    "exit_time" : 8,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.5,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r2",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "center",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l2",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12burst", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 3,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 3,
+            "enemies" : []
+        },
+        
+        {
+            "enemy_spawn_delay" : 1,
+            "enemies" :
+            [
+                {
+                    "name" : "void3",
+                    "generators" : [
+                        {"delay" : 0, "s" : "doubledip", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "ring13burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 0, "s" : "ring16burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 1, "s" : "ring12burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 1, "s" : "ring14burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 2, "s" : "ring13burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 2, "s" : "ring16burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 3, "s" : "ring12burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 3, "s" : "ring14burst", "pt" : "proj_circ3"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "r2",
+                    "exit_time" : 10,
+                },
+        
+                {
+                    "name" : "void3",
+                    "generators" : [
+                        {"delay" : 2, "s" : "doubledip", "pt" : "proj2.1"}, 
+                        {"delay" : 2, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 2, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 3, "s" : "ring13burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 3, "s" : "ring16burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 4, "s" : "ring13burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 4, "s" : "ring16burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 5, "s" : "ring13burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 5, "s" : "ring16burst", "pt" : "proj_circ3"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "l2",
+                    "exit_time" : 10,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.1,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused4", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused4slow", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "r2",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0, "s" : "doubledip", "pt" : "proj_circ1small"}, 
+                        {"delay" : 0, "s" : "doubledipRev", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "center",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused4slow", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v3",
+                    "pos_h_override" : "l2",
+                    "exit_time" : 3,
+                },
+        
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused4", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 3,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.4,
+            "enemies" :
+            [
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0.5, "s" : "ring12slow", "pt" : "proj_circ3small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 10,
+                },
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0.5, "s" : "doubledip", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 10,
+                },
+                {
+                    "name" : "void3",
+                    "generators" : [
+                        {"delay" : 0, "s" : "ring12slow", "pt" : "proj_circ1small"}, 
+                        {"delay" : 0, "s" : "focused3", "pt" : "proj_circ1small"}, 
+                        {"delay" : 0, "s" : "focused3slow", "pt" : "proj_circ1small"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "center",
+                    "exit_time" : 20,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.4,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2slow", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "focused2fast", "pt" : "proj2.1"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 5,
+                },
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2slow", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "focused2fast", "pt" : "proj2.1"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 5,
+                },
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0, "l" : 10, "s" : "focused2slow", "pt" : "proj_circ2"}, 
+                        {"delay" : 0, "l" : 10, "s" : "focused2", "pt" : "proj_circ2small"}, 
+                        {"delay" : 0, "l" : 10, "s" : "focused2fast", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "r1",
+                    "exit_time" : 15,
+                },
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0, "l" : 10, "s" : "focused2slow", "pt" : "proj_circ2"}, 
+                        {"delay" : 0, "l" : 10, "s" : "focused2", "pt" : "proj_circ2small"}, 
+                        {"delay" : 0, "l" : 10, "s" : "focused2fast", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "l1",
+                    "exit_time" : 15,
+                },
+            ],
+        },
+        
+        {
+            "enemy_spawn_delay" : 0.5,
+            "enemies" :
+            [
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2slow", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "ring24burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 0, "s" : "focused2fast", "pt" : "proj2.1"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "l3",
+                    "exit_time" : 5,
+                },
+                {
+                    "name" : "void1",
+                    "generators" : [
+                        {"delay" : 0, "s" : "focused2", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "s" : "ring24burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 0, "s" : "focused2fast", "pt" : "proj2.1"}, 
+                    ],
+                    "pos_v_override" : "v2",
+                    "pos_h_override" : "r3",
+                    "exit_time" : 5,
+                },
+                {
+                    "name" : "void2",
+                    "generators" : [
+                        {"delay" : 0, "l" : 8, "s" : "focused2slow", "pt" : "proj_circ2"}, 
+                        {"delay" : 0, "l" : 8, "s" : "focused2", "pt" : "proj_circ2small"}, 
+                        {"delay" : 0, "l" : 8, "s" : "focused3", "pt" : "proj_circ2small"}, 
+                        {"delay" : 0, "l" : 8, "s" : "focused2fast", "pt" : "proj_circ2small"}, 
+                    ],
+                    "pos_v_override" : "v4",
+                    "pos_h_override" : "center",
+                    "exit_time" : 10,
+                },
+            ],
+        },
+
+        {
+            "enemy_spawn_delay" : 3,
             "enemies" :
             [
                 {
                     "name" : "void4",
                     "generators" : [
-                        {"delay" : 1, "l" : 90.5, "s" : "focused3", "pt" : "proj_circ2small"}, 
-                        {"delay" : 3, "l" : 90.5, "s" : "focused3", "pt" : "proj_circ3"}, 
+                        {"delay" : 0, "l" : 6.5, "s" : "spinning6", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "l" : 6.5, "s" : "spinning6Rev", "pt" : "proj2.1"}, 
+                        {"delay" : 0, "l" : 6.5, "s" : "ring22slow", "pt" : "proj_circ3"}, 
+                        
+                        {"delay" : 9, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 9.5, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 10, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 10.5, "s" : "ring19burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 11, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 11.5, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 12, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 12.5, "s" : "ring19burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 13, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 13.5, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 14, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 14.5, "s" : "ring19burst", "pt" : "proj_circ3"}, 
+
+                        {"delay" : 17, "l" : 6.5, "s" : "sprinkler4", "pt" : "proj_circ1small"}, 
+
+                        {"delay" : 17, "l" : 1, "s" : "focused1slow", "pt" : "proj2.1"}, 
+                        {"delay" : 17, "l" : 1, "s" : "focused1", "pt" : "proj2.1"}, 
+                        {"delay" : 17, "l" : 1, "s" : "focused1fast", "pt" : "proj2.1"}, 
+
+                        {"delay" : 20, "l" : 1, "s" : "focused1slow", "pt" : "proj2.1"}, 
+                        {"delay" : 20, "l" : 1, "s" : "focused1", "pt" : "proj2.1"}, 
+                        {"delay" : 20, "l" : 1, "s" : "focused1fast", "pt" : "proj2.1"}, 
+
+                        {"delay" : 25, "l" : 100, "s" : "spinning5Var", "pt" : "proj2.1"}, 
+
+                        {"delay" : 27, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 29, "s" : "ring16burst", "pt" : "proj_circ2small"}, 
+                        {"delay" : 31, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 33, "s" : "ring19burst", "pt" : "proj_circ3small"},
+
+                        {"delay" : 35, "s" : "ring13burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 37, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 39, "s" : "ring14burst", "pt" : "proj_circ1small"}, 
+                        {"delay" : 41, "s" : "ring19burst", "pt" : "proj_circ3"},
+
+                        {"delay" : 42, "l" : 100, "s" : "ring16slow", "pt" : "proj_circ2small"},
+
+                        {"delay" : 43, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 45, "s" : "ring16burst", "pt" : "proj_circ2small"}, 
+                        {"delay" : 47, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 49, "s" : "ring19burst", "pt" : "proj_circ3small"},
+
+                        {"delay" : 51, "s" : "ring13burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 53, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 55, "s" : "ring14burst", "pt" : "proj_circ1small"}, 
+                        {"delay" : 57, "s" : "ring19burst", "pt" : "proj_circ3"},
+
+
+                        {"delay" : 59, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 61, "s" : "ring16burst", "pt" : "proj_circ2small"}, 
+                        {"delay" : 63, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 65, "s" : "ring19burst", "pt" : "proj_circ3small"},
+
+                        {"delay" : 67, "s" : "ring13burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 69, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 71, "s" : "ring14burst", "pt" : "proj_circ1small"}, 
+                        {"delay" : 73, "s" : "ring19burst", "pt" : "proj_circ3"},
+
+                        {"delay" : 75, "s" : "ring13burst", "pt" : "proj_circ3"}, 
+                        {"delay" : 77, "s" : "ring16burst", "pt" : "proj_circ2small"}, 
+                        {"delay" : 79, "s" : "ring14burst", "pt" : "proj_circ1"}, 
+                        {"delay" : 81, "s" : "ring19burst", "pt" : "proj_circ3small"},
+
+                        {"delay" : 83, "s" : "ring13burst", "pt" : "proj_circ3small"}, 
+                        {"delay" : 85, "s" : "ring16burst", "pt" : "proj_circ2"}, 
+                        {"delay" : 87, "s" : "ring14burst", "pt" : "proj_circ1small"}, 
+                        {"delay" : 89, "s" : "ring19burst", "pt" : "proj_circ3"},
+                        
                     ],
                     "pos_v_override" : "v4",
                     "pos_h_override" : "center",
