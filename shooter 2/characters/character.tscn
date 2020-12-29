@@ -368,7 +368,7 @@ position = Vector2( 256, 278 )
 collision_mask = 28
 script = ExtResource( 2 )
 FIRE_RATE = 0.1
-LIVES = 3
+LIVES = 1
 BOMBS = 3
 POWER_MAX = 100
 BOMB_CHARGE_MAX = 200
@@ -385,6 +385,7 @@ visible = false
 scale = Vector2( 0.690292, 0.690292 )
 frames = SubResource( 9 )
 animation = "cruiser2"
+frame = 1
 playing = true
 
 [node name="Blink" type="AnimationPlayer" parent="Sprite"]

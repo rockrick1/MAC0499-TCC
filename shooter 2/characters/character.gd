@@ -41,7 +41,7 @@ var grazed_bullets = 0
 var accumulated_diff = 0
 var overall_diff = 0
 
-var shot_lv = 1
+var shot_lv = 3
 
 const shots = [
 	preload("res://projectiles/character/shot2lv1.tscn"),

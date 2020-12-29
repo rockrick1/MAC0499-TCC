@@ -31,8 +31,8 @@ func remove_bullet():
 
 
 func update_diff(no_hit_time, grazed_bullets):
-	if is_demo:
-		return
+#	if is_demo:
+#		return
 	var core_action_points = 0
 	
 	var no_hit_points = 0
