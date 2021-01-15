@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/tutorial/page2.png" type="Texture" id=1]
+[ext_resource path="res://assets/tutorial/page3.png" type="Texture" id=2]
+[ext_resource path="res://assets/tutorial/page1.png" type="Texture" id=3]
+[ext_resource path="res://assets/tutorial/page5.png" type="Texture" id=4]
+[ext_resource path="res://assets/tutorial/page4.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/alterebro-pixel-font.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://menus/tutorial.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 6 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 6 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 490.0
+margin_bottom = 281.0
+color = Color( 0.109804, 0.109804, 0.109804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_right = 467.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+text = "TUTORIAL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Num" type="Label" parent="ColorRect"]
+margin_left = 185.0
+margin_top = 222.0
+margin_right = 281.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 4 )
+text = "1/5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pages" type="AnimatedSprite" parent="ColorRect"]
+position = Vector2( 233, 134 )
+scale = Vector2( 0.26087, 0.26087 )
+frames = SubResource( 2 )
+animation = "5"
+
+[node name="Next" type="Button" parent="ColorRect"]
+margin_left = 257.0
+margin_top = 230.0
+margin_right = 273.0
+margin_bottom = 252.0
+custom_fonts/font = SubResource( 3 )
+text = ">"
+
+[node name="Prev" type="Button" parent="ColorRect"]
+margin_left = 193.0
+margin_top = 230.0
+margin_right = 209.0
+margin_bottom = 252.0
+custom_fonts/font = SubResource( 3 )
+text = "<"
+
+[node name="Close" type="Button" parent="ColorRect"]
+margin_left = 425.0
+margin_top = 6.0
+margin_right = 461.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 3 )
+text = "CLOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ColorRect/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="ColorRect/Prev" to="." method="_on_Prev_pressed"]
+[connection signal="pressed" from="ColorRect/Close" to="." method="_on_Close_pressed"]

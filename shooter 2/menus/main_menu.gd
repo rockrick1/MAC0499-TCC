@@ -13,6 +13,8 @@ extends Control
 
 var hovering = 0 # which button is being hovered
 
+const tutorial_screen = preload("res://menus/tutorial.tscn")
+
 
 func _ready():
 	set_process(true)
@@ -135,7 +137,8 @@ func _on_quit_mouse_exited():
 
 
 func _on_tutorial_pressed():
-	pass # Replace with function body.
+	var tutorial_inst = tutorial_screen.instance()
+	add_child(tutorial_inst)
 
 
 func _on_tutorial_mouse_entered():
