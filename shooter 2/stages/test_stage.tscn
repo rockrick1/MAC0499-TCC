@@ -124,5 +124,10 @@ position = Vector2( 256, -15 )
 stream = ExtResource( 6 )
 volume_db = -10.0
 autoplay = true
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 [connection signal="body_shape_entered" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_entered"]
 [connection signal="body_shape_exited" from="AutoCollectZone" to="." method="_on_AutoCollectZone_body_shape_exited"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
