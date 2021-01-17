@@ -7,7 +7,7 @@ OD = 0.001
 DEATH_PENALTY = 1.5
 
 mod_bullets_per_array = 0
-mod_spin_speed = 1
+mod_spin_speed = 0
 mod_fire_rate = 1
 mod_bullet_speed = 0
 n_bullets = 0
@@ -45,8 +45,6 @@ def generator_diff(overall_diff):
 	
 	if overall_diff > 1:
 		mod_bullet_speed = (overall_diff ** 0.0503) - 1
-		if overall_diff < 200:
-			mod_bullet_speed = mod_bullet_speed / ((200/overall_diff)**0.7)
 		mod_spin_speed = 1
 		mod_fire_rate = np.log10(overall_diff) / 2
 		if mod_fire_rate <= 1:
@@ -92,7 +90,7 @@ def main():
 
 	CONSIDER_DEATH = False
 
-	MAX_TIME = 600.0
+	MAX_TIME = 300.0
 
 	values = [1, 10, 100]
 	n_bullets = 0
@@ -101,8 +99,12 @@ def main():
 	plt.figure(figsize=(9, 3))
 	# Simulates half second interval, implemented in-game
 	i = 0
-	colors = ['k-','y-','g-','b-']
-	for n in [200,200,200,200]:
+	colors = ['b-','r-']
+	for n in [200,200]:
+		mod_bullets_per_array = 0
+		mod_spin_speed = 0
+		mod_fire_rate = 1
+		mod_bullet_speed = 0
 		no_hit_time = 0
 		last_hit = 0
 		OD = 0.001
@@ -149,14 +151,12 @@ def main():
 			
 		plt.subplot(411)
 		plt.grid(True)
-		plt.ylabel('overall_difficulty')
-		plt.xlabel('time')
+		plt.ylabel('Dificuldade')
 		plt.plot(tim,ODs, colors[i-1] )
 
 		plt.subplot(412)
 		plt.grid(True)
-		plt.ylabel('mod_bullets_per_array')
-		plt.xlabel('time')
+		plt.ylabel('ModNBalas')
 		plt.plot(tim,mod_bullets_per_array_plt, colors[i-1] )
 
 		# plt.subplot(513)
@@ -167,14 +167,13 @@ def main():
 
 		plt.subplot(413)
 		plt.grid(True)
-		plt.ylabel('mod_fire_rate')
-		plt.xlabel('time')
+		plt.ylabel('ModBalas/s')
 		plt.plot(tim,mod_fire_rate_plt, colors[i-1] )
 
 		plt.subplot(414)
 		plt.grid(True)
-		plt.ylabel('mod_bullet_speed')
-		plt.xlabel('time')
+		plt.ylabel('ModV')
+		plt.xlabel('Tempo (s)')
 		plt.plot(tim,mod_bullet_speed_plt, colors[i-1] )
 
 		# plt.subplot(616)
@@ -185,7 +184,8 @@ def main():
 		# plt.plot(grazetim,grazes, colors[i-1][0]+'o' )
 		# plt.plot(tim,rODs, colors[i-1] )
 	print(colors[0][0])
-	plt.suptitle('quero morrer')
+	plt.suptitle('Progressão de atributos\nMédia de balas na tela = 200')
+
 	plt.show()
 
 main()

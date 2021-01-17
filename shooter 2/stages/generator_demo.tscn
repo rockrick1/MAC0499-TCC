@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gui/generator_controller.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters/enemies/test_enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/enemies/void1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/stats_displayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/character.tscn" type="PackedScene" id=4]
 [ext_resource path="res://stages/generator_demo.gd" type="Script" id=5]
@@ -98,6 +98,5 @@ __meta__ = {
 position = Vector2( 256, -15 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 0, 1 )
-HP = 1e+06
+HP = 1e+08
 amount_to_move = 0.0

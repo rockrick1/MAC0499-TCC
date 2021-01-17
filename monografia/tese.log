@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  9 DEC 2020 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  17 JAN 2021 17:22
 entering extended mode
 **d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
 (d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
@@ -2347,17 +2347,37 @@ File: figuras//geradores1.png Graphic file (type png)
 Package pdftex.def Info: figuras//geradores1.png  used on input line 116.
 (pdftex.def)             Requested size: 302.736pt x 257.46033pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--138
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--138
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--138
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--140
 
  []
 
@@ -2563,7 +2583,7 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  103i,14n,138p,1365b,3136s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusEX.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusSYM.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMR.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMI.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}<D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><D:/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb>
-Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (53 pages, 1034838 bytes).
+Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (53 pages, 1036785 bytes).
 PDF statistics:
  845 PDF objects out of 1000 (max. 8388607)
  227 named destinations out of 1000 (max. 500000)

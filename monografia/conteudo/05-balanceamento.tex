@@ -122,10 +122,12 @@ Por exemplo, um \textit{vetor} com 3 projéteis e $90^{\circ}$ de abertura resul
 Estes dados são carregados sempre do banco de dados (\ref{BancoDeDados}) para inicialização dos inimigos. Estes valores, porém, não serão sempre os mesmos para os inimigos. Conforme a variável $overall\_difficulty$ é alterada~(\ref{overallDiffCalc}), modificadores para estes valores são calculados dentro dos inimigos também, processo executado nas 3 últimas linhas do programa \ref{prog:diff_calc}. Nisso, as seguintes variáveis são calculadas.\\
 \\
 $mod\_bullet\_speed = overall\_difficulty^{0.05} - 1$\\
-$mod\_spin\_speed = ???$\\
-$mod\_fire\_rate = log_{10} overall\_difficulty$\\
-$mod\_bullets\_per\_array =  \begin{cases}
-                                0,& \text{se } overall\_difficulty< 50\\
+$mod\_spin\_speed = ???$\\\\
+$mod\_fire\_rate = log_{10} overall\_difficulty$\\\\
+$ModV = D^{0,0503} - 1$\\\\
+$ModBalas/s = log_2\;D$\\\\
+$ModNBalas =  \begin{cases}
+                                0,& \text{se } D< 300\\
                                 1,              & \text{caso contrário}
                             \end{cases}$\\
 \\

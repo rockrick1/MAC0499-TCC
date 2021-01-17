@@ -8,6 +8,9 @@ var total_generators = 0
 var enemy
 
 
+var current_demo = 1
+
+
 const base_generator = preload("res://characters/bullet_generator.tscn")
 
 
@@ -44,7 +47,8 @@ func _on_GeneratorAdd_pressed():
 	total_generators += 1
 
 	var g = base_generator.instance()
-	var params = DBManager.get_bullet_gen("demo")
+	var params = DBManager.get_bullet_gen("demo"+str(current_demo))
+	current_demo += 1
 	g.set_params(params, params.proj_type, 0)
 	enemy.get_node("Generators").add_child(g)
 	generators = enemy.get_node("Generators").get_children()
