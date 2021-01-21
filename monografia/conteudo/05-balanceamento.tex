@@ -37,7 +37,7 @@ Neste estudo, o cálculo da dificuldade se baseou na seguinte divisão de açõe
 Os pontos de dano são calculados considerando o tempo total desde que o jogador entrou em contato com uma bala inimiga e quantas balas inimigas estão ativas na tela no momento, da seguinte maneira:
 
 $$
-no\_hit\_points = \frac{no\_hit\_time^{1.15} * n\_bullets}{500}
+no\_hit\_points = \frac{no\_hit\_time^{1.15} * n\_bullets}{20.00}
 $$
 
 onde $no\_hit\_time$ representa o tempo, em segundos, desde a última colisão do jogador com uma bala inimiga, e $n\_bullets$, o número de balas inimigas na tela no momento. Este valor é apenas considerado quando existem inimigos ativos no momento.
@@ -45,7 +45,7 @@ onde $no\_hit\_time$ representa o tempo, em segundos, desde a última colisão d
 Os pontos de \textit{graze}, por sua vez, são calculados da seguinte maneira:
 
 $$
-graze\_points = grazed\_bullets * (overall\_difficulty + 1)^{0.2}
+graze\_points = grazed\_bullets * (overall\_difficulty + 1)^{0.42}
 $$
 
 onde $grazed\_bullets$ é o número de balas \textquotedbl{raspadas}\textquotedbl{} desde o último cálculo de dificuldade. Após o cálculo, $grazed\_bullets$ é zerado. $overall\_difficulty$ é a dificuldade total atual, calculada da maneira a seguir:
@@ -121,23 +121,15 @@ Por exemplo, um \textit{vetor} com 3 projéteis e $90^{\circ}$ de abertura resul
 
 Estes dados são carregados sempre do banco de dados (\ref{BancoDeDados}) para inicialização dos inimigos. Estes valores, porém, não serão sempre os mesmos para os inimigos. Conforme a variável $overall\_difficulty$ é alterada~(\ref{overallDiffCalc}), modificadores para estes valores são calculados dentro dos inimigos também, processo executado nas 3 últimas linhas do programa \ref{prog:diff_calc}. Nisso, as seguintes variáveis são calculadas.\\
 \\
-$mod\_bullet\_speed = overall\_difficulty^{0.05} - 1$\\
-$mod\_spin\_speed = ???$\\\\
-$mod\_fire\_rate = log_{10} overall\_difficulty$\\\\
-$ModV = D^{0,0503} - 1$\\\\
-$ModBalas/s = log_2\;D$\\\\
-$ModNBalas =  \begin{cases}
-                                0,& \text{se } D< 300\\
+$mod\_bullet\_speed = overall\_difficulty^{0.0503} - 1$\\
+$mod\_fire\_rate = log_{10} overall\_difficulty$\\
+$mod\_bullets\_per\_array =  \begin{cases}
+                                0,& \text{se } overall\_difficulty < 300\\
                                 1,              & \text{caso contrário}
                             \end{cases}$\\
 \\
 e, com isso, os valores do gerador são alterados da seguinte maneira, quando considerados na instanciação de projéteis.\\
 \\
 $bullet\_speed = mod\_bullet\_speed + bullet\_speed$\\
-$spin\_speed = mod\_spin\_speed * spin\_speed$\\
 $fire\_rate = mod\_fire\_rate * fire\_rate$\\
 $bullets\_per\_array = mod\_bullets\_per\_array + bullets\_per\_array$
-
-aaaaaa
-
-

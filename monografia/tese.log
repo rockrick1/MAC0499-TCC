@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  17 JAN 2021 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.4)  20 JAN 2021 22:02
 entering extended mode
 **d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
 (d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/tese.tex
@@ -2015,6 +2015,16 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 117.
 \@normalstrutheight=\skip149
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 120.
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
+(Font)              scaled to size 14.4pt on input line 120.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/LibertinusSerif-TLF/m/sc/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (55.60765pt too wide) in paragraph at lines 120--120
+|| [] 
+ []
+
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 120.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
@@ -2025,6 +2035,19 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 120.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/LibertinusSerif-TLF/m/sc/17.28'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Trying to load font information for T1+LibertinusSerif-OsF on input line 120.
+(D:\Programs\MiKTeX\tex/latex/libertinus-type1\t1libertinusserif-osf.fd
+File: T1LibertinusSerif-OsF.fd 2020/08/22 (autoinst) Font definitions for T1/LibertinusSerif-OsF.
+)
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-OsF/m/sc' will be
+(Font)              scaled to size 17.28pt on input line 120.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LibertinusSerif-OsF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/LibertinusSerif-OsF/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
 (Font)              scaled to size 14.4pt on input line 120.
@@ -2094,56 +2117,27 @@ Underfull \vbox (badness 10000) detected at line 136
 ] [4.4
 
 ]
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 144.
-[5.5
-
-
-] [6.6
-
-]
 Package hyperref Info: Option `pageanchor' set `true' on input line 155.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 162.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 162.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathsf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 10.95pt on input line 163.
 (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/resumo-abstract.tex
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 8.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 8.
-[1.7
+[1.5
 
-] [2.8
+
+] [2.6
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 8.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.0pt on input line 8.
-[3.9] [4.10
+[3.7] [4.8
 
-]) [5.11] [6.12
+]) [5.9] [6.10
 
 ] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.lof
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
@@ -2151,6 +2145,8 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/LibertinusSerif-TLF/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 8.
 )
 \tf@lof=\write7
 \openout7 = `tese.lof'.
@@ -2159,32 +2155,32 @@ Package microtype Info: Character `029' is missing
 \tf@lot=\write8
 \openout8 = `tese.lot'.
 
-(d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.lop [7.13
+(d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.lop [7.11
 
 ])
 \tf@lop=\write9
 \openout9 = `tese.lop'.
 
-[8.14] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.toc
+[8.12] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.toc
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
 (Font)              scaled to size 12.0pt on input line 10.
-[9.15
+[9.13
 
 ])
 \tf@toc=\write10
 \openout10 = `tese.toc'.
 
-) [10.16] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/capitulos.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/01-introducao.tex
+) [10.14] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/capitulos.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/01-introducao.tex
 Cap\'{\i }tulo 1.
-[1.17
+[1.15
 
 
 ]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/02-cenario-atual.tex
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 6.
-[2.18]
+[2.16]
 Cap\'{\i }tulo 2.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
 (Font)              scaled to size 6.5pt on input line 18.
@@ -2202,33 +2198,37 @@ LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
 (Font)              scaled to size 6.5pt on input line 18.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
 (Font)              scaled to size 6.5pt on input line 18.
-[3.19
+[3.17
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 28.
-[4.20] [5.21]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/03-decisoes-de-design.tex [6.22]
+[4.18] [5.19]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/03-decisoes-de-design.tex [6.20]
 Cap\'{\i }tulo 3.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
 (Font)              scaled to size 24.88pt on input line 6.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
 (Font)              scaled to size 17.28pt on input line 18.
-[7.23
+[7.21
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 35.
-[8.24] [9.25]
-<figuras//easeing.png, id=428, 764.8575pt x 384.43625pt>
+[8.22] [9.23]
+<figuras//easeing.png, id=411, 764.8575pt x 384.43625pt>
 File: figuras//easeing.png Graphic file (type png)
 <use figuras//easeing.png>
 Package pdftex.def Info: figuras//easeing.png  used on input line 61.
 (pdftex.def)             Requested size: 389.23105pt x 195.63753pt.
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 64.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 64.
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 64.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/scit' will be
 (Font)              scaled to size 10.95pt on input line 64.
-[10.26 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//easeing.png>]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/04-plataforma.tex [11.27] [12.28
+[10.24 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//easeing.png>]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/04-plataforma.tex [11.25] [12.26
 
 ]
 Cap\'{\i }tulo 4.
@@ -2250,7 +2250,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/gameloop.py)
 Package hyperref Info: bookmark level for unknown program defaults to 0 on input line 18.
-[13.29]
+[13.27]
 LaTeX Font Info:    Trying to load font information for TS1+LibertinusSerif-TLF on input line 38.
 (D:\Programs\MiKTeX\tex/latex/libertinus-type1\ts1libertinusserif-tlf.fd
 File: TS1LibertinusSerif-TLF.fd 2020/08/22 (autoinst) Font definitions for TS1/LibertinusSerif-TLF.
@@ -2261,31 +2261,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSerif-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figuras//tiposDeNos.png, id=472, 532.23843pt x 340.27126pt>
+<figuras//tiposDeNos.png, id=456, 532.23843pt x 340.27126pt>
 File: figuras//tiposDeNos.png Graphic file (type png)
 <use figuras//tiposDeNos.png>
 Package pdftex.def Info: figuras//tiposDeNos.png  used on input line 55.
 (pdftex.def)             Requested size: 389.23105pt x 248.84766pt.
-<figuras//arvoreDeNos.png, id=474, 198.7425pt x 277.78781pt>
+<figuras//arvoreDeNos.png, id=458, 198.7425pt x 277.78781pt>
 File: figuras//arvoreDeNos.png Graphic file (type png)
 <use figuras//arvoreDeNos.png>
 Package pdftex.def Info: figuras//arvoreDeNos.png  used on input line 70.
 (pdftex.def)             Requested size: 172.99011pt x 241.80058pt.
-[14.30] [15.31 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//tiposDeNos.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//arvoreDeNos.png>]
-<figuras//playerGroup.png, id=490, 230.36063pt x 179.16937pt>
+[14.28] [15.29 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//tiposDeNos.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//arvoreDeNos.png>]
+<figuras//playerGroup.png, id=473, 230.36063pt x 179.16937pt>
 File: figuras//playerGroup.png Graphic file (type png)
 <use figuras//playerGroup.png>
 Package pdftex.def Info: figuras//playerGroup.png  used on input line 103.
 (pdftex.def)             Requested size: 155.69003pt x 121.08994pt.
-<figuras//playerCollidable.png, id=491, 231.11343pt x 176.15813pt>
+<figuras//playerCollidable.png, id=474, 231.11343pt x 176.15813pt>
 File: figuras//playerCollidable.png Graphic file (type png)
 <use figuras//playerCollidable.png>
 Package pdftex.def Info: figuras//playerCollidable.png  used on input line 112.
 (pdftex.def)             Requested size: 155.69003pt x 118.67043pt.
-[16.32]
+[16.30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[17.33 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerGroup.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerCollidable.png>]
+[17.31 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerGroup.png> <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//playerCollidable.png>]
 Overfull \hbox (35.0pt too wide) in paragraph at lines 131--131
 [] 
  []
@@ -2303,7 +2303,7 @@ Overfull \hbox (35.0pt too wide) in paragraph at lines 164--164
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[18.34]
+[18.32]
 Overfull \hbox (35.0pt too wide) in paragraph at lines 172--172
 [] 
  []
@@ -2318,14 +2318,14 @@ Overfull \hbox (35.0pt too wide) in paragraph at lines 198--198
 [] 
  []
 
-) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/05-balanceamento.tex [19.35] [20.36
+) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/05-balanceamento.tex [19.33] [20.34
 
 ]
 Cap\'{\i }tulo 5.
-[21.37]
+[21.35]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 40.
-[22.38]
+[22.36]
 Overfull \hbox (35.0pt too wide) in paragraph at lines 59--59
 [] 
  []
@@ -2340,205 +2340,60 @@ Overfull \hbox (35.0pt too wide) in paragraph at lines 88--88
 [] 
  []
 
-[23.39]
-<figuras//geradores1.png, id=607, 578.91281pt x 492.33937pt>
+[23.37]
+<figuras//geradores1.png, id=591, 578.91281pt x 492.33937pt>
 File: figuras//geradores1.png Graphic file (type png)
 <use figuras//geradores1.png>
 Package pdftex.def Info: figuras//geradores1.png  used on input line 116.
 (pdftex.def)             Requested size: 302.736pt x 257.46033pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
+)
+Underfull \hbox (badness 10000) in paragraph at lines 122--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
+Underfull \hbox (badness 10000) in paragraph at lines 122--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
+Underfull \hbox (badness 10000) in paragraph at lines 122--22
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--140
-
- []
-
-[24.40 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//geradores1.png>]) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/06-resultados.tex [25.41] [26.42
+[24.38 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//geradores1.png>] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/06-resultados.tex [25.39] [26.40
 
 ]
 Cap\'{\i }tulo 6.
-
-Overfull \hbox (97.11694pt too wide) in paragraph at lines 8--8
-|[]\T1/LibertinusSerif-TLF/b/n/17.28 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|  
- []
-
-
-Overfull \hbox (97.11694pt too wide) in paragraph at lines 8--8
-|[]\T1/LibertinusSerif-TLF/b/n/17.28 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|  
- []
-
-)) [27.43] [28.44
-
-] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/apendices.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/apendice-demo.tex
+<figuras//graficos.png, id=610, 743.77875pt x 587.94656pt>
+File: figuras//graficos.png Graphic file (type png)
+<use figuras//graficos.png>
+Package pdftex.def Info: figuras//graficos.png  used on input line 19.
+(pdftex.def)             Requested size: 302.736pt x 239.31024pt.
+[27.41 <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//graficos.png>])) [28.42] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/apendices.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/apendice-demo.tex
 Ap\^endice A.
-<figuras//generatorDemo.png, id=635, 1445.4pt x 765.6103pt>
+<figuras//generatorDemo.png, id=621, 1445.4pt x 765.6103pt>
 File: figuras//generatorDemo.png Graphic file (type png)
 <use figuras//generatorDemo.png>
 Package pdftex.def Info: figuras//generatorDemo.png  used on input line 16.
 (pdftex.def)             Requested size: 432.48189pt x 229.07738pt.
-) (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/apendice-pseudocodigo.tex [29.45
+)) [29.43
 
- <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//generatorDemo.png>] [30.46
 
-]
-Ap\^endice B.
-LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 8.
+ <d:/Henrique/Documentos/USP/MAC0499-TCC/monografia/figuras//generatorDemo.png>] [30.44
+
+] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/anexos.tex)
+LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 312.
 (D:\Programs\MiKTeX\tex/latex/libertinus-type1\t1libertinussans-tlf.fd
 File: T1LibertinusSans-TLF.fd 2020/08/22 (autoinst) Font definitions for T1/LibertinusSans-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 8.
+(Font)              scaled to size 12.0pt on input line 312.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSans-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-LaTeX Warning: Reference `prog:java' on page 31 undefined on input line 9.
-
-(d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/euclid.psc
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/sc' will be
-(Font)              scaled to size 10.95pt on input line 1.
-Package microtype Info: Character `029 (= 029)' is missing
-(microtype)             in font `T1/LibertinusSerif-TLF/b/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 1.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.95pt on input line 1.
-)
-LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 37.
-
-Overfull \hbox (35.0pt too wide) in paragraph at lines 39--39
-[] 
- []
-
-
-Overfull \hbox (35.0pt too wide) in paragraph at lines 57--57
-[] 
- []
-
-
-Overfull \hbox (35.0pt too wide) in paragraph at lines 57--57
-[] 
- []
-
-
-Overfull \hbox (35.0pt too wide) in paragraph at lines 57--57
-[] 
- []
-
-[31.47]
-Underfull \hbox (badness 1521) in paragraph at lines 114--119
-[]\T1/LibertinusSerif-TLF/m/n/12 (+20) Além de fun-ções, palavras-chave, strings, co-men-tá-rios e iden-ti-fi-ca-do-res, há
- []
-
-
-Underfull \hbox (badness 4886) in paragraph at lines 114--119
-\T1/LibertinusSerif-TLF/m/n/12 (+20) ``\T1/LibertinusSans-TLF/m/n/12 (+20) specialidentifiers\T1/LibertinusSerif-TLF/m/n/12 (+20) ''. Você pode usá-los com \T1/LibertinusSans-TLF/m/n/12 (+20) \spe-ci-a-lid{blah}\T1/LibertinusSerif-TLF/m/n/12 (+20) , com a op-ção
- []
-
-)) [32.48] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo/anexos.tex (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\conteudo-exemplo/anexo-faq.tex
-Anexo A.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathsf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathsf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathsf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 24.88pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 7.
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 15.
-
-LaTeX Warning: Reference `sec:limitations' on page 33 undefined on input line 18.
-
-
-LaTeX Warning: Reference `sec:limitations' on page 33 undefined on input line 21.
-
-[33.49
-
-
-]
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 35.
-
-LaTeX Warning: Reference `chap:tutorial' on page 34 undefined on input line 42.
-
-
-LaTeX Warning: Reference `chap:exemplos' on page 34 undefined on input line 42.
-
-)) [34.50] [35.51
+[31.45
 
 
 ]
@@ -2546,7 +2401,7 @@ LaTeX Warning: Reference `chap:exemplos' on page 34 undefined on input line 42.
 Package biblatex Warning: No driver for entry type 'forum'.
 (biblatex)                Using fallback driver on input line 312.
 
-[36.52] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.ind) (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-portuguese-brazil.tex
+(D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex (D:\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-portuguese-brazil.tex
 Package babel Info: Importing font and identification data for brazilian
 (babel)             from babel-pt-BR.ini. Reported on input line 11.
 )) (D:\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
@@ -2556,36 +2411,25 @@ Package babel Info: Importing font and identification data for english
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (D:\Programs\MiKTeX\tex/generic/stringenc\se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [37.53
-
-
-]
-
-Package imakeidx Warning: Remember to run (pdf)latex again after calling
-(imakeidx)                `makeindex -s mkidxhead.ist -l -c tese.idx'.
-
-(d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.aux)
+) [32.46] (d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.aux)
 Package rerunfilecheck Info: File `tese.out' has not changed.
-(rerunfilecheck)             Checksum: 8973618D136367A4A0E449EFE7154703;5650.
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: C7E6FB2CD9F10C857834415E9F12806A;5098.
 Package logreq Info: Writing requests to 'tese.run.xml'.
 \openout1 = `tese.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60108 strings out of 479799
- 1292220 string characters out of 2881986
- 2207505 words of memory out of 3000000
- 75179 multiletter control sequences out of 15000+200000
- 838879 words of font info for 493 fonts, out of 3000000 for 9000
+ 59856 strings out of 479799
+ 1288334 string characters out of 2881986
+ 2207352 words of memory out of 3000000
+ 74992 multiletter control sequences out of 15000+200000
+ 778929 words of font info for 424 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 103i,14n,138p,1365b,3136s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusEX.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusSYM.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMR.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMI.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}<D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><D:/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb>
-Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (53 pages, 1036785 bytes).
+ 103i,14n,138p,1310b,3134s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusEX.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusSYM.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMR.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinust1math/libusMI.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_p7snj6.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{D:/Programs/MiKTeX/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}<D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><D:/Programs/MiKTeX/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><D:/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb>
+Output written on d:/Henrique\Documentos\USP\MAC0499-TCC\monografia\tese.pdf (46 pages, 1064031 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 227 named destinations out of 1000 (max. 500000)
- 63948 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 196 named destinations out of 1000 (max. 500000)
+ 56769 words of extra memory for PDF output out of 61914 (max. 10000000)
 

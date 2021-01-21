@@ -1,10 +1,4 @@
 \begin{theindex}
-{\bfseries B}\nopagebreak
-
-  \item biblatex, \hyperpage{33}
-  \item bibtex, \hyperpage{33}
-
-  \indexspace
 {\bfseries C}\nopagebreak
 
   \item Captions, \hyperindexformat{\see{Legendas}}{x}
@@ -29,16 +23,6 @@
   \item Inglês, \hyperindexformat{\see{Língua estrangeira}}{x}
 
   \indexspace
-{\bfseries L}\nopagebreak
-
-  \item Legendas, \hyperpage{34}
-
-  \indexspace
-{\bfseries M}\nopagebreak
-
-  \item Mendeley, \hyperpage{34}
-
-  \indexspace
 {\bfseries P}\nopagebreak
 
   \item Palavras estrangeiras, 
@@ -56,21 +40,11 @@
   \item Sublegendas, \hyperindexformat{\see{Subfiguras}}{x}
 
   \indexspace
-{\bfseries T}\nopagebreak
-
-  \item Tabelas, \hyperindexformat{\see{Floats}}{x}
-
-  \indexspace
 {\bfseries V}\nopagebreak
 
   \item Versão corrigida, 
 		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
   \item Versão original, 
 		\hyperindexformat{\see{Tese/Dissertação, versões}}{x}
-
-  \indexspace
-{\bfseries Z}\nopagebreak
-
-  \item Zotero, \hyperpage{34}
 
 \end{theindex}

@@ -24,11 +24,11 @@ Essa estrutura é conhecida como \textit{Game Loop}~\citep{GameProgramming}. O j
 
 Por uma questão de simplicidade e para eliminar a necessidade de recriar essa estrutura para qualquer programa interativo, \textit{frameworks} dedicadas para o desenvolvimento desse tipo de programa tornaram-se disponíveis, mais especificamente para o cenário de desenvolvimento de jogos, as \textit{Game Engines}\footnote{
     Alguns exemplos de \textit{engines} famosas hoje em dia: Unity; Unreal Engine; CryEngine; GameMaker Studio; RPG Maker; Godot.
-}. Também conhecidas como \textit{Motor de Jogo}, essas auxiliam fortemente no desenvolvimento tanto jogos 2D quanto 3D, além de uso de gráficos, audio, bancos de dados, físicas, ou até mesmo uso de outras \textit{frameworks} para, por exemplo, comunicação entre redes. A \textit{engine} utilizada para desenvolver o protótipo neste estudo foi a \textit{Godot Engine}.
+}. Também conhecidas como \textit{Motor de Jogo}, essas auxiliam fortemente no desenvolvimento tanto jogos 2D quanto 3D, além de uso de gráficos, audio, bancos de dados, físicas, ou até mesmo uso de outras \textit{frameworks} para, por exemplo, comunicação entre redes. A \textit{engine} utilizada para desenvolver o \textit{Galaxy Rush} neste estudo foi a \textit{Godot Engine}.
 
 \section{Funcionalidades e Aplicações da Godot}
 
-A \textit{Godot Engine} é uma \textit{engine} totalmente gratuita e \textit{open-source} sob a licença MIT, dedicada para o desenvolvimento de aplicativos 2D ou 3D, principalmente jogos eletrônicos, e tem sua manutenção feita atualmente pela comunidade de forma independente. A versão da engine utilizada neste estudo foi a 3.2.3, parte da versão 3.0 da \textit{Godot}, lançada em 2018. Para entendimento do protótipo desenvolvido e do estudo feito, esta seção será dedicada a explicar os conceitos e funcionalidades principais da \textit{engine}.
+A \textit{Godot Engine} é uma \textit{engine} totalmente gratuita e \textit{open-source} sob a licença MIT, dedicada para o desenvolvimento de aplicativos 2D ou 3D, principalmente jogos eletrônicos, e tem sua manutenção feita atualmente pela comunidade de forma independente. A versão da engine utilizada neste estudo foi a 3.2.3, parte da versão 3.0 da \textit{Godot}, lançada em 2018. Para entendimento do desenvolvimento do \textit{Galaxy Rush} e do estudo feito, esta seção será dedicada a explicar os conceitos e funcionalidades principais da \textit{engine}.
 
 \subsection{Nós}
 
@@ -79,7 +79,7 @@ Ao executar o jogo, significa que uma cena é executada. É possível executar a
 
 \subsection{Instanciação}
 
-Ao estruturar uma cena, esta pode ser tratada como uma classe e ser instanciada como um objeto para fazer parte da hierarquia de qualquer outra cena, assim como nós simples. Isso provou-se extremamente útil no desenvolvimento do protótipo em questão para, por exemplo, geração de projéteis. Com o alto número de projéteis ativos em \textit{Shmups} no geral, basta definir um projétil simples e instanciá-lo diversas vezes na posição do personagem ou do inimigo para gerar um cenário simples de combate.
+Ao estruturar uma cena, esta pode ser tratada como uma classe e ser instanciada como um objeto para fazer parte da hierarquia de qualquer outra cena, assim como nós simples. Isso provou-se extremamente útil no desenvolvimento do \textit{Galaxy Rush} para, por exemplo, geração de projéteis. Com o alto número de projéteis ativos em \textit{Shmups} no geral, basta definir um projétil simples e instanciá-lo diversas vezes na posição do personagem ou do inimigo para gerar um cenário simples de combate.
 
 A depender do cenário em que uma cena é instanciada, porém, torna-se necessário carregá-la previamente através de um \textit{script}, para possibilitar sua instanciação sob demanda, por exemplo, do \textit{input}\footnote{
     Qualquer ação, parametrizada no jogo, vinda do jogador, como um clique do mouse, ou uma tecla apertada no teclado.
@@ -169,7 +169,7 @@ Não sendo obrigatório no desenvolvimento de jogos, porém, o uso de um banco d
 
 \pagebreak
 
-\begin{programruledcaption}{\textit{Database Manager} utilizado no protótipo.\label{prog:db_manager}}
+\begin{programruledcaption}{\textit{Database Manager} utilizado no \textit{Galaxy Rush}.\label{prog:db_manager}}
     \begin{lstlisting}[
         language=Python,
         style=wider,

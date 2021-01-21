@@ -1,7 +1,7 @@
 This is makeindex, version 2.15 [MiKTeX 20.11].
 Scanning style file ./mkidxhead.ist...done (3 attributes redefined, 0 ignored).
-Scanning input file tese.idx....done (19 entries accepted, 0 rejected).
-Sorting entries....done (79 comparisons).
-Generating output file tese.ind....done (76 lines written, 0 warnings).
+Scanning input file tese.idx....done (13 entries accepted, 0 rejected).
+Sorting entries....done (49 comparisons).
+Generating output file tese.ind....done (50 lines written, 0 warnings).
 Output written in tese.ind.
 Transcript written in tese.ilg.

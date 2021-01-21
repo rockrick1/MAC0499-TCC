@@ -1,6 +1,5 @@
 \indexentry{Inglês|hyperindexformat{\see{Língua estrangeira}}}{x}
 \indexentry{Figuras|hyperindexformat{\see{Floats}}}{x}
-\indexentry{Tabelas|hyperindexformat{\see{Floats}}}{x}
 \indexentry{Código-fonte|hyperindexformat{\see{Floats}}}{x}
 \indexentry{Subcaptions|hyperindexformat{\see{Subfiguras}}}{x}
 \indexentry{Sublegendas|hyperindexformat{\see{Subfiguras}}}{x}
@@ -12,8 +11,3 @@
 \indexentry{Versão corrigida|hyperindexformat{\see{Tese/Dissertação, versões}}}{x}
 \indexentry{Palavras estrangeiras|hyperindexformat{\see{Língua estrangeira}}}{x}
 \indexentry{Floats!Algoritmo|hyperindexformat{\see{Floats, Ordem}}}{x}
-\indexentry{bibtex|hyperpage}{33}
-\indexentry{biblatex|hyperpage}{33}
-\indexentry{Legendas|hyperpage}{34}
-\indexentry{Zotero|hyperpage}{34}
-\indexentry{Mendeley|hyperpage}{34}
