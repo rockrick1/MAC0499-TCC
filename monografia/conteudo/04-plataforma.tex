@@ -24,7 +24,7 @@ Essa estrutura é conhecida como \textit{Game Loop}~\citep{GameProgramming}. O j
 
 Por uma questão de simplicidade e para eliminar a necessidade de recriar essa estrutura para qualquer programa interativo, \textit{frameworks} dedicadas para o desenvolvimento desse tipo de programa tornaram-se disponíveis, mais especificamente para o cenário de desenvolvimento de jogos, as \textit{Game Engines}\footnote{
     Alguns exemplos de \textit{engines} famosas hoje em dia: Unity; Unreal Engine; CryEngine; GameMaker Studio; RPG Maker; Godot.
-}. Também conhecidas como \textit{Motor de Jogo}, essas auxiliam fortemente no desenvolvimento tanto jogos 2D quanto 3D, além de uso de gráficos, audio, bancos de dados, físicas, ou até mesmo uso de outras \textit{frameworks} para, por exemplo, comunicação entre redes. A \textit{engine} utilizada para desenvolver o \textit{Galaxy Rush} neste estudo foi a \textit{Godot Engine}.
+}. Também conhecidas como \textit{Motor de Jogo}, essas auxiliam fortemente no desenvolvimento tanto de jogos 2D quanto 3D, além de uso de gráficos, audio, bancos de dados, físicas, ou até mesmo uso de outras \textit{frameworks} para, por exemplo, comunicação entre redes. A \textit{engine} utilizada para desenvolver o \textit{Galaxy Rush} neste estudo foi a \textit{Godot Engine}.
 
 \section{Funcionalidades e Aplicações da Godot}
 
@@ -32,12 +32,12 @@ A \textit{Godot Engine} é uma \textit{engine} totalmente gratuita e \textit{ope
 
 \subsection{Nós}
 
-Também conhecidos como \textit{Nodes}, quando separados, representam pequenos elementos do jogo. Quando juntos, compoem a estrutura geral do jogo, como blocos de construção. Na \textit{Godot}, exitem diversos tipos diferentes de nós, cada um com uma função específica, e possivelmente herdando funcionalidades de outros tipos de nós. Por outro lado, os nós terão por padrão as seguintes utilidades:
+Também conhecidos como \textit{Nodes}, quando separados, representam pequenos elementos do jogo. Quando juntos, compõem a estrutura geral do jogo, como blocos de construção. Na \textit{Godot}, exitem diversos tipos diferentes de nós, cada um com uma função específica, e possivelmente herdando funcionalidades de outros tipos de nós. Por outro lado, os nós terão por padrão as seguintes utilidades:
 
 \begin{itemize}
     \item Possuem um nome;
     \item Possuem atributos (variáveis);
-    \item Podem possuir ou não um trecho de código que é chamado toda \textit{frame} do jogo, definido em um \textit{script};
+    \item Podem possuir ou não um trecho de código, chamado uma vez a cada \textit{frame} do jogo, definido em um \textit{script};
     \item Podem possuir ou não métodos customizados, definidos no \textit{script} mencionado;
     \item Podem herdar funcionalidades de outros nós ou scripts criados;
     %(tendo assim atributos e métodos de ambos scripts, o atribuído e o herdado)
@@ -60,7 +60,7 @@ Usufruindo de todas essas funções, o desenvolvimento do jogo é focado quase t
 
 \subsection{Cenas}
 
-Como mencionado anteriormente em~\ref{Cenas}, uma cena pode representar tanto um estado específico do jogo, por exemplo uma fase, como um determinado \textquotedbl{objeto}\textquotedbl{}, por exemplo, o personagem principal ou um inimigo. Cenas são sempre compostas por um ou mais nós em uma estrutura hierárquica. O editor da \textit{Godot} possui uma seção intuitiva para criação e modificação dessa hierarquia, como demonstrado a seguir.
+Como mencionado anteriormente na seção~\ref{Cenas}, uma cena pode representar tanto um estado específico do jogo, por exemplo uma fase, como um determinado \textquotedbl{objeto}\textquotedbl{}, por exemplo, o personagem principal ou um inimigo. Cenas são sempre compostas por um ou mais nós em uma estrutura hierárquica. O editor da \textit{Godot} possui uma seção intuitiva para criação e modificação dessa hierarquia, como demonstrado a seguir.
 
 \begin{figure}
     \centering
@@ -124,7 +124,7 @@ Ao definir classes customizadas a partir de \textit{scripts}, é possível fazer
 
 \subsection{Singletons}\label{sec:Singletons}
 
-Com o uso de \textit{Singletons} é possível ter acesso globalmente a métodos e variáveis definidas no nessa classe, por qualquer outro \textit{script}. Similarmente ao uso de sinais, o uso de \textit{Singletons} permite uma rápida e simples comunicação entre cenas distintas. O código a seguir, usado no protótipo em muitas cenas, auxilia, por meio de \textit{setters} e \textit{getters}, o acesso às cenas do personagem, fase principal, e \textit{stats}, uma cena utilizada durante o desenvolvimento, dedicada a expor de variáveis na tela, como número de vidas, bombas, número de balas ativas e outras variáveis utilizadas no cálculo da dificuldade.
+Com o uso de \textit{Singletons} é possível ter acesso globalmente a métodos e variáveis definidas nessa classe, por qualquer outro \textit{script}. Similarmente ao uso de sinais, o uso de \textit{Singletons} permite uma rápida e simples comunicação entre cenas distintas. O código a seguir, usado no protótipo em muitas cenas, auxilia, por meio de \textit{setters} e \textit{getters}, o acesso às cenas do personagem, fase principal, e \textit{stats}, uma cena utilizada durante o desenvolvimento, dedicada a expor de variáveis na tela, como número de vidas, bombas, número de balas ativas e outras variáveis utilizadas no cálculo da dificuldade.
 
 \pagebreak
 
